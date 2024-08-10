@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E9497E752C662D820050A251 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9497E742C662D820050A251 /* AppDelegate.swift */; };
+		E9497E772C662D820050A251 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9497E762C662D820050A251 /* SceneDelegate.swift */; };
+		E9497E792C662D820050A251 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9497E782C662D820050A251 /* LoginVC.swift */; };
+		E9497E7C2C662D820050A251 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E9497E7B2C662D820050A251 /* Base */; };
+		E9497E812C662D840050A251 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9497E802C662D840050A251 /* Assets.xcassets */; };
+		E9497E842C662D840050A251 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E9497E832C662D840050A251 /* Base */; };
+		E9497E8D2C66652B0050A251 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E9497E8C2C66652B0050A251 /* IQKeyboardManagerSwift */; };
+		E96C60942C674AC2000F2D38 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60932C674AC2000F2D38 /* LoginVM.swift */; };
+		E96C60962C67581A000F2D38 /* UiVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60952C67581A000F2D38 /* UiVCExtension.swift */; };
+		E96C60982C6760BA000F2D38 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60972C6760BA000F2D38 /* TabBarVC.swift */; };
+		E96C609A2C6760F3000F2D38 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60992C6760F3000F2D38 /* AppController.swift */; };
+		E96C609E2C676155000F2D38 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C609D2C676155000F2D38 /* HomeVC.swift */; };
+		E96C60A02C676163000F2D38 /* LogbookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C609F2C676163000F2D38 /* LogbookVC.swift */; };
+		E96C60A22C676176000F2D38 /* MessgegesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60A12C676176000F2D38 /* MessgegesVC.swift */; };
+		E96C60A42C676182000F2D38 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60A32C676182000F2D38 /* MoreVC.swift */; };
+		E96C60A62C67637C000F2D38 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60A52C67637C000F2D38 /* Enumerations.swift */; };
+		E96C60A82C676E43000F2D38 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60A72C676E43000F2D38 /* SplashVC.swift */; };
+		E96C60AA2C676EBF000F2D38 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60A92C676EBF000F2D38 /* UserData.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E9497E712C662D820050A251 /* TruckX iOS Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TruckX iOS Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9497E742C662D820050A251 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E9497E762C662D820050A251 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E9497E782C662D820050A251 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		E9497E7B2C662D820050A251 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E9497E802C662D840050A251 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E9497E832C662D840050A251 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E9497E852C662D840050A251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E96C60932C674AC2000F2D38 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		E96C60952C67581A000F2D38 /* UiVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiVCExtension.swift; sourceTree = "<group>"; };
+		E96C60972C6760BA000F2D38 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		E96C60992C6760F3000F2D38 /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
+		E96C609D2C676155000F2D38 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		E96C609F2C676163000F2D38 /* LogbookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogbookVC.swift; sourceTree = "<group>"; };
+		E96C60A12C676176000F2D38 /* MessgegesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessgegesVC.swift; sourceTree = "<group>"; };
+		E96C60A32C676182000F2D38 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
+		E96C60A52C67637C000F2D38 /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
+		E96C60A72C676E43000F2D38 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		E96C60A92C676EBF000F2D38 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E9497E6E2C662D820050A251 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9497E8D2C66652B0050A251 /* IQKeyboardManagerSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E9497E682C662D820050A251 = {
+			isa = PBXGroup;
+			children = (
+				E9497E732C662D820050A251 /* TruckX iOS Application */,
+				E9497E722C662D820050A251 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E9497E722C662D820050A251 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E9497E712C662D820050A251 /* TruckX iOS Application.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E9497E732C662D820050A251 /* TruckX iOS Application */ = {
+			isa = PBXGroup;
+			children = (
+				E9497E742C662D820050A251 /* AppDelegate.swift */,
+				E9497E762C662D820050A251 /* SceneDelegate.swift */,
+				E96C60952C67581A000F2D38 /* UiVCExtension.swift */,
+				E9497E782C662D820050A251 /* LoginVC.swift */,
+				E96C60932C674AC2000F2D38 /* LoginVM.swift */,
+				E96C60972C6760BA000F2D38 /* TabBarVC.swift */,
+				E96C60A52C67637C000F2D38 /* Enumerations.swift */,
+				E96C60992C6760F3000F2D38 /* AppController.swift */,
+				E96C609D2C676155000F2D38 /* HomeVC.swift */,
+				E96C609F2C676163000F2D38 /* LogbookVC.swift */,
+				E96C60A92C676EBF000F2D38 /* UserData.swift */,
+				E96C60A12C676176000F2D38 /* MessgegesVC.swift */,
+				E96C60A32C676182000F2D38 /* MoreVC.swift */,
+				E96C60A72C676E43000F2D38 /* SplashVC.swift */,
+				E9497E7A2C662D820050A251 /* Main.storyboard */,
+				E9497E802C662D840050A251 /* Assets.xcassets */,
+				E9497E822C662D840050A251 /* LaunchScreen.storyboard */,
+				E9497E852C662D840050A251 /* Info.plist */,
+			);
+			path = "TruckX iOS Application";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E9497E702C662D820050A251 /* TruckX iOS Application */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9497E882C662D840050A251 /* Build configuration list for PBXNativeTarget "TruckX iOS Application" */;
+			buildPhases = (
+				E9497E6D2C662D820050A251 /* Sources */,
+				E9497E6E2C662D820050A251 /* Frameworks */,
+				E9497E6F2C662D820050A251 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TruckX iOS Application";
+			packageProductDependencies = (
+				E9497E8C2C66652B0050A251 /* IQKeyboardManagerSwift */,
+			);
+			productName = "TruckX iOS Application";
+			productReference = E9497E712C662D820050A251 /* TruckX iOS Application.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E9497E692C662D820050A251 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					E9497E702C662D820050A251 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = E9497E6C2C662D820050A251 /* Build configuration list for PBXProject "TruckX iOS Application" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E9497E682C662D820050A251;
+			packageReferences = (
+				E9497E8B2C66652B0050A251 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
+			productRefGroup = E9497E722C662D820050A251 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E9497E702C662D820050A251 /* TruckX iOS Application */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E9497E6F2C662D820050A251 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9497E812C662D840050A251 /* Assets.xcassets in Resources */,
+				E9497E842C662D840050A251 /* Base in Resources */,
+				E9497E7C2C662D820050A251 /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E9497E6D2C662D820050A251 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E96C60942C674AC2000F2D38 /* LoginVM.swift in Sources */,
+				E96C60A02C676163000F2D38 /* LogbookVC.swift in Sources */,
+				E96C60AA2C676EBF000F2D38 /* UserData.swift in Sources */,
+				E96C609E2C676155000F2D38 /* HomeVC.swift in Sources */,
+				E96C60A42C676182000F2D38 /* MoreVC.swift in Sources */,
+				E9497E792C662D820050A251 /* LoginVC.swift in Sources */,
+				E96C60A22C676176000F2D38 /* MessgegesVC.swift in Sources */,
+				E9497E752C662D820050A251 /* AppDelegate.swift in Sources */,
+				E96C60962C67581A000F2D38 /* UiVCExtension.swift in Sources */,
+				E96C60A82C676E43000F2D38 /* SplashVC.swift in Sources */,
+				E96C60982C6760BA000F2D38 /* TabBarVC.swift in Sources */,
+				E9497E772C662D820050A251 /* SceneDelegate.swift in Sources */,
+				E96C609A2C6760F3000F2D38 /* AppController.swift in Sources */,
+				E96C60A62C67637C000F2D38 /* Enumerations.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E9497E7A2C662D820050A251 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9497E7B2C662D820050A251 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E9497E822C662D840050A251 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9497E832C662D840050A251 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E9497E862C662D840050A251 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E9497E872C662D840050A251 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E9497E892C662D840050A251 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4NP4L6636N;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TruckX iOS Application/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.self..TruckX-iOS-Application";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E9497E8A2C662D840050A251 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4NP4L6636N;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TruckX iOS Application/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.self..TruckX-iOS-Application";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E9497E6C2C662D820050A251 /* Build configuration list for PBXProject "TruckX iOS Application" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9497E862C662D840050A251 /* Debug */,
+				E9497E872C662D840050A251 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9497E882C662D840050A251 /* Build configuration list for PBXNativeTarget "TruckX iOS Application" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9497E892C662D840050A251 /* Debug */,
+				E9497E8A2C662D840050A251 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E9497E8B2C66652B0050A251 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E9497E8C2C66652B0050A251 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9497E8B2C66652B0050A251 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E9497E692C662D820050A251 /* Project object */;
+}
