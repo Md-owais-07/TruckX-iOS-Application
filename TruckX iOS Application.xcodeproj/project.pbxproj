@@ -25,7 +25,22 @@
 		E96C60A62C67637C000F2D38 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60A52C67637C000F2D38 /* Enumerations.swift */; };
 		E96C60A82C676E43000F2D38 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60A72C676E43000F2D38 /* SplashVC.swift */; };
 		E96C60AA2C676EBF000F2D38 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60A92C676EBF000F2D38 /* UserData.swift */; };
+		E96C60AC2C678E8B000F2D38 /* CustomUiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60AB2C678E8B000F2D38 /* CustomUiView.swift */; };
+		E96C60CB2C6945E5000F2D38 /* BottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60CA2C6945E5000F2D38 /* BottomSheetVC.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E96C60B52C680818000F2D38 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E9497E712C662D820050A251 /* TruckX iOS Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TruckX iOS Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +62,8 @@
 		E96C60A52C67637C000F2D38 /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
 		E96C60A72C676E43000F2D38 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		E96C60A92C676EBF000F2D38 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		E96C60AB2C678E8B000F2D38 /* CustomUiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUiView.swift; sourceTree = "<group>"; };
+		E96C60CA2C6945E5000F2D38 /* BottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,26 +97,116 @@
 		E9497E732C662D820050A251 /* TruckX iOS Application */ = {
 			isa = PBXGroup;
 			children = (
-				E9497E742C662D820050A251 /* AppDelegate.swift */,
-				E9497E762C662D820050A251 /* SceneDelegate.swift */,
-				E96C60952C67581A000F2D38 /* UiVCExtension.swift */,
-				E9497E782C662D820050A251 /* LoginVC.swift */,
-				E96C60932C674AC2000F2D38 /* LoginVM.swift */,
-				E96C60972C6760BA000F2D38 /* TabBarVC.swift */,
-				E96C60A52C67637C000F2D38 /* Enumerations.swift */,
-				E96C60992C6760F3000F2D38 /* AppController.swift */,
-				E96C609D2C676155000F2D38 /* HomeVC.swift */,
-				E96C609F2C676163000F2D38 /* LogbookVC.swift */,
-				E96C60A92C676EBF000F2D38 /* UserData.swift */,
-				E96C60A12C676176000F2D38 /* MessgegesVC.swift */,
-				E96C60A32C676182000F2D38 /* MoreVC.swift */,
-				E96C60A72C676E43000F2D38 /* SplashVC.swift */,
-				E9497E7A2C662D820050A251 /* Main.storyboard */,
-				E9497E802C662D840050A251 /* Assets.xcassets */,
-				E9497E822C662D840050A251 /* LaunchScreen.storyboard */,
+				E96C60C02C68F6D5000F2D38 /* Screens */,
 				E9497E852C662D840050A251 /* Info.plist */,
+				E96C60BB2C68E5A1000F2D38 /* Supporting Files */,
 			);
 			path = "TruckX iOS Application";
+			sourceTree = "<group>";
+		};
+		E96C60BB2C68E5A1000F2D38 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60C62C68F80D000F2D38 /* Base File */,
+				E9497E822C662D840050A251 /* LaunchScreen.storyboard */,
+				E9497E802C662D840050A251 /* Assets.xcassets */,
+				E9497E742C662D820050A251 /* AppDelegate.swift */,
+				E9497E762C662D820050A251 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E96C60C02C68F6D5000F2D38 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				E9497E7A2C662D820050A251 /* Main.storyboard */,
+				E96C60C92C6945CB000F2D38 /* Bottom Sheet  */,
+				E96C60C82C68FA0C000F2D38 /* Tabbar Controller */,
+				E96C60C72C68F879000F2D38 /* Splash */,
+				E96C60C52C68F73C000F2D38 /* Login Screen */,
+				E96C60C42C68F72D000F2D38 /* More Tab */,
+				E96C60C32C68F70A000F2D38 /* Messages Tab */,
+				E96C60C22C68F6FB000F2D38 /* Logbook Tab */,
+				E96C60C12C68F6EF000F2D38 /* Home Tab */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		E96C60C12C68F6EF000F2D38 /* Home Tab */ = {
+			isa = PBXGroup;
+			children = (
+				E96C609D2C676155000F2D38 /* HomeVC.swift */,
+			);
+			path = "Home Tab";
+			sourceTree = "<group>";
+		};
+		E96C60C22C68F6FB000F2D38 /* Logbook Tab */ = {
+			isa = PBXGroup;
+			children = (
+				E96C609F2C676163000F2D38 /* LogbookVC.swift */,
+			);
+			path = "Logbook Tab";
+			sourceTree = "<group>";
+		};
+		E96C60C32C68F70A000F2D38 /* Messages Tab */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60A12C676176000F2D38 /* MessgegesVC.swift */,
+			);
+			path = "Messages Tab";
+			sourceTree = "<group>";
+		};
+		E96C60C42C68F72D000F2D38 /* More Tab */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60A32C676182000F2D38 /* MoreVC.swift */,
+			);
+			path = "More Tab";
+			sourceTree = "<group>";
+		};
+		E96C60C52C68F73C000F2D38 /* Login Screen */ = {
+			isa = PBXGroup;
+			children = (
+				E9497E782C662D820050A251 /* LoginVC.swift */,
+				E96C60932C674AC2000F2D38 /* LoginVM.swift */,
+			);
+			path = "Login Screen";
+			sourceTree = "<group>";
+		};
+		E96C60C62C68F80D000F2D38 /* Base File */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60A92C676EBF000F2D38 /* UserData.swift */,
+				E96C60AB2C678E8B000F2D38 /* CustomUiView.swift */,
+				E96C60A52C67637C000F2D38 /* Enumerations.swift */,
+				E96C60952C67581A000F2D38 /* UiVCExtension.swift */,
+				E96C60992C6760F3000F2D38 /* AppController.swift */,
+			);
+			path = "Base File";
+			sourceTree = "<group>";
+		};
+		E96C60C72C68F879000F2D38 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60A72C676E43000F2D38 /* SplashVC.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		E96C60C82C68FA0C000F2D38 /* Tabbar Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60972C6760BA000F2D38 /* TabBarVC.swift */,
+			);
+			path = "Tabbar Controller";
+			sourceTree = "<group>";
+		};
+		E96C60C92C6945CB000F2D38 /* Bottom Sheet  */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60CA2C6945E5000F2D38 /* BottomSheetVC.swift */,
+			);
+			path = "Bottom Sheet ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +219,7 @@
 				E9497E6D2C662D820050A251 /* Sources */,
 				E9497E6E2C662D820050A251 /* Frameworks */,
 				E9497E6F2C662D820050A251 /* Resources */,
+				E96C60B52C680818000F2D38 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,9 +288,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E96C60942C674AC2000F2D38 /* LoginVM.swift in Sources */,
+				E96C60AC2C678E8B000F2D38 /* CustomUiView.swift in Sources */,
 				E96C60A02C676163000F2D38 /* LogbookVC.swift in Sources */,
 				E96C60AA2C676EBF000F2D38 /* UserData.swift in Sources */,
 				E96C609E2C676155000F2D38 /* HomeVC.swift in Sources */,
+				E96C60CB2C6945E5000F2D38 /* BottomSheetVC.swift in Sources */,
 				E96C60A42C676182000F2D38 /* MoreVC.swift in Sources */,
 				E9497E792C662D820050A251 /* LoginVC.swift in Sources */,
 				E96C60A22C676176000F2D38 /* MessgegesVC.swift in Sources */,
@@ -347,9 +457,11 @@
 				DEVELOPMENT_TEAM = 4NP4L6636N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TruckX iOS Application/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = TruckX;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
@@ -380,9 +492,11 @@
 				DEVELOPMENT_TEAM = 4NP4L6636N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TruckX iOS Application/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = TruckX;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
