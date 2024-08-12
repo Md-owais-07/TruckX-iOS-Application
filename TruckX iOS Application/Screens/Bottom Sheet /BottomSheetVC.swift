@@ -20,6 +20,10 @@ class BottomSheetVC: UIViewController {
         containerView.layer.cornerRadius = 12
         containerView.layer.masksToBounds = true
         
+        startButton.layer.cornerRadius = 10
+        startButton.layer.borderWidth = 4
+        startButton.layer.borderColor = #colorLiteral(red: 0.09424795955, green: 0.3382889926, blue: 0.3569509983, alpha: 1)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

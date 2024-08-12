@@ -20,12 +20,14 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var bottomView: UIView!
     
     var isPasswordVisible: Bool = false
+    private let loaderView = LoaderView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupLabel()
         labelHeight()
+        setupLoader()
         
         radioButton.addTarget(self, action: #selector(agreeButtonTerms), for: .touchUpInside)
         
@@ -41,17 +43,43 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         self.HideKeyboardWhenTapAround()
     }
     
+    private func setupLoader() {
+        loaderView.frame = view.bounds
+        loaderView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // Ensure it resizes with the main view
+        view.addSubview(loaderView)
+        loaderView.isHidden = true
+    }
+    
+    private func showLoader() {
+        loaderView.startLoading()
+    }
+    
+    private func hideLoader() {
+        loaderView.stopLoading()
+    }
+    
     @IBAction func loginBtnction(_ sender: Any) {
-        print("loginBtnction")
-        UserData.shared.isLoggedIn = true
-        let dashboardVC = AppController.shared.Tabbar
-        let navigationController = UINavigationController(rootViewController: dashboardVC)
-        navigationController.navigationItem.hidesBackButton = true
-        navigationController.isNavigationBarHidden = true
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let window = windowScene.windows.first {
-            window.rootViewController = navigationController
-            window.makeKeyAndVisible()
+        showLoader()
+        APIManager.shared.signIn(email: emailTextfield.text!, password: passwordTextfield.text!) { result in
+            DispatchQueue.main.async {
+                self.hideLoader()
+                switch result {
+                case .success(let accessToken):
+                    
+                    UserData.shared.isLoggedIn = true
+                    UserData.shared.currentAuthKey = accessToken
+                    let tabBarController = AppController.shared.Tabbar
+                    
+                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                       let window = windowScene.windows.first {
+                        window.rootViewController = tabBarController
+                        window.makeKeyAndVisible()
+                    }
+                    print("Login Success, with Access Token: \(accessToken)")
+                case .failure(let error):
+                    print("Error: \(error.localizedDescription)")
+                }
+            }
         }
     }
     

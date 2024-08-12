@@ -21,6 +21,44 @@ class AppStatusBar: UIView {
    }
 }
 
+class LoaderView: UIView {
+    private let activityIndicator = UIActivityIndicatorView(style: .medium)
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
+    }
+
+    private func setupView() {
+        backgroundColor = UIColor.clear
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(activityIndicator)
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
+        
+        activityIndicator.hidesWhenStopped = true
+    }
+
+    func startLoading() {
+        isHidden = false
+        activityIndicator.startAnimating()
+    }
+
+    func stopLoading() {
+        activityIndicator.stopAnimating()
+        isHidden = true
+    }
+}
+
+
 extension UIView {
     func setShadow(radius: CGFloat = 5, opacity: Float = 0.4, color: UIColor = UIColor.systemGray3, offset: CGSize = CGSize.zero, cornerRadius: CGFloat = 16)
     {

@@ -19,4 +19,13 @@ class UserData {
             return userDefault.set(status, forKey: "isLoggedIn")
         }
     }
+    
+    var currentAuthKey: String {
+       get{
+          return userDefault.string(forKey: "currentAuthKey") ?? ""
+       }
+       set(data) {
+          userDefault.set(data, forKey: "currentAuthKey")
+       }
+    }
 }

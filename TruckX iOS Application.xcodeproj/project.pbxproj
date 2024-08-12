@@ -27,6 +27,7 @@
 		E96C60AA2C676EBF000F2D38 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60A92C676EBF000F2D38 /* UserData.swift */; };
 		E96C60AC2C678E8B000F2D38 /* CustomUiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60AB2C678E8B000F2D38 /* CustomUiView.swift */; };
 		E96C60CB2C6945E5000F2D38 /* BottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60CA2C6945E5000F2D38 /* BottomSheetVC.swift */; };
+		E96C60CD2C69E8D3000F2D38 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60CC2C69E8D3000F2D38 /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,6 +65,7 @@
 		E96C60A92C676EBF000F2D38 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		E96C60AB2C678E8B000F2D38 /* CustomUiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUiView.swift; sourceTree = "<group>"; };
 		E96C60CA2C6945E5000F2D38 /* BottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetVC.swift; sourceTree = "<group>"; };
+		E96C60CC2C69E8D3000F2D38 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				E9497E802C662D840050A251 /* Assets.xcassets */,
 				E9497E742C662D820050A251 /* AppDelegate.swift */,
 				E9497E762C662D820050A251 /* SceneDelegate.swift */,
+				E96C60CC2C69E8D3000F2D38 /* APIManager.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				E9497E752C662D820050A251 /* AppDelegate.swift in Sources */,
 				E96C60962C67581A000F2D38 /* UiVCExtension.swift in Sources */,
 				E96C60A82C676E43000F2D38 /* SplashVC.swift in Sources */,
+				E96C60CD2C69E8D3000F2D38 /* APIManager.swift in Sources */,
 				E96C60982C6760BA000F2D38 /* TabBarVC.swift in Sources */,
 				E9497E772C662D820050A251 /* SceneDelegate.swift in Sources */,
 				E96C609A2C6760F3000F2D38 /* AppController.swift in Sources */,
