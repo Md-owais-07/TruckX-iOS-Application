@@ -35,4 +35,8 @@ class AppController {
     var Tabbar: TabBarVC {
         AppStoryBoard.shared.main.instantiateViewController(withIdentifier: "TabBarVC_id") as? TabBarVC ?? TabBarVC()
     }
+    var Exemption: ExemptionVC {
+        AppStoryBoard.shared.main.instantiateViewController(withIdentifier: "ExemptionVC_id") as? ExemptionVC ?? ExemptionVC()
+    }
 }
+

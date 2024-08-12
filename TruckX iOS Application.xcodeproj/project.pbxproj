@@ -28,6 +28,15 @@
 		E96C60AC2C678E8B000F2D38 /* CustomUiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60AB2C678E8B000F2D38 /* CustomUiView.swift */; };
 		E96C60CB2C6945E5000F2D38 /* BottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60CA2C6945E5000F2D38 /* BottomSheetVC.swift */; };
 		E96C60CD2C69E8D3000F2D38 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60CC2C69E8D3000F2D38 /* APIManager.swift */; };
+		E96C60D02C6A86A8000F2D38 /* ExemptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60CF2C6A86A8000F2D38 /* ExemptionVC.swift */; };
+		E96C60D32C6A8796000F2D38 /* ExemptionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60D12C6A8796000F2D38 /* ExemptionTVC.swift */; };
+		E96C60D42C6A8796000F2D38 /* ExemptionTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96C60D22C6A8796000F2D38 /* ExemptionTVC.xib */; };
+		E96C60D72C6A8BDA000F2D38 /* ToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96C60D62C6A8BDA000F2D38 /* ToastView.xib */; };
+		E96C60D92C6A8BEB000F2D38 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60D82C6A8BEB000F2D38 /* ToastView.swift */; };
+		E96C60DB2C6A8F98000F2D38 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60DA2C6A8F98000F2D38 /* Network.swift */; };
+		E96C60DD2C6A928A000F2D38 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60DC2C6A928A000F2D38 /* Toast.swift */; };
+		E96C60DF2C6A9D03000F2D38 /* ExemptionDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60DE2C6A9D03000F2D38 /* ExemptionDataModel.swift */; };
+		E96C60E12C6AA139000F2D38 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60E02C6AA139000F2D38 /* LoaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,6 +75,15 @@
 		E96C60AB2C678E8B000F2D38 /* CustomUiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUiView.swift; sourceTree = "<group>"; };
 		E96C60CA2C6945E5000F2D38 /* BottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetVC.swift; sourceTree = "<group>"; };
 		E96C60CC2C69E8D3000F2D38 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		E96C60CF2C6A86A8000F2D38 /* ExemptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExemptionVC.swift; sourceTree = "<group>"; };
+		E96C60D12C6A8796000F2D38 /* ExemptionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExemptionTVC.swift; sourceTree = "<group>"; };
+		E96C60D22C6A8796000F2D38 /* ExemptionTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExemptionTVC.xib; sourceTree = "<group>"; };
+		E96C60D62C6A8BDA000F2D38 /* ToastView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToastView.xib; sourceTree = "<group>"; };
+		E96C60D82C6A8BEB000F2D38 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		E96C60DA2C6A8F98000F2D38 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		E96C60DC2C6A928A000F2D38 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		E96C60DE2C6A9D03000F2D38 /* ExemptionDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExemptionDataModel.swift; sourceTree = "<group>"; };
+		E96C60E02C6AA139000F2D38 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				E9497E7A2C662D820050A251 /* Main.storyboard */,
+				E96C60D52C6A8BC7000F2D38 /* Toast View */,
+				E96C60CE2C6A8685000F2D38 /* Exemption Tab Screen */,
 				E96C60C92C6945CB000F2D38 /* Bottom Sheet  */,
 				E96C60C82C68FA0C000F2D38 /* Tabbar Controller */,
 				E96C60C72C68F879000F2D38 /* Splash */,
@@ -184,6 +204,9 @@
 				E96C60A52C67637C000F2D38 /* Enumerations.swift */,
 				E96C60952C67581A000F2D38 /* UiVCExtension.swift */,
 				E96C60992C6760F3000F2D38 /* AppController.swift */,
+				E96C60DA2C6A8F98000F2D38 /* Network.swift */,
+				E96C60DC2C6A928A000F2D38 /* Toast.swift */,
+				E96C60E02C6AA139000F2D38 /* LoaderView.swift */,
 			);
 			path = "Base File";
 			sourceTree = "<group>";
@@ -210,6 +233,26 @@
 				E96C60CA2C6945E5000F2D38 /* BottomSheetVC.swift */,
 			);
 			path = "Bottom Sheet ";
+			sourceTree = "<group>";
+		};
+		E96C60CE2C6A8685000F2D38 /* Exemption Tab Screen */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60CF2C6A86A8000F2D38 /* ExemptionVC.swift */,
+				E96C60D12C6A8796000F2D38 /* ExemptionTVC.swift */,
+				E96C60D22C6A8796000F2D38 /* ExemptionTVC.xib */,
+				E96C60DE2C6A9D03000F2D38 /* ExemptionDataModel.swift */,
+			);
+			path = "Exemption Tab Screen";
+			sourceTree = "<group>";
+		};
+		E96C60D52C6A8BC7000F2D38 /* Toast View */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60D62C6A8BDA000F2D38 /* ToastView.xib */,
+				E96C60D82C6A8BEB000F2D38 /* ToastView.swift */,
+			);
+			path = "Toast View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +323,8 @@
 				E9497E812C662D840050A251 /* Assets.xcassets in Resources */,
 				E9497E842C662D840050A251 /* Base in Resources */,
 				E9497E7C2C662D820050A251 /* Base in Resources */,
+				E96C60D42C6A8796000F2D38 /* ExemptionTVC.xib in Resources */,
+				E96C60D72C6A8BDA000F2D38 /* ToastView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +339,11 @@
 				E96C60AC2C678E8B000F2D38 /* CustomUiView.swift in Sources */,
 				E96C60A02C676163000F2D38 /* LogbookVC.swift in Sources */,
 				E96C60AA2C676EBF000F2D38 /* UserData.swift in Sources */,
+				E96C60D92C6A8BEB000F2D38 /* ToastView.swift in Sources */,
+				E96C60E12C6AA139000F2D38 /* LoaderView.swift in Sources */,
+				E96C60DB2C6A8F98000F2D38 /* Network.swift in Sources */,
+				E96C60D02C6A86A8000F2D38 /* ExemptionVC.swift in Sources */,
+				E96C60D32C6A8796000F2D38 /* ExemptionTVC.swift in Sources */,
 				E96C609E2C676155000F2D38 /* HomeVC.swift in Sources */,
 				E96C60CB2C6945E5000F2D38 /* BottomSheetVC.swift in Sources */,
 				E96C60A42C676182000F2D38 /* MoreVC.swift in Sources */,
@@ -305,8 +355,10 @@
 				E96C60CD2C69E8D3000F2D38 /* APIManager.swift in Sources */,
 				E96C60982C6760BA000F2D38 /* TabBarVC.swift in Sources */,
 				E9497E772C662D820050A251 /* SceneDelegate.swift in Sources */,
+				E96C60DD2C6A928A000F2D38 /* Toast.swift in Sources */,
 				E96C609A2C6760F3000F2D38 /* AppController.swift in Sources */,
 				E96C60A62C67637C000F2D38 /* Enumerations.swift in Sources */,
+				E96C60DF2C6A9D03000F2D38 /* ExemptionDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

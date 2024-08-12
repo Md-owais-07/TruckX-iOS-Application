@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Thread.sleep(forTimeInterval: 0.8)
-//        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enable = true
         window = UIWindow(frame: UIScreen.main.bounds)
         let initialVC = SplashVC() // Your initial view controller
         let navigationController = UINavigationController(rootViewController: initialVC)

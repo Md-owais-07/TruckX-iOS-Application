@@ -59,13 +59,28 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func loginBtnction(_ sender: Any) {
+        
+        guard let email = emailTextfield.text,  email != "" else {
+            Toast.shared.toastView(toastMessage: "Please enter your email address.", type: "error")
+            return
+        }
+        guard let password = passwordTextfield.text, password != "" else {
+            Toast.shared.toastView(toastMessage: "Please enter your Password.", type: "error")
+            return
+        }
+        guard password.count >= 6 else {
+            Toast.shared.toastView(toastMessage: "Please enter atleast 6 or more characters.", type: "error")
+            return
+        }
+        
         showLoader()
+        
         APIManager.shared.signIn(email: emailTextfield.text!, password: passwordTextfield.text!) { result in
             DispatchQueue.main.async {
                 self.hideLoader()
                 switch result {
                 case .success(let accessToken):
-                    
+                    Toast.shared.toastView(toastMessage: "Login Success!!", type: "success")
                     UserData.shared.isLoggedIn = true
                     UserData.shared.currentAuthKey = accessToken
                     let tabBarController = AppController.shared.Tabbar

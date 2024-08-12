@@ -19,12 +19,16 @@ class MoreVC: UIViewController {
     @IBOutlet weak var logoutView: UIView!
     @IBOutlet weak var btnLogout: UIButton!
     @IBOutlet weak var btnDot: UIButton!
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var btnExemption: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(unhideTab), name: NSNotification.Name("Unhide"), object: nil)
+        
+        bottomView.isHidden = true
         
         dotView.applyCardStyle()
         truckView.applyCardStyle()
@@ -61,6 +65,13 @@ class MoreVC: UIViewController {
         
         UserData.shared.isLoggedIn = false
     }
+    
+    @IBAction func exemptionButtonAction(_ sender: Any) {
+        let vc = AppController.shared.Exemption
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
     @IBAction func dotInspectionButtonTapped(_ sender: Any) {
         
