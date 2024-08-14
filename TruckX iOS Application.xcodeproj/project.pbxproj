@@ -15,7 +15,7 @@
 		E9497E842C662D840050A251 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E9497E832C662D840050A251 /* Base */; };
 		E9497E8D2C66652B0050A251 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E9497E8C2C66652B0050A251 /* IQKeyboardManagerSwift */; };
 		E96C60942C674AC2000F2D38 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60932C674AC2000F2D38 /* LoginVM.swift */; };
-		E96C60962C67581A000F2D38 /* UiVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60952C67581A000F2D38 /* UiVCExtension.swift */; };
+		E96C60962C67581A000F2D38 /* UIVC+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60952C67581A000F2D38 /* UIVC+Extensions.swift */; };
 		E96C60982C6760BA000F2D38 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60972C6760BA000F2D38 /* TabBarVC.swift */; };
 		E96C609A2C6760F3000F2D38 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60992C6760F3000F2D38 /* AppController.swift */; };
 		E96C609E2C676155000F2D38 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C609D2C676155000F2D38 /* HomeVC.swift */; };
@@ -25,7 +25,7 @@
 		E96C60A62C67637C000F2D38 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60A52C67637C000F2D38 /* Enumerations.swift */; };
 		E96C60A82C676E43000F2D38 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60A72C676E43000F2D38 /* SplashVC.swift */; };
 		E96C60AA2C676EBF000F2D38 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60A92C676EBF000F2D38 /* UserData.swift */; };
-		E96C60AC2C678E8B000F2D38 /* CustomUiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60AB2C678E8B000F2D38 /* CustomUiView.swift */; };
+		E96C60AC2C678E8B000F2D38 /* UiView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60AB2C678E8B000F2D38 /* UiView+Extensions.swift */; };
 		E96C60CB2C6945E5000F2D38 /* BottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60CA2C6945E5000F2D38 /* BottomSheetVC.swift */; };
 		E96C60CD2C69E8D3000F2D38 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60CC2C69E8D3000F2D38 /* APIManager.swift */; };
 		E96C60D02C6A86A8000F2D38 /* ExemptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60CF2C6A86A8000F2D38 /* ExemptionVC.swift */; };
@@ -34,9 +34,28 @@
 		E96C60D72C6A8BDA000F2D38 /* ToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96C60D62C6A8BDA000F2D38 /* ToastView.xib */; };
 		E96C60D92C6A8BEB000F2D38 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60D82C6A8BEB000F2D38 /* ToastView.swift */; };
 		E96C60DB2C6A8F98000F2D38 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60DA2C6A8F98000F2D38 /* Network.swift */; };
-		E96C60DD2C6A928A000F2D38 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60DC2C6A928A000F2D38 /* Toast.swift */; };
 		E96C60DF2C6A9D03000F2D38 /* ExemptionDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60DE2C6A9D03000F2D38 /* ExemptionDataModel.swift */; };
 		E96C60E12C6AA139000F2D38 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60E02C6AA139000F2D38 /* LoaderView.swift */; };
+		E96C60E32C6B3ED1000F2D38 /* ExemptionDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60E22C6B3ED1000F2D38 /* ExemptionDetailsVC.swift */; };
+		E96C60E52C6B4606000F2D38 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60E42C6B4606000F2D38 /* ImageDownloader.swift */; };
+		E96C60E92C6B6CA7000F2D38 /* GraphTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96C60E82C6B6CA7000F2D38 /* GraphTVC.xib */; };
+		E96C60EA2C6B6CA7000F2D38 /* GraphTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60E72C6B6CA7000F2D38 /* GraphTVC.swift */; };
+		E96C60ED2C6B73D3000F2D38 /* ChartTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96C60EC2C6B73D3000F2D38 /* ChartTVC.xib */; };
+		E96C60EE2C6B73D3000F2D38 /* ChartTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60EB2C6B73D3000F2D38 /* ChartTVC.swift */; };
+		E96C60F12C6B990A000F2D38 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60F02C6B990A000F2D38 /* NotificationVC.swift */; };
+		E96C60F82C6BAA15000F2D38 /* NewChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60F72C6BAA15000F2D38 /* NewChatVC.swift */; };
+		E96C60FA2C6BB0F3000F2D38 /* LogoutAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60F92C6BB0F3000F2D38 /* LogoutAlertVC.swift */; };
+		E96C60FD2C6BE56E000F2D38 /* DemoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60FB2C6BE56E000F2D38 /* DemoTVC.swift */; };
+		E96C60FE2C6BE56E000F2D38 /* DemoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96C60FC2C6BE56E000F2D38 /* DemoTVC.xib */; };
+		E96C61002C6C81B6000F2D38 /* SearchCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60FF2C6C81B6000F2D38 /* SearchCode.swift */; };
+		E96C61032C6C9593000F2D38 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C61022C6C9593000F2D38 /* AuthService.swift */; };
+		E96C61052C6C95A3000F2D38 /* TerminalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C61042C6C95A3000F2D38 /* TerminalService.swift */; };
+		E96C61072C6C95AE000F2D38 /* ExemptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C61062C6C95AE000F2D38 /* ExemptionService.swift */; };
+		E96C61152C6CA9FA000F2D38 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C61142C6CA9FA000F2D38 /* AppInfo.swift */; };
+		E96C61172C6CAF8B000F2D38 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C61162C6CAF8B000F2D38 /* Api.swift */; };
+		E96C61192C6CAF93000F2D38 /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C61182C6CAF93000F2D38 /* ApiModel.swift */; };
+		E96C611B2C6CAFF1000F2D38 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C611A2C6CAFF1000F2D38 /* ApiResponse.swift */; };
+		E96C611D2C6CD630000F2D38 /* TerminalDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C611C2C6CD630000F2D38 /* TerminalDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,7 +81,7 @@
 		E9497E832C662D840050A251 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9497E852C662D840050A251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E96C60932C674AC2000F2D38 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
-		E96C60952C67581A000F2D38 /* UiVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiVCExtension.swift; sourceTree = "<group>"; };
+		E96C60952C67581A000F2D38 /* UIVC+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVC+Extensions.swift"; sourceTree = "<group>"; };
 		E96C60972C6760BA000F2D38 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		E96C60992C6760F3000F2D38 /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		E96C609D2C676155000F2D38 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -72,7 +91,7 @@
 		E96C60A52C67637C000F2D38 /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
 		E96C60A72C676E43000F2D38 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		E96C60A92C676EBF000F2D38 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		E96C60AB2C678E8B000F2D38 /* CustomUiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUiView.swift; sourceTree = "<group>"; };
+		E96C60AB2C678E8B000F2D38 /* UiView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Extensions.swift"; sourceTree = "<group>"; };
 		E96C60CA2C6945E5000F2D38 /* BottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetVC.swift; sourceTree = "<group>"; };
 		E96C60CC2C69E8D3000F2D38 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		E96C60CF2C6A86A8000F2D38 /* ExemptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExemptionVC.swift; sourceTree = "<group>"; };
@@ -81,9 +100,28 @@
 		E96C60D62C6A8BDA000F2D38 /* ToastView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToastView.xib; sourceTree = "<group>"; };
 		E96C60D82C6A8BEB000F2D38 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		E96C60DA2C6A8F98000F2D38 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		E96C60DC2C6A928A000F2D38 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		E96C60DE2C6A9D03000F2D38 /* ExemptionDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExemptionDataModel.swift; sourceTree = "<group>"; };
 		E96C60E02C6AA139000F2D38 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		E96C60E22C6B3ED1000F2D38 /* ExemptionDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExemptionDetailsVC.swift; sourceTree = "<group>"; };
+		E96C60E42C6B4606000F2D38 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		E96C60E72C6B6CA7000F2D38 /* GraphTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTVC.swift; sourceTree = "<group>"; };
+		E96C60E82C6B6CA7000F2D38 /* GraphTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraphTVC.xib; sourceTree = "<group>"; };
+		E96C60EB2C6B73D3000F2D38 /* ChartTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTVC.swift; sourceTree = "<group>"; };
+		E96C60EC2C6B73D3000F2D38 /* ChartTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartTVC.xib; sourceTree = "<group>"; };
+		E96C60F02C6B990A000F2D38 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
+		E96C60F72C6BAA15000F2D38 /* NewChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChatVC.swift; sourceTree = "<group>"; };
+		E96C60F92C6BB0F3000F2D38 /* LogoutAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertVC.swift; sourceTree = "<group>"; };
+		E96C60FB2C6BE56E000F2D38 /* DemoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTVC.swift; sourceTree = "<group>"; };
+		E96C60FC2C6BE56E000F2D38 /* DemoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoTVC.xib; sourceTree = "<group>"; };
+		E96C60FF2C6C81B6000F2D38 /* SearchCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCode.swift; sourceTree = "<group>"; };
+		E96C61022C6C9593000F2D38 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		E96C61042C6C95A3000F2D38 /* TerminalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalService.swift; sourceTree = "<group>"; };
+		E96C61062C6C95AE000F2D38 /* ExemptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExemptionService.swift; sourceTree = "<group>"; };
+		E96C61142C6CA9FA000F2D38 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		E96C61162C6CAF8B000F2D38 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		E96C61182C6CAF93000F2D38 /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
+		E96C611A2C6CAFF1000F2D38 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		E96C611C2C6CD630000F2D38 /* TerminalDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +155,14 @@
 		E9497E732C662D820050A251 /* TruckX iOS Application */ = {
 			isa = PBXGroup;
 			children = (
-				E96C60C02C68F6D5000F2D38 /* Screens */,
-				E9497E852C662D840050A251 /* Info.plist */,
+				E9497E742C662D820050A251 /* AppDelegate.swift */,
+				E9497E762C662D820050A251 /* SceneDelegate.swift */,
+				E96C61082C6C9833000F2D38 /* Models */,
+				E96C61092C6C983E000F2D38 /* Views */,
+				E96C610A2C6C9845000F2D38 /* Controllers */,
+				E96C61012C6C9551000F2D38 /* Services */,
 				E96C60BB2C68E5A1000F2D38 /* Supporting Files */,
+				E96C610E2C6C9B01000F2D38 /* Resources */,
 			);
 			path = "TruckX iOS Application";
 			sourceTree = "<group>";
@@ -128,85 +171,67 @@
 			isa = PBXGroup;
 			children = (
 				E96C60C62C68F80D000F2D38 /* Base File */,
-				E9497E822C662D840050A251 /* LaunchScreen.storyboard */,
-				E9497E802C662D840050A251 /* Assets.xcassets */,
-				E9497E742C662D820050A251 /* AppDelegate.swift */,
-				E9497E762C662D820050A251 /* SceneDelegate.swift */,
-				E96C60CC2C69E8D3000F2D38 /* APIManager.swift */,
+				E96C60992C6760F3000F2D38 /* AppController.swift */,
+				E96C60952C67581A000F2D38 /* UIVC+Extensions.swift */,
+				E96C60AB2C678E8B000F2D38 /* UiView+Extensions.swift */,
+				E96C60E02C6AA139000F2D38 /* LoaderView.swift */,
+				E96C60E42C6B4606000F2D38 /* ImageDownloader.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E96C60C02C68F6D5000F2D38 /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				E9497E7A2C662D820050A251 /* Main.storyboard */,
-				E96C60D52C6A8BC7000F2D38 /* Toast View */,
-				E96C60CE2C6A8685000F2D38 /* Exemption Tab Screen */,
-				E96C60C92C6945CB000F2D38 /* Bottom Sheet  */,
-				E96C60C82C68FA0C000F2D38 /* Tabbar Controller */,
-				E96C60C72C68F879000F2D38 /* Splash */,
-				E96C60C52C68F73C000F2D38 /* Login Screen */,
-				E96C60C42C68F72D000F2D38 /* More Tab */,
-				E96C60C32C68F70A000F2D38 /* Messages Tab */,
-				E96C60C22C68F6FB000F2D38 /* Logbook Tab */,
-				E96C60C12C68F6EF000F2D38 /* Home Tab */,
-			);
-			path = Screens;
-			sourceTree = "<group>";
-		};
-		E96C60C12C68F6EF000F2D38 /* Home Tab */ = {
+		E96C60C12C68F6EF000F2D38 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				E96C609D2C676155000F2D38 /* HomeVC.swift */,
 			);
-			path = "Home Tab";
+			path = Home;
 			sourceTree = "<group>";
 		};
-		E96C60C22C68F6FB000F2D38 /* Logbook Tab */ = {
+		E96C60C22C68F6FB000F2D38 /* Logbook */ = {
 			isa = PBXGroup;
 			children = (
 				E96C609F2C676163000F2D38 /* LogbookVC.swift */,
 			);
-			path = "Logbook Tab";
+			path = Logbook;
 			sourceTree = "<group>";
 		};
-		E96C60C32C68F70A000F2D38 /* Messages Tab */ = {
+		E96C60C32C68F70A000F2D38 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
 				E96C60A12C676176000F2D38 /* MessgegesVC.swift */,
 			);
-			path = "Messages Tab";
+			path = Messages;
 			sourceTree = "<group>";
 		};
-		E96C60C42C68F72D000F2D38 /* More Tab */ = {
+		E96C60C42C68F72D000F2D38 /* More */ = {
 			isa = PBXGroup;
 			children = (
 				E96C60A32C676182000F2D38 /* MoreVC.swift */,
 			);
-			path = "More Tab";
+			path = More;
 			sourceTree = "<group>";
 		};
-		E96C60C52C68F73C000F2D38 /* Login Screen */ = {
+		E96C60C52C68F73C000F2D38 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				E9497E782C662D820050A251 /* LoginVC.swift */,
 				E96C60932C674AC2000F2D38 /* LoginVM.swift */,
 			);
-			path = "Login Screen";
+			path = Login;
 			sourceTree = "<group>";
 		};
 		E96C60C62C68F80D000F2D38 /* Base File */ = {
 			isa = PBXGroup;
 			children = (
+				E96C61142C6CA9FA000F2D38 /* AppInfo.swift */,
 				E96C60A92C676EBF000F2D38 /* UserData.swift */,
-				E96C60AB2C678E8B000F2D38 /* CustomUiView.swift */,
 				E96C60A52C67637C000F2D38 /* Enumerations.swift */,
-				E96C60952C67581A000F2D38 /* UiVCExtension.swift */,
-				E96C60992C6760F3000F2D38 /* AppController.swift */,
 				E96C60DA2C6A8F98000F2D38 /* Network.swift */,
-				E96C60DC2C6A928A000F2D38 /* Toast.swift */,
-				E96C60E02C6AA139000F2D38 /* LoaderView.swift */,
+				E96C60FF2C6C81B6000F2D38 /* SearchCode.swift */,
+				E96C61162C6CAF8B000F2D38 /* Api.swift */,
+				E96C61182C6CAF93000F2D38 /* ApiModel.swift */,
+				E96C611A2C6CAFF1000F2D38 /* ApiResponse.swift */,
 			);
 			path = "Base File";
 			sourceTree = "<group>";
@@ -219,40 +244,144 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
-		E96C60C82C68FA0C000F2D38 /* Tabbar Controller */ = {
+		E96C60C82C68FA0C000F2D38 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				E96C60972C6760BA000F2D38 /* TabBarVC.swift */,
+				E96C611E2C6CDF69000F2D38 /* TabbaVC */,
+				E96C60C12C68F6EF000F2D38 /* Home */,
+				E96C60C22C68F6FB000F2D38 /* Logbook */,
+				E96C60C32C68F70A000F2D38 /* Messages */,
+				E96C60C42C68F72D000F2D38 /* More */,
 			);
-			path = "Tabbar Controller";
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
-		E96C60C92C6945CB000F2D38 /* Bottom Sheet  */ = {
+		E96C60C92C6945CB000F2D38 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
 				E96C60CA2C6945E5000F2D38 /* BottomSheetVC.swift */,
+				E96C60F92C6BB0F3000F2D38 /* LogoutAlertVC.swift */,
 			);
-			path = "Bottom Sheet ";
+			path = BottomSheet;
 			sourceTree = "<group>";
 		};
-		E96C60CE2C6A8685000F2D38 /* Exemption Tab Screen */ = {
+		E96C60CE2C6A8685000F2D38 /* Exemptions */ = {
 			isa = PBXGroup;
 			children = (
 				E96C60CF2C6A86A8000F2D38 /* ExemptionVC.swift */,
 				E96C60D12C6A8796000F2D38 /* ExemptionTVC.swift */,
-				E96C60D22C6A8796000F2D38 /* ExemptionTVC.xib */,
-				E96C60DE2C6A9D03000F2D38 /* ExemptionDataModel.swift */,
+				E96C60E22C6B3ED1000F2D38 /* ExemptionDetailsVC.swift */,
 			);
-			path = "Exemption Tab Screen";
+			path = Exemptions;
 			sourceTree = "<group>";
 		};
-		E96C60D52C6A8BC7000F2D38 /* Toast View */ = {
+		E96C60EF2C6B98F0000F2D38 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60F02C6B990A000F2D38 /* NotificationVC.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		E96C60F62C6BA9F7000F2D38 /* NewChat */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60F72C6BAA15000F2D38 /* NewChatVC.swift */,
+				E96C60FB2C6BE56E000F2D38 /* DemoTVC.swift */,
+			);
+			path = NewChat;
+			sourceTree = "<group>";
+		};
+		E96C61012C6C9551000F2D38 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60CC2C69E8D3000F2D38 /* APIManager.swift */,
+				E96C61022C6C9593000F2D38 /* AuthService.swift */,
+				E96C61042C6C95A3000F2D38 /* TerminalService.swift */,
+				E96C61062C6C95AE000F2D38 /* ExemptionService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E96C61082C6C9833000F2D38 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60DE2C6A9D03000F2D38 /* ExemptionDataModel.swift */,
+				E96C611C2C6CD630000F2D38 /* TerminalDataModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E96C61092C6C983E000F2D38 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E96C610D2C6C98CA000F2D38 /* Custom Views */,
+				E96C610C2C6C98BC000F2D38 /* Storyboards */,
+				E96C610B2C6C98B0000F2D38 /* Xibs */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E96C610A2C6C9845000F2D38 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60C82C68FA0C000F2D38 /* Tabbar */,
+				E96C60F62C6BA9F7000F2D38 /* NewChat */,
+				E96C60EF2C6B98F0000F2D38 /* Notifications */,
+				E96C60CE2C6A8685000F2D38 /* Exemptions */,
+				E96C60C92C6945CB000F2D38 /* BottomSheet */,
+				E96C60C72C68F879000F2D38 /* Splash */,
+				E96C60C52C68F73C000F2D38 /* Login */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E96C610B2C6C98B0000F2D38 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60EB2C6B73D3000F2D38 /* ChartTVC.swift */,
+				E96C60E72C6B6CA7000F2D38 /* GraphTVC.swift */,
+				E96C60EC2C6B73D3000F2D38 /* ChartTVC.xib */,
+				E96C60E82C6B6CA7000F2D38 /* GraphTVC.xib */,
+				E96C60FC2C6BE56E000F2D38 /* DemoTVC.xib */,
+				E96C60D22C6A8796000F2D38 /* ExemptionTVC.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+		E96C610C2C6C98BC000F2D38 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E9497E7A2C662D820050A251 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E96C610D2C6C98CA000F2D38 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
 				E96C60D62C6A8BDA000F2D38 /* ToastView.xib */,
 				E96C60D82C6A8BEB000F2D38 /* ToastView.swift */,
 			);
-			path = "Toast View";
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		E96C610E2C6C9B01000F2D38 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E9497E852C662D840050A251 /* Info.plist */,
+				E9497E802C662D840050A251 /* Assets.xcassets */,
+				E9497E822C662D840050A251 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E96C611E2C6CDF69000F2D38 /* TabbaVC */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60972C6760BA000F2D38 /* TabBarVC.swift */,
+			);
+			path = TabbaVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,8 +451,11 @@
 			files = (
 				E9497E812C662D840050A251 /* Assets.xcassets in Resources */,
 				E9497E842C662D840050A251 /* Base in Resources */,
+				E96C60E92C6B6CA7000F2D38 /* GraphTVC.xib in Resources */,
 				E9497E7C2C662D820050A251 /* Base in Resources */,
 				E96C60D42C6A8796000F2D38 /* ExemptionTVC.xib in Resources */,
+				E96C60ED2C6B73D3000F2D38 /* ChartTVC.xib in Resources */,
+				E96C60FE2C6BE56E000F2D38 /* DemoTVC.xib in Resources */,
 				E96C60D72C6A8BDA000F2D38 /* ToastView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,8 +467,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E96C61192C6CAF93000F2D38 /* ApiModel.swift in Sources */,
 				E96C60942C674AC2000F2D38 /* LoginVM.swift in Sources */,
-				E96C60AC2C678E8B000F2D38 /* CustomUiView.swift in Sources */,
+				E96C60F82C6BAA15000F2D38 /* NewChatVC.swift in Sources */,
+				E96C60AC2C678E8B000F2D38 /* UiView+Extensions.swift in Sources */,
+				E96C60E52C6B4606000F2D38 /* ImageDownloader.swift in Sources */,
 				E96C60A02C676163000F2D38 /* LogbookVC.swift in Sources */,
 				E96C60AA2C676EBF000F2D38 /* UserData.swift in Sources */,
 				E96C60D92C6A8BEB000F2D38 /* ToastView.swift in Sources */,
@@ -346,19 +481,32 @@
 				E96C60D32C6A8796000F2D38 /* ExemptionTVC.swift in Sources */,
 				E96C609E2C676155000F2D38 /* HomeVC.swift in Sources */,
 				E96C60CB2C6945E5000F2D38 /* BottomSheetVC.swift in Sources */,
+				E96C60E32C6B3ED1000F2D38 /* ExemptionDetailsVC.swift in Sources */,
+				E96C60F12C6B990A000F2D38 /* NotificationVC.swift in Sources */,
 				E96C60A42C676182000F2D38 /* MoreVC.swift in Sources */,
 				E9497E792C662D820050A251 /* LoginVC.swift in Sources */,
+				E96C611B2C6CAFF1000F2D38 /* ApiResponse.swift in Sources */,
+				E96C61072C6C95AE000F2D38 /* ExemptionService.swift in Sources */,
 				E96C60A22C676176000F2D38 /* MessgegesVC.swift in Sources */,
+				E96C60FA2C6BB0F3000F2D38 /* LogoutAlertVC.swift in Sources */,
 				E9497E752C662D820050A251 /* AppDelegate.swift in Sources */,
-				E96C60962C67581A000F2D38 /* UiVCExtension.swift in Sources */,
+				E96C61172C6CAF8B000F2D38 /* Api.swift in Sources */,
+				E96C60962C67581A000F2D38 /* UIVC+Extensions.swift in Sources */,
+				E96C611D2C6CD630000F2D38 /* TerminalDataModel.swift in Sources */,
+				E96C61052C6C95A3000F2D38 /* TerminalService.swift in Sources */,
 				E96C60A82C676E43000F2D38 /* SplashVC.swift in Sources */,
 				E96C60CD2C69E8D3000F2D38 /* APIManager.swift in Sources */,
+				E96C61152C6CA9FA000F2D38 /* AppInfo.swift in Sources */,
 				E96C60982C6760BA000F2D38 /* TabBarVC.swift in Sources */,
 				E9497E772C662D820050A251 /* SceneDelegate.swift in Sources */,
-				E96C60DD2C6A928A000F2D38 /* Toast.swift in Sources */,
+				E96C60FD2C6BE56E000F2D38 /* DemoTVC.swift in Sources */,
 				E96C609A2C6760F3000F2D38 /* AppController.swift in Sources */,
+				E96C60EE2C6B73D3000F2D38 /* ChartTVC.swift in Sources */,
 				E96C60A62C67637C000F2D38 /* Enumerations.swift in Sources */,
 				E96C60DF2C6A9D03000F2D38 /* ExemptionDataModel.swift in Sources */,
+				E96C61032C6C9593000F2D38 /* AuthService.swift in Sources */,
+				E96C61002C6C81B6000F2D38 /* SearchCode.swift in Sources */,
+				E96C60EA2C6B6CA7000F2D38 /* GraphTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +584,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -493,6 +642,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -512,7 +662,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4NP4L6636N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "TruckX iOS Application/Info.plist";
+				INFOPLIST_FILE = "TruckX iOS Application/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = TruckX;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -547,7 +697,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4NP4L6636N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "TruckX iOS Application/Info.plist";
+				INFOPLIST_FILE = "TruckX iOS Application/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = TruckX;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

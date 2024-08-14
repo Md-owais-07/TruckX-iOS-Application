@@ -1303,6 +1303,7 @@
                     <connections>
                         <outlet property="bottomView" destination="s20-yX-hHp" id="sns-da-QVy"/>
                         <outlet property="btnNotification" destination="MbZ-9W-JTq" id="oZ5-9G-TLT"/>
+                        <outlet property="btnRefresh" destination="xTS-2H-Uk3" id="aZd-st-geU"/>
                         <outlet property="collectionView" destination="FnN-Wc-hhB" id="3IE-3N-8Sr"/>
                         <outlet property="countryView" destination="hkT-6y-xgK" id="w2e-CX-wCW"/>
                         <outlet property="dView" destination="snd-e0-yZJ" id="oz3-Hr-tYk"/>

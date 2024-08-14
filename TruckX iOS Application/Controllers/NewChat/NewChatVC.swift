@@ -48,7 +48,7 @@ class NewChatVC: UIViewController, UITextFieldDelegate {
         if let searchText = sender.text {
             dataArr = searchText.isEmpty ? allData : allData.filter{ $0.lowercased().contains(searchText.lowercased()) }
             if dataArr.isEmpty {
-                ToastViewAlert.shared.toastView(toastMessage: "No data found", type: "error")
+                self.toastView(toastMessage: "No data found", type: "error")
             }
             tableView.reloadData()
         }
@@ -68,7 +68,7 @@ class NewChatVC: UIViewController, UITextFieldDelegate {
 
 extension NewChatVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataArr.count
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

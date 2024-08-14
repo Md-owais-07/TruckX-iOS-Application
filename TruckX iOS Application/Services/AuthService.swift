@@ -62,7 +62,6 @@ class AuthService {
                     completion(.failure(jsonError))
                 }
             case 401:
-                ToastViewAlert.shared.toastView(toastMessage: "Incorrect Password", type: "error")
                 print("Debug: Wrong password or unauthorized access")
                 completion(.failure(NSError(domain: "", code: 401, userInfo: [NSLocalizedDescriptionKey: "Unauthorized"])))
             default:

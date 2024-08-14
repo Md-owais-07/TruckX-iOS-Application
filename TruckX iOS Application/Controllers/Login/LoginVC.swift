@@ -61,15 +61,15 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     @IBAction func loginBtnction(_ sender: Any) {
         
         guard let email = emailTextfield.text,  email != "" else {
-            ToastViewAlert.shared.toastView(toastMessage: "Please enter your email address.", type: "error")
+            self.toastView(toastMessage: "Please enter your email address.", type: "error")
             return
         }
         guard let password = passwordTextfield.text, password != "" else {
-            ToastViewAlert.shared.toastView(toastMessage: "Please enter your Password.", type: "error")
+            self.toastView(toastMessage: "Please enter your Password.", type: "error")
             return
         }
         guard password.count >= 6 else {
-            ToastViewAlert.shared.toastView(toastMessage: "Please enter atleast 6 or more characters.", type: "error")
+            self.toastView(toastMessage: "Please enter atleast 6 or more characters.", type: "error")
             return
         }
         
@@ -79,7 +79,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 self.hideLoader()
                 switch result {
                 case .success(let accessToken):
-                    ToastViewAlert.shared.toastView(toastMessage: "Login Success!!", type: "success")
+                    self.toastView(toastMessage: "Login Success!!", type: "success")
                     UserData.shared.isLoggedIn = true
                     UserData.shared.currentAuthKey = accessToken
                     let tabBarController = AppController.shared.Tabbar
@@ -91,6 +91,9 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                     }
                     print("Login Success, with Access Token: \(accessToken)")
                 case .failure(let error):
+                    if let nsError = error as NSError?, nsError.code == 401 {
+                        self.toastView(toastMessage: "Please enter correct password.", type: "error")
+                    }
                     print("Error: \(error.localizedDescription)")
                 }
             }

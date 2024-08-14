@@ -8,7 +8,7 @@
 import Foundation
 
 class ExemptionService {
-    func getExemptionData(completion: @escaping (Result<APIResponse, Error>) -> Void) {
+    func getExemptionData(completion: @escaping (Result<ExemptionDataModel, Error>) -> Void) {
         guard let url = URL(string: "https://eld-backend.vercel.app/api/v1/user/getExemption") else {
             print("Invalid URL")
             return
@@ -31,8 +31,8 @@ class ExemptionService {
             
             do {
                 let decoder = JSONDecoder()
-                let response = try decoder.decode(APIResponse.self, from: data)
-                print("RESPONSE", response)
+                let response = try decoder.decode(ExemptionDataModel.self, from: data)
+                print("RESPONSE")
                 completion(.success(response))
             } catch let jsonError {
                 completion(.failure(jsonError))
