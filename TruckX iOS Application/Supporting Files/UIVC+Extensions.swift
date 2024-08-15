@@ -18,6 +18,10 @@ extension UIViewController {
         self.view.endEditing(true)
     }
     
+    @objc func backToView() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func downloadImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data, error == nil else {
@@ -79,6 +83,22 @@ extension UIViewController {
                     }
                 })
             })
+        }
+    }
+    
+    func dismiss(completion:(()->())? = nil) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.alpha = 0
+            self.view.alpha = 0
+            self.view.layoutIfNeeded()
+        }) { (complete) in
+            if complete {
+                self.dismiss(animated: false) {
+                    DispatchQueue.main.async {
+                        completion?()
+                    }
+                }
+            }
         }
     }
     

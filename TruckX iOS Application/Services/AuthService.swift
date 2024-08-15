@@ -10,10 +10,19 @@ import Foundation
 class AuthService {
     func signIn(email: String, password: String, completion: @escaping (Result<String, Error>) -> Void) {
         
+//        let api = Api.shared.signIn
+        
+        
         guard let url = URL(string: "https://eld-backend.vercel.app/api/v1/auth/signin") else {
             print("Invalid URL")
             return
         }
+        
+        
+//        var completeURL = AppInfo.shared.baseURL + api.url
+//        completeURL = completeURL.replacingOccurrences(of: " ", with: "%20")
+//        print("COMPLETEURL: ", completeURL)
+        
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

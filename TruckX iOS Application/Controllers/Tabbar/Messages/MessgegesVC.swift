@@ -13,11 +13,7 @@ class MessgegesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-//        searchView.layer.cornerRadius = 20
-//        searchView.layer.borderWidth = 1
-//        searchView.layer.borderColor = UIColor.darkGray.withAlphaComponent(80).cgColor
         searchView.customizeSearchBar()
         
         btnAdd.layer.cornerRadius = 13
@@ -34,15 +30,5 @@ class MessgegesVC: UIViewController {
         newChatVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(newChatVC, animated: true)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -13,63 +13,71 @@ class LogoutAlertVC: UIViewController {
     @IBOutlet weak var lblLogoutDescription: UILabel!
     @IBOutlet weak var btnCancel: UIButton!
     @IBOutlet weak var btnOK: UIButton!
+    @IBOutlet weak var customView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        customView.alpha = 0
+        mainView.alpha = 0
+        mainView.clipsToBounds = true
         mainView.layer.cornerRadius = 12
         mainView.layer.masksToBounds = true
+        
+        setAttributedText()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        // Calculate the center position
-        let centerX = (self.view.frame.width - self.mainView.frame.width) / 2
-        let centerY = (self.view.frame.height - self.mainView.frame.height) / 2
-        
-        // Animate the mainView to the center position
-        UIView.animate(withDuration: 0.3, animations: {
-            self.mainView.frame.origin = CGPoint(x: centerX, y: centerY)
-        })
+        UIView.animate(withDuration: 0.3) {
+            self.customView.alpha = 0.4
+            self.mainView.alpha = 1.0
+            self.view.layoutIfNeeded()
+        }
     }
     
     @IBAction func cancelButtonAction(_ sender: Any) {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.mainView.alpha = 0
-        }, completion: { _ in
-            NotificationCenter.default.post(name: NSNotification.Name("Unhide"), object: nil)
-            self.dismiss(animated: false, completion: nil)
-        })
+        dismiss()
     }
     
     @IBAction func okButtonAction(_ sender: Any) {
         UIView.animate(withDuration: 0.3, animations: {
             self.mainView.alpha = 0
         }, completion: { _ in
-//            NotificationCenter.default.post(name: NSNotification.Name("Unhide"), object: nil)
             let loginVC = AppController.shared.Login
-            
             let newNavController = UINavigationController(rootViewController: loginVC)
             
             if let window = UIApplication.shared.keyWindow {
                 window.rootViewController = newNavController
-//                UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
+                UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
             }
             
             UserData.shared.isLoggedIn = false
             self.dismiss(animated: false, completion: nil)
         })
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+}
+
+extension LogoutAlertVC {
+    func setAttributedText() {
+        let boldAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 15, weight: .bold),
+            .foregroundColor: #colorLiteral(red: 0.5333333611, green: 0.5333333611, blue: 0.5333333611, alpha: 1).withAlphaComponent(50)
+        ]
+        let regularAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 15, weight: .regular),
+            .foregroundColor: #colorLiteral(red: 0.5333333611, green: 0.5333333611, blue: 0.5333333611, alpha: 1).withAlphaComponent(50)
+        ]
+        var attributeString = NSMutableAttributedString(
+            string: "TrucX app ?",
+            attributes: boldAttributes)
+        var attributeString1 = NSMutableAttributedString(
+            string: "Are you sure you want to log out of ",
+            attributes: regularAttributes)
+        attributeString1.append(attributeString)
+        lblLogoutDescription.attributedText = attributeString1
+    }
     
 }

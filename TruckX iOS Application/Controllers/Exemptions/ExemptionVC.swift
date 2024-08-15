@@ -28,17 +28,6 @@ class ExemptionVC: UIViewController {
         fetchExemptionData()
     }
     
-    private func setupLoader() {
-        loaderView.frame = view.bounds
-        loaderView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(loaderView)
-        loaderView.isHidden = true
-    }
-    
-    @objc func backToView() {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
     func fetchExemptionData() {
         loaderView.startLoading()
         APIManager.shared.exemptionService.getExemptionData { result in
@@ -56,7 +45,16 @@ class ExemptionVC: UIViewController {
             }
         }
     }
+    
+}
 
+extension ExemptionVC {
+    func setupLoader() {
+        loaderView.frame = view.bounds
+        loaderView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(loaderView)
+        loaderView.isHidden = true
+    }
 }
 
 extension ExemptionVC: UITableViewDelegate, UITableViewDataSource {
@@ -79,6 +77,5 @@ extension ExemptionVC: UITableViewDelegate, UITableViewDataSource {
         detailsVC.image = exemptionsData[indexPath.row].image
         self.navigationController?.pushViewController(detailsVC, animated: true)
     }
-    
     
 }

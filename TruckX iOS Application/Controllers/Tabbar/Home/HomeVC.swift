@@ -64,7 +64,6 @@ class HomeVC: UIViewController {
         navigationVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(navigationVC, animated: true)
     }
-    
 
 }
 
@@ -75,10 +74,9 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ChartTVC else {
-            return UICollectionViewCell() }
-        
+            return UICollectionViewCell()
+        }
         return cell
     }
-    
     
 }

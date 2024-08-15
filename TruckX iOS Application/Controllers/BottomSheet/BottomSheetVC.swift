@@ -12,6 +12,7 @@ class BottomSheetVC: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var customView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,10 @@ class BottomSheetVC: UIViewController {
         // Do any additional setup after loading the view.
         containerView.layer.cornerRadius = 12
         containerView.layer.masksToBounds = true
+        
+        customView.alpha = 0
+        containerView.alpha = 0
+        containerView.clipsToBounds = true
         
         startButton.layer.cornerRadius = 10
         startButton.layer.borderWidth = 4
@@ -32,7 +37,9 @@ class BottomSheetVC: UIViewController {
         super.viewDidAppear(animated)
         
         UIView.animate(withDuration: 0.3, animations: {
-            self.containerView.frame.origin.y = self.view.frame.height - self.containerView.frame.height
+            self.customView.alpha = 0.4
+            self.containerView.alpha = 1.0
+            self.view.layoutIfNeeded()
         })
     }
     
@@ -40,7 +47,6 @@ class BottomSheetVC: UIViewController {
         UIView.animate(withDuration: 0.3, animations: {
             self.containerView.frame.origin.y = self.view.frame.height
         }, completion: { _ in
-            NotificationCenter.default.post(name: NSNotification.Name("Unhide"), object: nil)
             self.dismiss(animated: false, completion: nil)
         })
     }

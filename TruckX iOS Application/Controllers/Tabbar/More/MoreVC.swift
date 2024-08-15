@@ -24,10 +24,7 @@ class MoreVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
-        NotificationCenter.default.addObserver(self, selector: #selector(unhideTab), name: NSNotification.Name("Unhide"), object: nil)
-        
         bottomView.isHidden = true
         
         dotView.applyShadowStyle(cornerRadius: 16, shadowOpacity: 0.2, shadowColor: .systemGray3)
@@ -39,38 +36,19 @@ class MoreVC: UIViewController {
         logoutView.applyShadowStyle(cornerRadius: 16, shadowOpacity: 0.2, shadowColor: .systemGray3)
     }
     
-    @objc func unhideTab() {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.tabBarController?.tabBar.alpha = 1
-        }, completion: { _ in
-            self.tabBarController?.tabBar.isHidden = false
-        })
-    }
-    
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("Unhide"), object: nil)
-    }
-    
     @IBAction func logoutButtonAction(_ sender: Any) {
-        
-        let logoutAlert = AppController.shared.LogoutAlert
-        logoutAlert.modalPresentationStyle = .overFullScreen
-        logoutAlert.modalTransitionStyle = .crossDissolve
-        self.present(logoutAlert, animated: false, completion: nil)
-
-        
-        
-//        let loginVC = AppController.shared.Login
-//        
-//        let newNavController = UINavigationController(rootViewController: loginVC)
-//        
-//        if let window = UIApplication.shared.keyWindow {
-//            window.rootViewController = newNavController
-//            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
-//        }
-//        
-//        UserData.shared.isLoggedIn = false
+        DispatchQueue.main.async {
+            let logoutAlert = AppController.shared.LogoutAlert
+            logoutAlert.modalTransitionStyle = .crossDissolve
+            logoutAlert.modalPresentationStyle = .overCurrentContext
+            
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let rootVC = windowScene.windows.first(where: { $0.isKeyWindow })?.rootViewController {
+                rootVC.present(logoutAlert, animated: false, completion: nil)
+            } else {
+                print("Error: No active window found.")
+            }
+        }
     }
     
     @IBAction func exemptionButtonAction(_ sender: Any) {
@@ -79,12 +57,18 @@ class MoreVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    
     @IBAction func dotInspectionButtonTapped(_ sender: Any) {
-        let bottomSheet = AppController.shared.BottomSheet
-        bottomSheet.modalPresentationStyle = .overCurrentContext
-        bottomSheet.modalTransitionStyle = .crossDissolve
-        self.tabBarController?.tabBar.isHidden = true
-        self.present(bottomSheet, animated: false, completion: nil)
+        DispatchQueue.main.async {
+            let bottomSheet = AppController.shared.BottomSheet
+            bottomSheet.modalTransitionStyle = .crossDissolve
+            bottomSheet.modalPresentationStyle = .overCurrentContext
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let rootVC = windowScene.windows.first(where: { $0.isKeyWindow })?.rootViewController {
+                rootVC.present(bottomSheet, animated: false, completion: nil)
+            } else {
+                print("Error: No active window found.")
+            }
+        }
     }
+    
 }

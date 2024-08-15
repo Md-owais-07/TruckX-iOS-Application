@@ -43,21 +43,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         self.HideKeyboardWhenTapAround()
     }
     
-    private func setupLoader() {
-        loaderView.frame = view.bounds
-        loaderView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // Ensure it resizes with the main view
-        view.addSubview(loaderView)
-        loaderView.isHidden = true
-    }
-    
-    private func showLoader() {
-        loaderView.startLoading()
-    }
-    
-    private func hideLoader() {
-        loaderView.stopLoading()
-    }
-    
     @IBAction func loginBtnction(_ sender: Any) {
         
         guard let email = emailTextfield.text,  email != "" else {
@@ -92,7 +77,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                     print("Login Success, with Access Token: \(accessToken)")
                 case .failure(let error):
                     if let nsError = error as NSError?, nsError.code == 401 {
-                        self.toastView(toastMessage: "Please enter correct password.", type: "error")
+                        self.toastView(toastMessage: "Invalid username and password.", type: "error")
                     }
                     print("Error: \(error.localizedDescription)")
                 }
@@ -107,4 +92,64 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         passwordTextfield.isSecureTextEntry = !isPasswordVisible
     }
     
+}
+
+extension LoginVC {
+    
+    func setupLabel() {
+        let text = "by using xyz-product I agree to\nTerms & Conditions and Privacy Policy"
+        let attributedString = NSMutableAttributedString(string: text)
+        
+        attributedString.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], range: NSRange(location: 0, length: text.count))
+        
+        let rangeTerms = (text as NSString).range(of: "Terms & Conditions", options: .caseInsensitive)
+        let rangePrivacy = (text as NSString).range(of: "Privacy Policy", options: .caseInsensitive)
+        
+        attributedString.addAttributes([NSAttributedString.Key.foregroundColor: UIColor(red: 52/255, green: 183/255, blue: 193/255, alpha: 1), .font: UIFont.systemFont(ofSize: 11, weight: .semibold)], range: rangeTerms)
+        
+        attributedString.addAttributes([NSAttributedString.Key.foregroundColor: UIColor(red: 52/255, green: 183/255, blue: 193/255, alpha: 1), .font: UIFont.systemFont(ofSize: 11, weight: .semibold)], range: rangePrivacy)
+        
+        lblTerms.attributedText = attributedString
+    }
+    
+    func labelHeight() {
+        let maxSize = CGSize(width: lblTerms.frame.width, height: CGFloat.greatestFiniteMagnitude)
+        let textHeight = lblTerms.sizeThatFits(maxSize).height
+        
+        lblHeight.constant = textHeight
+    }
+    
+    @objc func agreeButtonTerms(_ sender: UIButton) {
+        sender.isSelected.toggle()
+        
+        if sender.isSelected {
+            self.imgCheckStatus.image = UIImage(named: "ri_checkbox-line (1)")
+        } else {
+            self.imgCheckStatus.image = UIImage(named: "ri_checkbox-line")
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTextfield {
+            passwordTextfield.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func setupLoader() {
+        loaderView.frame = view.bounds
+        loaderView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // Ensure it resizes with the main view
+        view.addSubview(loaderView)
+        loaderView.isHidden = true
+    }
+    
+    func showLoader() {
+        loaderView.startLoading()
+    }
+    
+    func hideLoader() {
+        loaderView.stopLoading()
+    }
 }

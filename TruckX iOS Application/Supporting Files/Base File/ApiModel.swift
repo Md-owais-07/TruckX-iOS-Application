@@ -9,14 +9,12 @@ import Foundation
 
 class ApiModel {
     var method: HTTPMethod
-    var url: URL
-    var takingToken: Bool
+    var url: String
     var contentType: ApiContentType
 
-    init(method: HTTPMethod, urlString: String, takingToken: Bool = false, contentType: ApiContentType = .json) {
+    init(method: HTTPMethod, url: String, contentType: ApiContentType = .json) {
         self.method = method
-        self.url = URL(string: urlString) ?? URL(string: "https://example.com")! // Fallback URL
-        self.takingToken = takingToken
+        self.url = url
         self.contentType = contentType
     }
 }
