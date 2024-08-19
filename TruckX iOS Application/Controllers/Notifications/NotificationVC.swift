@@ -13,7 +13,7 @@ class NotificationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        btnBack.addTarget(self, action: #selector(backToView), for: .touchUpInside)
+        btnBack.addTarget(self, action: #selector(popToView), for: .touchUpInside)
         
     }
 

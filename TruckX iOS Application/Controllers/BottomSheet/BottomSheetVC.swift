@@ -21,8 +21,8 @@ class BottomSheetVC: UIViewController {
         containerView.layer.cornerRadius = 12
         containerView.layer.masksToBounds = true
         
-        customView.alpha = 0
-        containerView.alpha = 0
+        customView.alpha = 0.1
+        containerView.alpha = 1
         containerView.clipsToBounds = true
         
         startButton.layer.cornerRadius = 10
@@ -37,7 +37,7 @@ class BottomSheetVC: UIViewController {
         super.viewDidAppear(animated)
         
         UIView.animate(withDuration: 0.3, animations: {
-            self.customView.alpha = 0.4
+            self.customView.alpha = 0.1
             self.containerView.alpha = 1.0
             self.view.layoutIfNeeded()
         })

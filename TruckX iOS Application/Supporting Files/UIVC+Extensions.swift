@@ -18,8 +18,12 @@ extension UIViewController {
         self.view.endEditing(true)
     }
     
-    @objc func backToView() {
+    @objc func popToView() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func popToRootView() {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func downloadImage(from url: URL, completion: @escaping (UIImage?) -> Void) {

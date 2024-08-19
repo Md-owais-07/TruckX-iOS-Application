@@ -38,7 +38,7 @@ class ExemptionDetailsVC: UIViewController {
         
         lblExemptionTitile.text = titleText
         
-        btnBack.addTarget(self, action: #selector(backToView), for: .touchUpInside)
+        btnBack.addTarget(self, action: #selector(popToView), for: .touchUpInside)
         btnSetup.layer.cornerRadius = 10
     }
 

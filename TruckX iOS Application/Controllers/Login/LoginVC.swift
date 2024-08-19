@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginVC: UIViewController, UITextFieldDelegate {
+class LoginVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
@@ -72,6 +72,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                     if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                        let window = windowScene.windows.first {
                         window.rootViewController = tabBarController
+                        UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
                         window.makeKeyAndVisible()
                     }
                     print("Login Success, with Access Token: \(accessToken)")

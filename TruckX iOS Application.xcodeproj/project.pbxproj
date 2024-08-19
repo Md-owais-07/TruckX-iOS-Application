@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9332D722C6F2B0200C25ABB /* CountryDropDownVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D712C6F2B0200C25ABB /* CountryDropDownVC.swift */; };
+		E9332D762C6F64F000C25ABB /* HosInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D742C6F64F000C25ABB /* HosInfoVC.swift */; };
+		E9332D792C6F738A00C25ABB /* ReusableGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9332D782C6F738A00C25ABB /* ReusableGraphView.xib */; };
+		E9332D7B2C6F739900C25ABB /* ReusableGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D7A2C6F739900C25ABB /* ReusableGraphView.swift */; };
+		E9332D7E2C70B12000C25ABB /* LogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D7D2C70B12000C25ABB /* LogsVC.swift */; };
+		E9332D802C70B18600C25ABB /* DocsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D7F2C70B18600C25ABB /* DocsVC.swift */; };
+		E9332D822C70B1A200C25ABB /* DvirVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D812C70B1A200C25ABB /* DvirVC.swift */; };
+		E9332D842C70B1AB00C25ABB /* SignVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D832C70B1AB00C25ABB /* SignVC.swift */; };
+		E9332D872C73203F00C25ABB /* TruckAndTarilerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D862C73203F00C25ABB /* TruckAndTarilerVC.swift */; };
+		E9332D8A2C73216700C25ABB /* TruckAndTarilerTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9332D892C73216700C25ABB /* TruckAndTarilerTVC.xib */; };
+		E9332D8B2C73216700C25ABB /* TruckAndTarilerTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D882C73216700C25ABB /* TruckAndTarilerTVC.swift */; };
+		E9332D8D2C73292E00C25ABB /* CustomUIButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D8C2C73292E00C25ABB /* CustomUIButtons.swift */; };
+		E9332D8F2C7330E500C25ABB /* UITable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D8E2C7330E500C25ABB /* UITable+Extensions.swift */; };
+		E9332D922C73313500C25ABB /* TopTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9332D912C73313500C25ABB /* TopTVC.xib */; };
+		E9332D932C73313500C25ABB /* TopTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D902C73313500C25ABB /* TopTVC.swift */; };
+		E9332D962C733E7D00C25ABB /* CycleInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D952C733E7D00C25ABB /* CycleInfoVC.swift */; };
+		E9332D992C733F6400C25ABB /* MoreTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9332D982C733F6400C25ABB /* MoreTVC.xib */; };
+		E9332D9A2C733F6400C25ABB /* MoreTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D972C733F6400C25ABB /* MoreTVC.swift */; };
+		E9332D9D2C73436E00C25ABB /* CarrierInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D9C2C73436E00C25ABB /* CarrierInfoVC.swift */; };
+		E9332DA02C7343F800C25ABB /* AppSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D9F2C7343F800C25ABB /* AppSettingVC.swift */; };
 		E9497E752C662D820050A251 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9497E742C662D820050A251 /* AppDelegate.swift */; };
 		E9497E772C662D820050A251 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9497E762C662D820050A251 /* SceneDelegate.swift */; };
 		E9497E792C662D820050A251 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9497E782C662D820050A251 /* LoginVC.swift */; };
@@ -69,6 +89,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E9332D712C6F2B0200C25ABB /* CountryDropDownVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDropDownVC.swift; sourceTree = "<group>"; };
+		E9332D742C6F64F000C25ABB /* HosInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HosInfoVC.swift; sourceTree = "<group>"; };
+		E9332D782C6F738A00C25ABB /* ReusableGraphView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReusableGraphView.xib; sourceTree = "<group>"; };
+		E9332D7A2C6F739900C25ABB /* ReusableGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableGraphView.swift; sourceTree = "<group>"; };
+		E9332D7D2C70B12000C25ABB /* LogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsVC.swift; sourceTree = "<group>"; };
+		E9332D7F2C70B18600C25ABB /* DocsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocsVC.swift; sourceTree = "<group>"; };
+		E9332D812C70B1A200C25ABB /* DvirVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DvirVC.swift; sourceTree = "<group>"; };
+		E9332D832C70B1AB00C25ABB /* SignVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignVC.swift; sourceTree = "<group>"; };
+		E9332D862C73203F00C25ABB /* TruckAndTarilerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckAndTarilerVC.swift; sourceTree = "<group>"; };
+		E9332D882C73216700C25ABB /* TruckAndTarilerTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckAndTarilerTVC.swift; sourceTree = "<group>"; };
+		E9332D892C73216700C25ABB /* TruckAndTarilerTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TruckAndTarilerTVC.xib; sourceTree = "<group>"; };
+		E9332D8C2C73292E00C25ABB /* CustomUIButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIButtons.swift; sourceTree = "<group>"; };
+		E9332D8E2C7330E500C25ABB /* UITable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITable+Extensions.swift"; sourceTree = "<group>"; };
+		E9332D902C73313500C25ABB /* TopTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTVC.swift; sourceTree = "<group>"; };
+		E9332D912C73313500C25ABB /* TopTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopTVC.xib; sourceTree = "<group>"; };
+		E9332D952C733E7D00C25ABB /* CycleInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleInfoVC.swift; sourceTree = "<group>"; };
+		E9332D972C733F6400C25ABB /* MoreTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTVC.swift; sourceTree = "<group>"; };
+		E9332D982C733F6400C25ABB /* MoreTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreTVC.xib; sourceTree = "<group>"; };
+		E9332D9C2C73436E00C25ABB /* CarrierInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierInfoVC.swift; sourceTree = "<group>"; };
+		E9332D9F2C7343F800C25ABB /* AppSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingVC.swift; sourceTree = "<group>"; };
 		E9497E712C662D820050A251 /* TruckX iOS Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TruckX iOS Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9497E742C662D820050A251 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9497E762C662D820050A251 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +170,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E9332D732C6F64CA00C25ABB /* HOSInfo */ = {
+			isa = PBXGroup;
+			children = (
+				E9332D742C6F64F000C25ABB /* HosInfoVC.swift */,
+			);
+			path = HOSInfo;
+			sourceTree = "<group>";
+		};
+		E9332D7C2C70B0C300C25ABB /* ChartDetails */ = {
+			isa = PBXGroup;
+			children = (
+				E9332D7D2C70B12000C25ABB /* LogsVC.swift */,
+				E9332D7F2C70B18600C25ABB /* DocsVC.swift */,
+				E9332D812C70B1A200C25ABB /* DvirVC.swift */,
+				E9332D832C70B1AB00C25ABB /* SignVC.swift */,
+			);
+			path = ChartDetails;
+			sourceTree = "<group>";
+		};
+		E9332D852C73201F00C25ABB /* TruckAndTrailer */ = {
+			isa = PBXGroup;
+			children = (
+				E9332D862C73203F00C25ABB /* TruckAndTarilerVC.swift */,
+			);
+			path = TruckAndTrailer;
+			sourceTree = "<group>";
+		};
+		E9332D942C733E6100C25ABB /* CycleInformation */ = {
+			isa = PBXGroup;
+			children = (
+				E9332D952C733E7D00C25ABB /* CycleInfoVC.swift */,
+			);
+			path = CycleInformation;
+			sourceTree = "<group>";
+		};
+		E9332D9B2C73435400C25ABB /* CarrierInformation */ = {
+			isa = PBXGroup;
+			children = (
+				E9332D9C2C73436E00C25ABB /* CarrierInfoVC.swift */,
+			);
+			path = CarrierInformation;
+			sourceTree = "<group>";
+		};
+		E9332D9E2C7343EB00C25ABB /* AppSetting */ = {
+			isa = PBXGroup;
+			children = (
+				E9332D9F2C7343F800C25ABB /* AppSettingVC.swift */,
+			);
+			path = AppSetting;
+			sourceTree = "<group>";
+		};
 		E9497E682C662D820050A251 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +261,7 @@
 				E96C60AB2C678E8B000F2D38 /* UiView+Extensions.swift */,
 				E96C60E02C6AA139000F2D38 /* LoaderView.swift */,
 				E96C60E42C6B4606000F2D38 /* ImageDownloader.swift */,
+				E9332D8E2C7330E500C25ABB /* UITable+Extensions.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -225,6 +317,7 @@
 				E96C61162C6CAF8B000F2D38 /* Api.swift */,
 				E96C61182C6CAF93000F2D38 /* ApiModel.swift */,
 				E96C611A2C6CAFF1000F2D38 /* ApiResponse.swift */,
+				E9332D8C2C73292E00C25ABB /* CustomUIButtons.swift */,
 			);
 			path = "Base File";
 			sourceTree = "<group>";
@@ -240,7 +333,7 @@
 		E96C60C82C68FA0C000F2D38 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				E96C611E2C6CDF69000F2D38 /* TabbaVC */,
+				E96C611E2C6CDF69000F2D38 /* TabbarVC */,
 				E96C60C12C68F6EF000F2D38 /* Home */,
 				E96C60C22C68F6FB000F2D38 /* Logbook */,
 				E96C60C32C68F70A000F2D38 /* Messages */,
@@ -254,6 +347,7 @@
 			children = (
 				E96C60CA2C6945E5000F2D38 /* BottomSheetVC.swift */,
 				E96C60F92C6BB0F3000F2D38 /* LogoutAlertVC.swift */,
+				E9332D712C6F2B0200C25ABB /* CountryDropDownVC.swift */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -316,6 +410,12 @@
 		E96C610A2C6C9845000F2D38 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E9332D9E2C7343EB00C25ABB /* AppSetting */,
+				E9332D9B2C73435400C25ABB /* CarrierInformation */,
+				E9332D942C733E6100C25ABB /* CycleInformation */,
+				E9332D852C73201F00C25ABB /* TruckAndTrailer */,
+				E9332D7C2C70B0C300C25ABB /* ChartDetails */,
+				E9332D732C6F64CA00C25ABB /* HOSInfo */,
 				E96C60C82C68FA0C000F2D38 /* Tabbar */,
 				E96C60F62C6BA9F7000F2D38 /* NewChat */,
 				E96C60EF2C6B98F0000F2D38 /* Notifications */,
@@ -330,12 +430,18 @@
 		E96C610B2C6C98B0000F2D38 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				E9332D902C73313500C25ABB /* TopTVC.swift */,
+				E9332D882C73216700C25ABB /* TruckAndTarilerTVC.swift */,
 				E96C60D12C6A8796000F2D38 /* ExemptionTVC.swift */,
 				E96C60EB2C6B73D3000F2D38 /* ChartTVC.swift */,
 				E96C60E72C6B6CA7000F2D38 /* GraphTVC.swift */,
 				E96C60EC2C6B73D3000F2D38 /* ChartTVC.xib */,
 				E96C60E82C6B6CA7000F2D38 /* GraphTVC.xib */,
 				E96C60D22C6A8796000F2D38 /* ExemptionTVC.xib */,
+				E9332D912C73313500C25ABB /* TopTVC.xib */,
+				E9332D892C73216700C25ABB /* TruckAndTarilerTVC.xib */,
+				E9332D972C733F6400C25ABB /* MoreTVC.swift */,
+				E9332D982C733F6400C25ABB /* MoreTVC.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -353,6 +459,8 @@
 			children = (
 				E96C60D62C6A8BDA000F2D38 /* ToastView.xib */,
 				E96C60D82C6A8BEB000F2D38 /* ToastView.swift */,
+				E9332D782C6F738A00C25ABB /* ReusableGraphView.xib */,
+				E9332D7A2C6F739900C25ABB /* ReusableGraphView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -367,12 +475,12 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		E96C611E2C6CDF69000F2D38 /* TabbaVC */ = {
+		E96C611E2C6CDF69000F2D38 /* TabbarVC */ = {
 			isa = PBXGroup;
 			children = (
 				E96C60972C6760BA000F2D38 /* TabBarVC.swift */,
 			);
-			path = TabbaVC;
+			path = TabbarVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,9 +551,13 @@
 				E9497E812C662D840050A251 /* Assets.xcassets in Resources */,
 				E9497E842C662D840050A251 /* Base in Resources */,
 				E96C60E92C6B6CA7000F2D38 /* GraphTVC.xib in Resources */,
+				E9332D922C73313500C25ABB /* TopTVC.xib in Resources */,
 				E9497E7C2C662D820050A251 /* Base in Resources */,
 				E96C60D42C6A8796000F2D38 /* ExemptionTVC.xib in Resources */,
 				E96C60ED2C6B73D3000F2D38 /* ChartTVC.xib in Resources */,
+				E9332D992C733F6400C25ABB /* MoreTVC.xib in Resources */,
+				E9332D8A2C73216700C25ABB /* TruckAndTarilerTVC.xib in Resources */,
+				E9332D792C6F738A00C25ABB /* ReusableGraphView.xib in Resources */,
 				E96C60D72C6A8BDA000F2D38 /* ToastView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,18 +574,28 @@
 				E96C60AC2C678E8B000F2D38 /* UiView+Extensions.swift in Sources */,
 				E96C60E52C6B4606000F2D38 /* ImageDownloader.swift in Sources */,
 				E96C60A02C676163000F2D38 /* LogbookVC.swift in Sources */,
+				E9332D962C733E7D00C25ABB /* CycleInfoVC.swift in Sources */,
 				E96C60AA2C676EBF000F2D38 /* UserData.swift in Sources */,
+				E9332D7E2C70B12000C25ABB /* LogsVC.swift in Sources */,
 				E96C60D92C6A8BEB000F2D38 /* ToastView.swift in Sources */,
+				E9332D8D2C73292E00C25ABB /* CustomUIButtons.swift in Sources */,
 				E96C60E12C6AA139000F2D38 /* LoaderView.swift in Sources */,
 				E96C60DB2C6A8F98000F2D38 /* Network.swift in Sources */,
+				E9332D762C6F64F000C25ABB /* HosInfoVC.swift in Sources */,
+				E9332D8B2C73216700C25ABB /* TruckAndTarilerTVC.swift in Sources */,
 				E96C60D02C6A86A8000F2D38 /* ExemptionVC.swift in Sources */,
 				E96C60D32C6A8796000F2D38 /* ExemptionTVC.swift in Sources */,
+				E9332D9A2C733F6400C25ABB /* MoreTVC.swift in Sources */,
 				E96C609E2C676155000F2D38 /* HomeVC.swift in Sources */,
 				E96C60CB2C6945E5000F2D38 /* BottomSheetVC.swift in Sources */,
 				E96C60E32C6B3ED1000F2D38 /* ExemptionDetailsVC.swift in Sources */,
 				E96C60F12C6B990A000F2D38 /* NotificationVC.swift in Sources */,
 				E96C60A42C676182000F2D38 /* MoreVC.swift in Sources */,
+				E9332D802C70B18600C25ABB /* DocsVC.swift in Sources */,
+				E9332D932C73313500C25ABB /* TopTVC.swift in Sources */,
 				E9497E792C662D820050A251 /* LoginVC.swift in Sources */,
+				E9332D872C73203F00C25ABB /* TruckAndTarilerVC.swift in Sources */,
+				E9332D9D2C73436E00C25ABB /* CarrierInfoVC.swift in Sources */,
 				E96C611B2C6CAFF1000F2D38 /* ApiResponse.swift in Sources */,
 				E96C61072C6C95AE000F2D38 /* ExemptionService.swift in Sources */,
 				E96C60A22C676176000F2D38 /* MessgegesVC.swift in Sources */,
@@ -482,13 +604,19 @@
 				E96C61172C6CAF8B000F2D38 /* Api.swift in Sources */,
 				E96C60962C67581A000F2D38 /* UIVC+Extensions.swift in Sources */,
 				E96C611D2C6CD630000F2D38 /* TerminalDataModel.swift in Sources */,
+				E9332D722C6F2B0200C25ABB /* CountryDropDownVC.swift in Sources */,
 				E96C61052C6C95A3000F2D38 /* TerminalService.swift in Sources */,
 				E96C60A82C676E43000F2D38 /* SplashVC.swift in Sources */,
 				E96C60CD2C69E8D3000F2D38 /* APIManager.swift in Sources */,
 				E96C61152C6CA9FA000F2D38 /* AppInfo.swift in Sources */,
+				E9332D822C70B1A200C25ABB /* DvirVC.swift in Sources */,
+				E9332D842C70B1AB00C25ABB /* SignVC.swift in Sources */,
 				E96C60982C6760BA000F2D38 /* TabBarVC.swift in Sources */,
 				E9497E772C662D820050A251 /* SceneDelegate.swift in Sources */,
+				E9332D7B2C6F739900C25ABB /* ReusableGraphView.swift in Sources */,
 				E96C609A2C6760F3000F2D38 /* AppController.swift in Sources */,
+				E9332D8F2C7330E500C25ABB /* UITable+Extensions.swift in Sources */,
+				E9332DA02C7343F800C25ABB /* AppSettingVC.swift in Sources */,
 				E96C60EE2C6B73D3000F2D38 /* ChartTVC.swift in Sources */,
 				E96C60A62C67637C000F2D38 /* Enumerations.swift in Sources */,
 				E96C60DF2C6A9D03000F2D38 /* ExemptionDataModel.swift in Sources */,

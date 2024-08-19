@@ -22,7 +22,7 @@ class ExemptionVC: UIViewController {
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
 
-        btnBack.addTarget(self, action: #selector(backToView), for: .touchUpInside)
+        btnBack.addTarget(self, action: #selector(popToView), for: .touchUpInside)
         
         setupLoader()
         fetchExemptionData()

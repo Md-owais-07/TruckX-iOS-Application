@@ -29,25 +29,25 @@ class TabBarVC: UITabBarController, UIGestureRecognizerDelegate, UINavigationCon
         let logbook = AppController.shared.Logbook
         let messege = AppController.shared.Messgege
         let more = AppController.shared.More
-        let homeBarItem = UITabBarItem(title: "Home", image: UIImage(named: AppAssets.tabbar_home.rawValue), selectedImage: UIImage(named: AppAssets.tabbar_home.rawValue))
+        let homeBarItem = UITabBarItem(title: "Home", image: UIImage(named: AppAssets.tabbar_home.rawValue), selectedImage: UIImage(named: AppAssets.tabbar_home_fill.rawValue))
         home.tabBarItem = homeBarItem
         if UIDevice.current.hasNotch {
             home.tabBarItem.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
         }
         
-        let menueBarItem = UITabBarItem(title: "Logbook", image: UIImage(named: AppAssets.tabbar_logbook.rawValue), selectedImage: UIImage(named: AppAssets.tabbar_logbook.rawValue))
+        let menueBarItem = UITabBarItem(title: "Logbook", image: UIImage(named: AppAssets.tabbar_logbook.rawValue), selectedImage: UIImage(named: AppAssets.tabbar_logbook_fill.rawValue))
         logbook.tabBarItem = menueBarItem
         if UIDevice.current.hasNotch {
             logbook.tabBarItem.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
         }
         
-        let profileBarItem = UITabBarItem(title: "Messeges", image: UIImage(named: AppAssets.tabbar_messgae.rawValue), selectedImage: UIImage(named: AppAssets.tabbar_messgae.rawValue))
+        let profileBarItem = UITabBarItem(title: "Messeges", image: UIImage(named: AppAssets.tabbar_messgae.rawValue), selectedImage: UIImage(named: AppAssets.tabbar_messgae_fill.rawValue))
         messege.tabBarItem = profileBarItem
         if UIDevice.current.hasNotch {
             messege.tabBarItem.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
         }
         
-        let mycartBarItem = UITabBarItem(title: "More", image: UIImage(named: AppAssets.tabbar_more.rawValue), selectedImage: UIImage(named: AppAssets.tabbar_more.rawValue))
+        let mycartBarItem = UITabBarItem(title: "More", image: UIImage(named: AppAssets.tabbar_more.rawValue), selectedImage: UIImage(named: AppAssets.tabbar_more_fill.rawValue))
         more.tabBarItem = mycartBarItem
         if UIDevice.current.hasNotch {
             more.tabBarItem.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)

@@ -24,7 +24,7 @@ class AppStatusBar: UIView {
 
 
 extension UIView {
-    func setShadow(radius: CGFloat = 5, opacity: Float = 0.4, color: UIColor = UIColor.systemGray3, offset: CGSize = CGSize.zero, cornerRadius: CGFloat = 16)
+    func setShadow(radius: CGFloat = 10, opacity: Float = 0.8, color: UIColor = UIColor.systemGray5, offset: CGSize = CGSize.zero, cornerRadius: CGFloat = 16)
     {
         self.layer.cornerRadius = cornerRadius
         self.layer.shadowRadius = radius

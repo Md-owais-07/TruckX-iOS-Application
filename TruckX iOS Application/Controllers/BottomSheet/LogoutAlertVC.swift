@@ -17,12 +17,11 @@ class LogoutAlertVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
-        customView.alpha = 0
-        mainView.alpha = 0
+        customView.alpha = 0.8
+        mainView.alpha = 1.0
         mainView.clipsToBounds = true
-        mainView.layer.cornerRadius = 12
+        mainView.layer.cornerRadius = 16
         mainView.layer.masksToBounds = true
         
         setAttributedText()
@@ -30,30 +29,27 @@ class LogoutAlertVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animate(withDuration: 0.3) {
-            self.customView.alpha = 0.4
-            self.mainView.alpha = 1.0
-            self.view.layoutIfNeeded()
-        }
+        self.view.layoutIfNeeded()
     }
     
     @IBAction func cancelButtonAction(_ sender: Any) {
-        dismiss()
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func okButtonAction(_ sender: Any) {
         UIView.animate(withDuration: 0.3, animations: {
             self.mainView.alpha = 0
         }, completion: { _ in
+            UserData.shared.isLoggedIn = false
             let loginVC = AppController.shared.Login
             let newNavController = UINavigationController(rootViewController: loginVC)
             
-            if let window = UIApplication.shared.keyWindow {
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let window = windowScene.windows.first {
                 window.rootViewController = newNavController
-                UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
+//                UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil)
             }
             
-            UserData.shared.isLoggedIn = false
             self.dismiss(animated: false, completion: nil)
         })
     }

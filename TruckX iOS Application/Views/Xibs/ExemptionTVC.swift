@@ -16,7 +16,7 @@ class ExemptionTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        mainView.setShadow(radius: 10, opacity: 0.6, color: .lightGray, offset: .zero, cornerRadius: 12)
+        mainView.setShadow(radius: 10, opacity: 0.5, color: UIColor(red: 83/255, green: 125/255, blue: 151/255, alpha: 0.50), offset: CGSize(width: 0, height: 11), cornerRadius: 12)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
