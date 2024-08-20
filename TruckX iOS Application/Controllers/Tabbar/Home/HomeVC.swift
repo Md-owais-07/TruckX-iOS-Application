@@ -16,7 +16,6 @@ class HomeVC: UIViewController {
     @IBOutlet weak var hosView: UIView!
     @IBOutlet weak var signView: UIView!
     @IBOutlet weak var bottomView: UIView!
-    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnNotification: UIButton!
     @IBOutlet weak var btnRefresh: UIButton!
     @IBOutlet weak var btnDropDown: UIButton!

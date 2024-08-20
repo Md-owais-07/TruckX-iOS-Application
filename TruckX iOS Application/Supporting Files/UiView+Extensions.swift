@@ -70,6 +70,20 @@ extension UIView {
         layer.insertSublayer(gradientLayer, at: 0)
     }
     
+    func applyGradient2() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [
+            UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1).cgColor, // rgba(255, 255, 255, 1)
+            UIColor(red: 55/255.0, green: 146/255.0, blue: 118/255.0, alpha: 1).cgColor  // rgba(55, 146, 118, 1)
+        ]
+        gradientLayer.cornerRadius = layer.cornerRadius
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 0)
+        gradientLayer.frame = bounds
+        layer.insertSublayer(gradientLayer, at: 0)
+    }
+
+    
     func customizeSearchBar() {
         self.layer.cornerRadius = 20
         self.layer.borderWidth = 1

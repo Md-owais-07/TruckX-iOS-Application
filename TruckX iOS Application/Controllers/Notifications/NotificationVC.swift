@@ -14,7 +14,6 @@ class NotificationVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         btnBack.addTarget(self, action: #selector(popToView), for: .touchUpInside)
-        
     }
 
 }

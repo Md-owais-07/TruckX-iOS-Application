@@ -12,6 +12,7 @@ class HosInfoVC: UIViewController {
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var reusableView: UIView!
     @IBOutlet weak var timeView: UIView!
+    @IBOutlet weak var circularView: CircularProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,8 @@ class HosInfoVC: UIViewController {
         
         btnBack.addTarget(self, action: #selector(popToView), for: .touchUpInside)
         
-//        reusableView.
+        circularView.setTotalTime(600)
+        circularView.startTimer()
     }
     
     func applyShadow(to view: UIView) {
