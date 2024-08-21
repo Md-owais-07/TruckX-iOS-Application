@@ -28,6 +28,7 @@
 		E9332D9D2C73436E00C25ABB /* CarrierInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D9C2C73436E00C25ABB /* CarrierInfoVC.swift */; };
 		E9332DA02C7343F800C25ABB /* AppSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D9F2C7343F800C25ABB /* AppSettingVC.swift */; };
 		E9332DA42C73E22300C25ABB /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332DA32C73E22300C25ABB /* CircularProgressView.swift */; };
+		E9332DA62C74B87A00C25ABB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332DA52C74B87A00C25ABB /* LocationManager.swift */; };
 		E9497E752C662D820050A251 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9497E742C662D820050A251 /* AppDelegate.swift */; };
 		E9497E772C662D820050A251 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9497E762C662D820050A251 /* SceneDelegate.swift */; };
 		E9497E792C662D820050A251 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9497E782C662D820050A251 /* LoginVC.swift */; };
@@ -70,6 +71,7 @@
 		E96C61192C6CAF93000F2D38 /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C61182C6CAF93000F2D38 /* ApiModel.swift */; };
 		E96C611B2C6CAFF1000F2D38 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C611A2C6CAFF1000F2D38 /* ApiResponse.swift */; };
 		E96C611D2C6CD630000F2D38 /* TerminalDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C611C2C6CD630000F2D38 /* TerminalDataModel.swift */; };
+		E99C9D252C75EE9D00A2C860 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C9D242C75EE9D00A2C860 /* UIButton+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -107,6 +109,7 @@
 		E9332D9C2C73436E00C25ABB /* CarrierInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierInfoVC.swift; sourceTree = "<group>"; };
 		E9332D9F2C7343F800C25ABB /* AppSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingVC.swift; sourceTree = "<group>"; };
 		E9332DA32C73E22300C25ABB /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		E9332DA52C74B87A00C25ABB /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		E9497E712C662D820050A251 /* TruckX iOS Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TruckX iOS Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9497E742C662D820050A251 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9497E762C662D820050A251 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +153,7 @@
 		E96C61182C6CAF93000F2D38 /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
 		E96C611A2C6CAFF1000F2D38 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		E96C611C2C6CD630000F2D38 /* TerminalDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalDataModel.swift; sourceTree = "<group>"; };
+		E99C9D242C75EE9D00A2C860 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +260,7 @@
 				E96C60E02C6AA139000F2D38 /* LoaderView.swift */,
 				E96C60E42C6B4606000F2D38 /* ImageDownloader.swift */,
 				E9332D8E2C7330E500C25ABB /* UITable+Extensions.swift */,
+				E99C9D242C75EE9D00A2C860 /* UIButton+Extensions.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 				E96C61182C6CAF93000F2D38 /* ApiModel.swift */,
 				E96C611A2C6CAFF1000F2D38 /* ApiResponse.swift */,
 				E9332D8C2C73292E00C25ABB /* CustomUIButtons.swift */,
+				E9332DA52C74B87A00C25ABB /* LocationManager.swift */,
 			);
 			path = "Base File";
 			sourceTree = "<group>";
@@ -584,6 +590,7 @@
 				E9332D932C73313500C25ABB /* TopTVC.swift in Sources */,
 				E9497E792C662D820050A251 /* LoginVC.swift in Sources */,
 				E9332D872C73203F00C25ABB /* TruckAndTarilerVC.swift in Sources */,
+				E9332DA62C74B87A00C25ABB /* LocationManager.swift in Sources */,
 				E9332D9D2C73436E00C25ABB /* CarrierInfoVC.swift in Sources */,
 				E96C611B2C6CAFF1000F2D38 /* ApiResponse.swift in Sources */,
 				E96C61072C6C95AE000F2D38 /* ExemptionService.swift in Sources */,
@@ -610,6 +617,7 @@
 				E96C60A62C67637C000F2D38 /* Enumerations.swift in Sources */,
 				E96C60DF2C6A9D03000F2D38 /* ExemptionDataModel.swift in Sources */,
 				E96C61032C6C9593000F2D38 /* AuthService.swift in Sources */,
+				E99C9D252C75EE9D00A2C860 /* UIButton+Extensions.swift in Sources */,
 				E96C61002C6C81B6000F2D38 /* SearchCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

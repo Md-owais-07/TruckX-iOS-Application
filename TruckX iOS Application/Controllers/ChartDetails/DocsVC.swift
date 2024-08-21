@@ -18,26 +18,23 @@ class DocsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        topView.layer.cornerRadius = 13
-        topView.layer.borderWidth = 1
-        topView.layer.borderColor = UIColor.black.withAlphaComponent(0.4).cgColor
         
         btnDvir.addTarget(self, action: #selector(gotoDvir), for: .touchUpInside)
         btnSign.addTarget(self, action: #selector(gotoSign), for: .touchUpInside)
-        btnLogs.addTarget(self, action: #selector(gotoLogs), for: .touchUpInside)
+        btnLogs.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
         btnBack.addTarget(self, action: #selector(popToRootView), for: .touchUpInside)
+        
+        self.enablePopGestureRecognizer()
     }
-    
+}
+
+extension DocsVC {
     @objc func gotoDvir() {
         let dvirVC = AppController.shared.Dvir
-        self.navigationController?.pushViewController(dvirVC, animated: true)
+        self.pushToVC(dvirVC)
     }
     @objc func gotoSign() {
         let signVC = AppController.shared.Sign
-        self.navigationController?.pushViewController(signVC, animated: true)
+        self.pushToVC(signVC)
     }
-    @objc func gotoLogs() {
-        self.navigationController?.popViewController(animated: true)
-    }
-
 }

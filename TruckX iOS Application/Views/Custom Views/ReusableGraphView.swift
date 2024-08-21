@@ -10,12 +10,16 @@ import UIKit
 class ReusableGraphView: UIView {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var signView: UIView!
+    @IBOutlet weak var btnGotoDetails: UIButton!
+    
+    weak var viewController: UIViewController?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
         setupConstraints()
         buttonStyle()
+        setupButtonActions()
     }
     
     required init?(coder: NSCoder) {
@@ -23,6 +27,7 @@ class ReusableGraphView: UIView {
         commonInit()
         setupConstraints()
         buttonStyle()
+        setupButtonActions()
     }
     
     private func commonInit() {
@@ -46,6 +51,20 @@ class ReusableGraphView: UIView {
         signView.layer.cornerRadius = 19
         signView.layer.borderWidth = 2
         signView.layer.borderColor = UIColor.systemGray5.withAlphaComponent(0.8).cgColor
+    }
+    
+    private func setupButtonActions() {
+        btnGotoDetails.addTarget(self, action: #selector(didTapGotoDetails), for: .touchUpInside)
+    }
+    
+    @objc private func didTapGotoDetails() {
+        guard let viewController = viewController else {
+            print("ViewController is not set")
+            return
+        }
+        
+        let chartDetailsVC = AppController.shared.Logs
+        self.viewController?.pushToVCWithHideTabBar(chartDetailsVC)
     }
     
 }

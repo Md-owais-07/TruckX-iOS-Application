@@ -20,20 +20,8 @@ class CountryDropDownVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        btnApply.layer.cornerRadius = 10
-        btnApply.layer.borderWidth = 4
-        btnApply.layer.borderColor = #colorLiteral(red: 0.1158032492, green: 0.3620201349, blue: 0.8701846004, alpha: 1)
-        
-        btnCancel.layer.cornerRadius = 10
-        btnCancel.layer.borderWidth = 4
-        btnCancel.layer.borderColor = #colorLiteral(red: 0.7384595275, green: 0.2374818921, blue: 0.2672286034, alpha: 1)
-        
-        mainView.clipsToBounds = true
         mainView.layer.masksToBounds = true
-        mainView.layer.cornerRadius = 16
-        
         mainView.alpha = 0
         containerView.alpha = 0
     }

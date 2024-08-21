@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReusableGraphView" customModule="TruckX_iOS_Application" customModuleProvider="target">
             <connections>
+                <outlet property="btnGotoDetails" destination="a33-P3-krj" id="nGj-ln-8cS"/>
                 <outlet property="mainView" destination="gZP-zP-YVc" id="dID-30-xGJ"/>
                 <outlet property="signView" destination="Olz-AC-ZnS" id="hHd-fi-M1n"/>
             </connections>
@@ -67,12 +68,20 @@
                                                 <constraint firstAttribute="trailing" secondItem="dB4-xI-77f" secondAttribute="trailing" constant="24" id="YbM-b9-18p"/>
                                             </constraints>
                                         </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a33-P3-krj">
+                                            <rect key="frame" x="16" y="0.0" width="361" height="36"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="Olz-AC-ZnS" secondAttribute="trailing" constant="16" id="6fl-h8-pnx"/>
+                                        <constraint firstAttribute="trailing" secondItem="a33-P3-krj" secondAttribute="trailing" constant="16" id="9Lz-ia-z6G"/>
+                                        <constraint firstAttribute="bottom" secondItem="a33-P3-krj" secondAttribute="bottom" id="C9p-e9-AJs"/>
                                         <constraint firstItem="Olz-AC-ZnS" firstAttribute="leading" secondItem="iRd-fH-17D" secondAttribute="trailing" constant="20" id="SvL-81-JAM"/>
                                         <constraint firstItem="Olz-AC-ZnS" firstAttribute="centerY" secondItem="s0J-Rt-5kc" secondAttribute="centerY" id="TPt-8c-gws"/>
+                                        <constraint firstItem="a33-P3-krj" firstAttribute="top" secondItem="s0J-Rt-5kc" secondAttribute="top" id="aPs-Kf-9Cb"/>
+                                        <constraint firstItem="a33-P3-krj" firstAttribute="leading" secondItem="s0J-Rt-5kc" secondAttribute="leading" constant="16" id="jon-r5-ejT"/>
                                         <constraint firstItem="iRd-fH-17D" firstAttribute="leading" secondItem="s0J-Rt-5kc" secondAttribute="leading" constant="16" id="vQd-kq-vhM"/>
                                         <constraint firstItem="iRd-fH-17D" firstAttribute="centerY" secondItem="s0J-Rt-5kc" secondAttribute="centerY" id="wBf-lX-R3d"/>
                                     </constraints>

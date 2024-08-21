@@ -24,8 +24,8 @@ class SplashVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     private func navigateToDashboard() {
-        let dashboardVC = AppController.shared.Tabbar
-        let navigationController = UINavigationController(rootViewController: dashboardVC)
+        let tabVC = AppController.shared.Tabbar
+        let navigationController = UINavigationController(rootViewController: tabVC)
         navigationController.isNavigationBarHidden = true
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let window = windowScene.windows.first {

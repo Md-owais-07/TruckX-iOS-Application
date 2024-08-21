@@ -7,6 +7,27 @@
 
 import UIKit
 
+@IBDesignable
+class DesignableView: UIView {
+    @IBInspectable var cornerRadius: CGFloat = 0 {
+        didSet {
+            self.layer.cornerRadius = cornerRadius
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat = 0 {
+        didSet {
+            self.layer.borderWidth = borderWidth
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor? {
+        didSet {
+            self.layer.borderColor = borderColor?.cgColor
+        }
+    }
+}
+
 class AppHeaderView: UIView {
    required init?(coder: NSCoder) {
       super.init(coder: coder)
@@ -20,7 +41,6 @@ class AppStatusBar: UIView {
        self.setBackgroundColor(color: UIColor.black)
    }
 }
-
 
 
 extension UIView {
@@ -82,12 +102,21 @@ extension UIView {
         gradientLayer.frame = bounds
         layer.insertSublayer(gradientLayer, at: 0)
     }
-
     
     func customizeSearchBar() {
         self.layer.cornerRadius = 20
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.darkGray.withAlphaComponent(80).cgColor
+    }
+    
+    func applyFinalStyle(cornerRadius: CGFloat, borderWidth: CGFloat? = nil, borderColor: UIColor? = nil) {
+        self.layer.cornerRadius = cornerRadius
+        if let borderWidth = borderWidth {
+            self.layer.borderWidth = borderWidth
+        }
+        if let borderColor = borderColor {
+            self.layer.borderColor = borderColor.cgColor
+        }
     }
 }
 

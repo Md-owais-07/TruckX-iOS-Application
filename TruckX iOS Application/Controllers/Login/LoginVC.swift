@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class LoginVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
@@ -33,8 +34,6 @@ class LoginVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegat
         
         self.imgCheckStatus.image = UIImage(named: "ri_checkbox-line")
         
-        btnLogin.layer.cornerRadius = 10
-        
         emailTextfield.delegate = self
         passwordTextfield.delegate = self
         
@@ -43,12 +42,28 @@ class LoginVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegat
         self.HideKeyboardWhenTapAround()
     }
     
+    private func updateLocationLabel(with location: CLLocation) {
+        let latitude = location.coordinate.latitude
+        let longitude = location.coordinate.longitude
+        
+        let cordinates = CLLocationCoordinate2D(latitude: 12.971599, longitude: 77.594566)
+//        locationLabel.text = "Latitude: \(latitude), Longitude: \(longitude)"
+        print("LOCATION FOUND: Latitude: \(latitude), Longitude: \(longitude)")
+        print("LOCATION FOUND cordinates: ", cordinates)
+    }
+    
     @IBAction func loginBtnction(_ sender: Any) {
         
         guard let email = emailTextfield.text,  email != "" else {
             self.toastView(toastMessage: "Please enter your email address.", type: "error")
             return
         }
+        
+        guard self.checkMailIdFormat(string: emailTextfield.text ?? "") else {
+            self.toastView(toastMessage: "Please enter a valid email address.", type: "error")
+            return
+        }
+        
         guard let password = passwordTextfield.text, password != "" else {
             self.toastView(toastMessage: "Please enter your Password.", type: "error")
             return
@@ -65,8 +80,10 @@ class LoginVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegat
                 switch result {
                 case .success(let accessToken):
                     self.toastView(toastMessage: "Login Success!!", type: "success")
+                    
                     UserData.shared.isLoggedIn = true
                     UserData.shared.currentAuthKey = accessToken
+                    
                     let tabBarController = AppController.shared.Tabbar
                     
                     if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
@@ -75,10 +92,14 @@ class LoginVC: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegat
                         UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
                         window.makeKeyAndVisible()
                     }
-                    print("Login Success, with Access Token: \(accessToken)")
+                    print("Login Success!")
                 case .failure(let error):
-                    if let nsError = error as NSError?, nsError.code == 401 {
-                        self.toastView(toastMessage: "Invalid username and password.", type: "error")
+                    if let nsError = error as NSError? {
+                        if nsError.code == 401 {
+                            self.toastView(toastMessage: "Invalid email or password.", type: "error")
+                        } else if nsError.code == 404 {
+                            self.toastView(toastMessage: "Invalid email or password.", type: "error")
+                        }
                     }
                     print("Error: \(error.localizedDescription)")
                 }
@@ -137,20 +158,5 @@ extension LoginVC {
             textField.resignFirstResponder()
         }
         return true
-    }
-    
-    func setupLoader() {
-        loaderView.frame = view.bounds
-        loaderView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // Ensure it resizes with the main view
-        view.addSubview(loaderView)
-        loaderView.isHidden = true
-    }
-    
-    func showLoader() {
-        loaderView.startLoading()
-    }
-    
-    func hideLoader() {
-        loaderView.stopLoading()
     }
 }

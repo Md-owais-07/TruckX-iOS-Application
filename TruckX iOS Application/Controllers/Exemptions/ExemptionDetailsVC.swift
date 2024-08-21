@@ -36,9 +36,11 @@ class ExemptionDetailsVC: UIViewController {
 //            }
 //        }
         
+        self.enablePopGestureRecognizer()
+        
         lblExemptionTitile.text = titleText
         
-        btnBack.addTarget(self, action: #selector(popToView), for: .touchUpInside)
+        btnBack.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
         btnSetup.layer.cornerRadius = 10
     }
 

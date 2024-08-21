@@ -19,18 +19,13 @@ class DvirVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        topView.layer.cornerRadius = 13
-        topView.layer.borderWidth = 1
-        topView.layer.borderColor = UIColor.black.withAlphaComponent(0.4).cgColor
         
         btnSign.addTarget(self, action: #selector(gotoSign), for: .touchUpInside)
-        btnLogs.addTarget(self, action: #selector(popToView), for: .touchUpInside)
-        btnDocs.addTarget(self, action: #selector(popToView), for: .touchUpInside)
+        btnLogs.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
+        btnDocs.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
         btnBack.addTarget(self, action: #selector(popToRootView), for: .touchUpInside)
         
-        btnTripInspection.layer.cornerRadius = 10
-        btnTripInspection.layer.borderWidth = 2
-        btnTripInspection.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5)
+        self.enablePopGestureRecognizer()
     }
     
     @objc func gotoSign() {

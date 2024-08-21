@@ -17,7 +17,9 @@ class CycleInfoVC: UIViewController {
         tableView.register(UINib(nibName: "MoreTVC", bundle: nil), forCellReuseIdentifier: "cell3")
         tableView.reloadData()
         
-        btnBack.addTarget(self, action: #selector(popToView), for: .touchUpInside)
+        btnBack.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
+        
+        self.enablePopGestureRecognizer()
     }
     
 

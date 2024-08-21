@@ -21,24 +21,13 @@ class SignVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        topView.layer.cornerRadius = 13
-        topView.layer.borderWidth = 1
-        topView.layer.borderColor = UIColor.black.withAlphaComponent(0.4).cgColor
         
-        btnLogs.addTarget(self, action: #selector(popToView), for: .touchUpInside)
-        btnDocs.addTarget(self, action: #selector(popToView), for: .touchUpInside)
-        btnDvir.addTarget(self, action: #selector(popToView), for: .touchUpInside)
+        btnLogs.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
+        btnDocs.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
+        btnDvir.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
         btnBack.addTarget(self, action: #selector(popToRootView), for: .touchUpInside)
         
-        btnAgree.layer.cornerRadius = 10
-        
-        btnNotReady.layer.cornerRadius = 10
-        btnNotReady.layer.borderWidth = 2
-        btnNotReady.layer.borderColor = #colorLiteral(red: 0, green: 0.3433497846, blue: 0.3613733053, alpha: 1)
-        
-        textView.layer.cornerRadius = 12
-        textView.layer.borderWidth = 2
-        textView.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1048220199)
+        self.enablePopGestureRecognizer()
     }
 
     @IBAction func agreeButtonAction(_ sender: Any) {

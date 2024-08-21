@@ -16,21 +16,13 @@ class BottomSheetVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
-        containerView.layer.cornerRadius = 12
         containerView.layer.masksToBounds = true
-        
         customView.alpha = 0.1
         containerView.alpha = 1
         containerView.clipsToBounds = true
         
-        startButton.layer.cornerRadius = 10
-        startButton.layer.borderWidth = 4
-        startButton.layer.borderColor = #colorLiteral(red: 0.09424795955, green: 0.3382889926, blue: 0.3569509983, alpha: 1)
-        
         self.tabBarController?.tabBar.isHidden = true
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {

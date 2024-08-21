@@ -13,7 +13,9 @@ class NotificationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        btnBack.addTarget(self, action: #selector(popToView), for: .touchUpInside)
+        btnBack.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
+        
+        self.enablePopGestureRecognizer()
     }
 
 }

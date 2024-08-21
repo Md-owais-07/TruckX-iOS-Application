@@ -25,6 +25,11 @@ class MessgegesVC: UIViewController {
         btnAdd.addTarget(self, action: #selector(pushToVC), for: .touchUpInside)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        disablePopGestureRecognizer()
+    }
+    
     @objc func pushToVC() {
         let newChatVC = AppController.shared.NewChat
         newChatVC.hidesBottomBarWhenPushed = true

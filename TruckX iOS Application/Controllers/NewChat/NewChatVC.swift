@@ -16,11 +16,13 @@ class NewChatVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        btnBack.addTarget(self, action: #selector(popToView), for: .touchUpInside)
+        btnBack.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
         
         searchBar.customizeSearchBar()
         searchBarTextField.delegate = self
         self.HideKeyboardWhenTapAround()
+        
+        self.enablePopGestureRecognizer()
     }
     
     override func viewDidAppear(_ animated: Bool) {

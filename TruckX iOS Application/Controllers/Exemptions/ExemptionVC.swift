@@ -22,17 +22,19 @@ class ExemptionVC: UIViewController {
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
 
-        btnBack.addTarget(self, action: #selector(popToView), for: .touchUpInside)
+        btnBack.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
+        
+        self.enablePopGestureRecognizer()
         
         setupLoader()
         fetchExemptionData()
     }
     
     func fetchExemptionData() {
-        loaderView.startLoading()
+        showLoader()
         APIManager.shared.exemptionService.getExemptionData { result in
             DispatchQueue.main.async {
-                self.loaderView.stopLoading()
+                self.hideLoader()
                 switch result {
                 case .success(let apiResponse):
                     self.exemptionsData = apiResponse.data.docs
@@ -46,15 +48,6 @@ class ExemptionVC: UIViewController {
         }
     }
     
-}
-
-extension ExemptionVC {
-    func setupLoader() {
-        loaderView.frame = view.bounds
-        loaderView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(loaderView)
-        loaderView.isHidden = true
-    }
 }
 
 extension ExemptionVC: UITableViewDelegate, UITableViewDataSource {

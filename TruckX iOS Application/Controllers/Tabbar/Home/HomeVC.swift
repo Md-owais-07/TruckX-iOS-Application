@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class HomeVC: UIViewController {
     @IBOutlet weak var topView: UIView!
@@ -24,47 +25,73 @@ class HomeVC: UIViewController {
     @IBOutlet weak var btnOn: UIButton!
     @IBOutlet weak var btnOF: UIButton!
     @IBOutlet weak var btnSB: UIButton!
+    @IBOutlet weak var lblLocation: UILabel!
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var buttonStyles: [UIButton: (backgroundColor: (default: UIColor, selected: UIColor), textColor: (default: UIColor, selected: UIColor))] = [:]
+    
+    private let loaderView = LoaderView()
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        btnNotification.addTarget(self, action: #selector(popToNotificationVC), for: .touchUpInside)
+        btnNotification.addTarget(self, action: #selector(pushToNotificationVC), for: .touchUpInside)
+        btnRefresh.addTarget(self, action: #selector(reloadView), for: .touchUpInside)
         
-        gradientView.applyGradient()
-        
-        hosView.layer.cornerRadius = 8
-        
-        countryView.layer.cornerRadius = 12
-        countryView.layer.borderWidth = 2
-        countryView.layer.borderColor = UIColor.systemGray5.cgColor
-        
-        topView.layer.cornerRadius = 12
-        topView.layer.borderWidth = 2
-        topView.layer.borderColor = UIColor.systemGray5.cgColor
-        
-        signView.layer.cornerRadius = 19
-        signView.layer.borderWidth = 2
-        signView.layer.borderColor = UIColor.systemGray5.withAlphaComponent(0.8).cgColor
-        
-        btnD.layer.cornerRadius = 12
-        btnOn.layer.cornerRadius = 12
-        btnOF.layer.cornerRadius = 12
-        btnSB.layer.cornerRadius = 12
-        personalView.layer.cornerRadius = 12
-        yardView.layer.cornerRadius = 12
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         bottomView.isHidden = true
         
+        gradientView.applyGradient()
         setupButtonStyles()
         updateAllButtonAppearances()
+        setupLoader()
+        fetchLocation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        disablePopGestureRecognizer()
     }
     
     @IBAction func toggleButton(_ sender: UIButton) {
         deselectAllButtons()
         sender.isSelected = true
         updateButtonAppearance(sender)
+    }
+    
+    @IBAction func dropDownButtonAction(_ sender: Any) {
+        let dropDownVC = AppController.shared.CountryDropDown
+        dropDownVC.modalPresentationStyle = .overCurrentContext
+        dropDownVC.modalTransitionStyle = .crossDissolve
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let rootVC = windowScene.windows.first(where: { $0.isKeyWindow })?.rootViewController {
+            rootVC.present(dropDownVC, animated: false, completion: nil)
+        } else {
+            print("Error: No active window found.")
+        }
+    }
+    
+    @IBAction func hosInfoButtonAction(_ sender: Any) {
+        let hosInfoVC = AppController.shared.HosInformation
+        self.pushToVC(hosInfoVC)
+    }
+    
+    @IBAction func chartButtonAction(_ sender: Any) {
+        let chartDetailsVC = AppController.shared.Logs
+        self.pushToVCWithHideTabBar(chartDetailsVC)
+    }
+    
+}
+
+
+extension HomeVC {
+    @objc func pushToNotificationVC() {
+        let notificationsVC = AppController.shared.Notifications
+        self.pushToVCWithHideTabBar(notificationsVC)
     }
     
     private func setupButtonStyles() {
@@ -115,33 +142,11 @@ class HomeVC: UIViewController {
         }
     }
     
-    @IBAction func dropDownButtonAction(_ sender: Any) {
-        let dropDownVC = AppController.shared.CountryDropDown
-        dropDownVC.modalPresentationStyle = .overCurrentContext
-        dropDownVC.modalTransitionStyle = .crossDissolve
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let rootVC = windowScene.windows.first(where: { $0.isKeyWindow })?.rootViewController {
-            rootVC.present(dropDownVC, animated: false, completion: nil)
-        } else {
-            print("Error: No active window found.")
+    func fetchLocation() {
+        LocationManager.shared.didUpdateLocation = { [weak self] locationString in
+            DispatchQueue.main.async {
+                self?.lblLocation.text = locationString
+            }
         }
     }
-    
-    @IBAction func hosInfoButtonAction(_ sender: Any) {
-        let hosInfoVC = AppController.shared.HosInformation
-        self.navigationController?.pushViewController(hosInfoVC, animated: true)
-    }
-    
-    @IBAction func chartButtonAction(_ sender: Any) {
-        let chartDetailsVC = AppController.shared.Logs
-        chartDetailsVC.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(chartDetailsVC, animated: true)
-    }
-    
-    @objc func popToNotificationVC() {
-        let navigationVC = AppController.shared.Notifications
-        navigationVC.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(navigationVC, animated: true)
-    }
-    
 }

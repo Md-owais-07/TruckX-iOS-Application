@@ -16,10 +16,13 @@ class AppSettingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        btnBAck.addTarget(self, action: #selector(popToView), for: .touchUpInside)
+        btnBAck.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
         
         imgCountry.layer.cornerRadius = imgCountry.frame.size.width / 2
+        
+        self.enablePopGestureRecognizer()
     }
+    
     @IBAction func nightModeButtonAction(_ sender: Any) {
         if btnToggle.tag == 0
         {

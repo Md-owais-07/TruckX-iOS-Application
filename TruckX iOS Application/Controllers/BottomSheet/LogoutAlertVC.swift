@@ -20,9 +20,6 @@ class LogoutAlertVC: UIViewController {
         // Do any additional setup after loading the view.
         customView.alpha = 0.8
         mainView.alpha = 1.0
-        mainView.clipsToBounds = true
-        mainView.layer.cornerRadius = 16
-        mainView.layer.masksToBounds = true
         
         setAttributedText()
     }
