@@ -248,8 +248,7 @@
 		E9497E732C662D820050A251 /* TruckX iOS Application */ = {
 			isa = PBXGroup;
 			children = (
-				E9497E742C662D820050A251 /* AppDelegate.swift */,
-				E9497E762C662D820050A251 /* SceneDelegate.swift */,
+				E99C9D452C7C6F6200A2C860 /* Common */,
 				E96C61082C6C9833000F2D38 /* Models */,
 				E96C61092C6C983E000F2D38 /* Views */,
 				E96C610A2C6C9845000F2D38 /* Controllers */,
@@ -557,6 +556,15 @@
 				E96C60992C6760F3000F2D38 /* AppController.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E99C9D452C7C6F6200A2C860 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E9497E742C662D820050A251 /* AppDelegate.swift */,
+				E9497E762C662D820050A251 /* SceneDelegate.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
