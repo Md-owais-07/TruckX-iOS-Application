@@ -62,7 +62,6 @@
 		E96C60F12C6B990A000F2D38 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60F02C6B990A000F2D38 /* NotificationVC.swift */; };
 		E96C60F82C6BAA15000F2D38 /* NewChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60F72C6BAA15000F2D38 /* NewChatVC.swift */; };
 		E96C60FA2C6BB0F3000F2D38 /* LogoutAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60F92C6BB0F3000F2D38 /* LogoutAlertVC.swift */; };
-		E96C61002C6C81B6000F2D38 /* SearchCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60FF2C6C81B6000F2D38 /* SearchCode.swift */; };
 		E96C61032C6C9593000F2D38 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C61022C6C9593000F2D38 /* AuthService.swift */; };
 		E96C61052C6C95A3000F2D38 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C61042C6C95A3000F2D38 /* UserService.swift */; };
 		E96C61072C6C95AE000F2D38 /* ExemptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C61062C6C95AE000F2D38 /* ExemptionService.swift */; };
@@ -150,7 +149,6 @@
 		E96C60F02C6B990A000F2D38 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
 		E96C60F72C6BAA15000F2D38 /* NewChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChatVC.swift; sourceTree = "<group>"; };
 		E96C60F92C6BB0F3000F2D38 /* LogoutAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertVC.swift; sourceTree = "<group>"; };
-		E96C60FF2C6C81B6000F2D38 /* SearchCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCode.swift; sourceTree = "<group>"; };
 		E96C61022C6C9593000F2D38 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E96C61042C6C95A3000F2D38 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		E96C61062C6C95AE000F2D38 /* ExemptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExemptionService.swift; sourceTree = "<group>"; };
@@ -265,14 +263,13 @@
 		E96C60BB2C68E5A1000F2D38 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E96C60C62C68F80D000F2D38 /* Base File */,
-				E96C60992C6760F3000F2D38 /* AppController.swift */,
-				E96C60952C67581A000F2D38 /* UIVC+Extensions.swift */,
-				E96C60AB2C678E8B000F2D38 /* UiView+Extensions.swift */,
-				E96C60E02C6AA139000F2D38 /* LoaderView.swift */,
-				E96C60E42C6B4606000F2D38 /* ImageDownloader.swift */,
-				E9332D8E2C7330E500C25ABB /* UITable+Extensions.swift */,
-				E99C9D242C75EE9D00A2C860 /* UIButton+Extensions.swift */,
+				E99C9D442C7C6AB100A2C860 /* Utilities */,
+				E99C9D432C7C6A9200A2C860 /* Helper */,
+				E99C9D422C7C6A8400A2C860 /* UI Components */,
+				E99C9D412C7C6A6100A2C860 /* Managers */,
+				E99C9D402C7C6A4100A2C860 /* Extensions */,
+				E99C9D3F2C7C69F300A2C860 /* Network */,
+				E99C9D3E2C7C69D300A2C860 /* Core */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -315,23 +312,6 @@
 				E9497E782C662D820050A251 /* LoginVC.swift */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		E96C60C62C68F80D000F2D38 /* Base File */ = {
-			isa = PBXGroup;
-			children = (
-				E96C61142C6CA9FA000F2D38 /* AppInfo.swift */,
-				E96C60A92C676EBF000F2D38 /* UserData.swift */,
-				E96C60A52C67637C000F2D38 /* Enumerations.swift */,
-				E96C60DA2C6A8F98000F2D38 /* Network.swift */,
-				E96C60FF2C6C81B6000F2D38 /* SearchCode.swift */,
-				E96C61162C6CAF8B000F2D38 /* Api.swift */,
-				E96C61182C6CAF93000F2D38 /* ApiModel.swift */,
-				E96C611A2C6CAFF1000F2D38 /* ApiResponse.swift */,
-				E9332D8C2C73292E00C25ABB /* CustomUIButtons.swift */,
-				E9332DA52C74B87A00C25ABB /* LocationManager.swift */,
-			);
-			path = "Base File";
 			sourceTree = "<group>";
 		};
 		E96C60C72C68F879000F2D38 /* Splash */ = {
@@ -392,10 +372,7 @@
 		E96C61012C6C9551000F2D38 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				E96C60CC2C69E8D3000F2D38 /* APIManager.swift */,
-				E96C61022C6C9593000F2D38 /* AuthService.swift */,
-				E96C61042C6C95A3000F2D38 /* UserService.swift */,
-				E96C61062C6C95AE000F2D38 /* ExemptionService.swift */,
+				E99C9D3D2C7C691F00A2C860 /* Networking */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -423,20 +400,20 @@
 		E96C610A2C6C9845000F2D38 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E96C60C82C68FA0C000F2D38 /* Tabbar */,
+				E96C60C52C68F73C000F2D38 /* Login */,
+				E99C9D342C789AE200A2C860 /* Register */,
 				E9332D9E2C7343EB00C25ABB /* AppSetting */,
 				E9332D9B2C73435400C25ABB /* CarrierInformation */,
 				E9332D942C733E6100C25ABB /* CycleInformation */,
 				E9332D852C73201F00C25ABB /* TruckAndTrailer */,
 				E9332D7C2C70B0C300C25ABB /* ChartDetails */,
 				E9332D732C6F64CA00C25ABB /* HOSInfo */,
-				E96C60C82C68FA0C000F2D38 /* Tabbar */,
 				E96C60F62C6BA9F7000F2D38 /* NewChat */,
 				E96C60EF2C6B98F0000F2D38 /* Notifications */,
 				E96C60CE2C6A8685000F2D38 /* Exemptions */,
 				E96C60C92C6945CB000F2D38 /* BottomSheet */,
 				E96C60C72C68F879000F2D38 /* Splash */,
-				E96C60C52C68F73C000F2D38 /* Login */,
-				E99C9D342C789AE200A2C860 /* Register */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -504,6 +481,82 @@
 				E99C9D352C789B0D00A2C860 /* RegisterVC.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		E99C9D3D2C7C691F00A2C860 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60CC2C69E8D3000F2D38 /* APIManager.swift */,
+				E96C61022C6C9593000F2D38 /* AuthService.swift */,
+				E96C61042C6C95A3000F2D38 /* UserService.swift */,
+				E96C61062C6C95AE000F2D38 /* ExemptionService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E99C9D3E2C7C69D300A2C860 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E96C61142C6CA9FA000F2D38 /* AppInfo.swift */,
+				E96C60A92C676EBF000F2D38 /* UserData.swift */,
+				E96C60A52C67637C000F2D38 /* Enumerations.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E99C9D3F2C7C69F300A2C860 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E96C61162C6CAF8B000F2D38 /* Api.swift */,
+				E96C61182C6CAF93000F2D38 /* ApiModel.swift */,
+				E96C611A2C6CAFF1000F2D38 /* ApiResponse.swift */,
+				E96C60DA2C6A8F98000F2D38 /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E99C9D402C7C6A4100A2C860 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60AB2C678E8B000F2D38 /* UiView+Extensions.swift */,
+				E96C60952C67581A000F2D38 /* UIVC+Extensions.swift */,
+				E9332D8E2C7330E500C25ABB /* UITable+Extensions.swift */,
+				E99C9D242C75EE9D00A2C860 /* UIButton+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E99C9D412C7C6A6100A2C860 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E9332DA52C74B87A00C25ABB /* LocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		E99C9D422C7C6A8400A2C860 /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60E02C6AA139000F2D38 /* LoaderView.swift */,
+				E9332D8C2C73292E00C25ABB /* CustomUIButtons.swift */,
+			);
+			path = "UI Components";
+			sourceTree = "<group>";
+		};
+		E99C9D432C7C6A9200A2C860 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60E42C6B4606000F2D38 /* ImageDownloader.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		E99C9D442C7C6AB100A2C860 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60992C6760F3000F2D38 /* AppController.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -650,7 +703,6 @@
 				E96C61032C6C9593000F2D38 /* AuthService.swift in Sources */,
 				E99C9D362C789B0D00A2C860 /* RegisterVC.swift in Sources */,
 				E99C9D252C75EE9D00A2C860 /* UIButton+Extensions.swift in Sources */,
-				E96C61002C6C81B6000F2D38 /* SearchCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
