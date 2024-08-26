@@ -26,11 +26,11 @@ class LogoutAlertVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.view.layoutIfNeeded()
+        
     }
     
     @IBAction func cancelButtonAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true)
     }
     
     @IBAction func okButtonAction(_ sender: Any) {
@@ -40,7 +40,7 @@ class LogoutAlertVC: UIViewController {
             UserData.shared.isLoggedIn = false
             let loginVC = AppController.shared.Login
             let newNavController = UINavigationController(rootViewController: loginVC)
-            
+            self.navigationItem.hidesBackButton = true
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                let window = windowScene.windows.first {
                 window.rootViewController = newNavController

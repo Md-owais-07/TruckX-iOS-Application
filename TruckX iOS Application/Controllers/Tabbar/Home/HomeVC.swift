@@ -28,6 +28,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var lblLocation: UILabel!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var lblUserName: UILabel!
     
     var buttonStyles: [UIButton: (backgroundColor: (default: UIColor, selected: UIColor), textColor: (default: UIColor, selected: UIColor))] = [:]
     
@@ -43,6 +44,8 @@ class HomeVC: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
+        lblUserName.text = UserData.shared.isLoggedIn ? "\(UserData.shared.firstName) \(UserData.shared.lastName)" : "No Name Found"
+        
         bottomView.isHidden = true
         
         gradientView.applyGradient()
@@ -54,6 +57,7 @@ class HomeVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        lblUserName.text = UserData.shared.isLoggedIn ? "\(UserData.shared.firstName) \(UserData.shared.lastName)" : "No Name Found"
         disablePopGestureRecognizer()
     }
     
@@ -81,8 +85,8 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func chartButtonAction(_ sender: Any) {
-        let chartDetailsVC = AppController.shared.Logs
-        self.pushToVCWithHideTabBar(chartDetailsVC)
+            let chartDetailsVC = AppController.shared.Logs
+            self.pushToVCWithHideTabBar(chartDetailsVC)
     }
     
 }

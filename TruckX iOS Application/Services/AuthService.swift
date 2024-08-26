@@ -8,10 +8,10 @@
 import Foundation
 
 class AuthService {
-    func signIn(email: String, password: String, completion: @escaping (Result<String, Error>) -> Void) {
-        
+    func signIn(email: String, password: String, completion: @escaping (Result<SignInResponse, Error>) -> Void)
+    {
         guard let url = URL(string: "https://eld-backend.vercel.app/api/v1/auth/signin") else {
-            print("Invalid URL")
+            print("Invalid SignIn URL")
             return
         }
         
@@ -38,38 +38,86 @@ class AuthService {
                 return
             }
             
-            guard let httpResponse = response as? HTTPURLResponse else {
-                print("Invalid response")
+            guard let data = data, let response = response as? HTTPURLResponse else {
+                completion(.failure(NSError(domain: "", code: 500, userInfo: [NSLocalizedDescriptionKey: "No response data"])))
                 return
             }
             
-            switch httpResponse.statusCode {
-            case 200, 201:
-                // Successful login
-                guard let data = data else {
-                    print("No data returned")
-                    return
-                }
-                
-                do {
-                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                       let accessToken = json["accessToken"] as? String {
-                        completion(.success(accessToken))
-                    } else {
-                        print("Invalid response")
-                    }
-                } catch let jsonError {
-                    completion(.failure(jsonError))
-                }
-            case 401:
-                print("Debug: Wrong password or unauthorized access")
-                completion(.failure(NSError(domain: "", code: 401, userInfo: [NSLocalizedDescriptionKey: "Unauthorized"])))
-            default:
-                print("Debug: Unexpected status code \(httpResponse.statusCode)")
-                completion(.failure(NSError(domain: "", code: httpResponse.statusCode, userInfo: [NSLocalizedDescriptionKey: "Unexpected status code \(httpResponse.statusCode)"])))
+            guard (200...299).contains(response.statusCode) else {
+                let errorMessage = "Server error with status code: \(response.statusCode)"
+                completion(.failure(NSError(domain: "", code: response.statusCode, userInfo: [NSLocalizedDescriptionKey: errorMessage])))
+                return
+            }
+            
+            if let jsonString = String(data: data, encoding: .utf8) {
+                print("Raw JSON Response SignIN: \(jsonString)")
+            }
+            
+            do {
+                let signInResponse = try JSONDecoder().decode(SignInResponse.self, from: data)
+                completion(.success(signInResponse))
+            } catch {
+                print("Decoding Error: \(error)")
+                completion(.failure(error))
             }
         }
+        task.resume()
+    }
+    
+    func createUser(fName: String, lName: String, email: String, password: String, completion: @escaping (Result<CreateUserResponse, Error>) -> Void)
+    {
+        guard let url = URL(string: "https://eld-backend.vercel.app/api/v1/admin/createUser") else {
+            completion(.failure(NSError(domain: "", code: 400, userInfo: [NSLocalizedDescriptionKey: "Invalid CreateUser URL"])))
+            return
+        }
         
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let body: [String: Any] = [
+            "firstName": fName,
+            "lastName": lName,
+            "email": email,
+            "password": password
+        ]
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: body, options: [])
+        } catch {
+            completion(.failure(error))
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let data = data, let response = response as? HTTPURLResponse else {
+                completion(.failure(NSError(domain: "", code: 500, userInfo: [NSLocalizedDescriptionKey: "No response data"])))
+                return
+            }
+            
+            guard (200...299).contains(response.statusCode) else {
+                let errorMessage = "Server error with status code: \(response.statusCode)"
+                completion(.failure(NSError(domain: "", code: response.statusCode, userInfo: [NSLocalizedDescriptionKey: errorMessage])))
+                return
+            }
+            
+            if let jsonString = String(data: data, encoding: .utf8) {
+                print("Raw JSON Response: \(jsonString)")
+            }
+            
+            do {
+                let createUserResponse = try JSONDecoder().decode(CreateUserResponse.self, from: data)
+                completion(.success(createUserResponse))
+            } catch {
+                print("Decoding Error: \(error)")
+                completion(.failure(error))
+            }
+        }
         task.resume()
     }
 }

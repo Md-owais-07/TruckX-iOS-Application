@@ -25,6 +25,7 @@ class MoreVC: UIViewController {
     @IBOutlet weak var btnRotate: UIButton!
     @IBOutlet weak var btnUpdates: UIButton!
     @IBOutlet weak var imgRotation: UIImageView!
+    @IBOutlet weak var lblUserName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,8 @@ class MoreVC: UIViewController {
         bottomView.isHidden = true
         
         imgRotation.image = UIImage(named: "Vector (3)")
+        
+        lblUserName.text = UserData.shared.isLoggedIn ? "\(UserData.shared.firstName) \(UserData.shared.lastName)" : "No Name Found"
         
         applyViewStyle()
     }
@@ -77,9 +80,11 @@ class MoreVC: UIViewController {
             let rootV = winS?.windows.first(where: { $0.isKeyWindow
             })?.rootViewController
             rootV?.present(bottomSheet, animated: true)
+            
+            
 //            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
 //               let rootVC = windowScene.windows.first(where: { $0.isKeyWindow })?.rootViewController {
-//                rootVC.present(bottomSheet, animated: false, completion: nil)
+//                rootVC.present(bottomSheet, animated: true, completion: nil)
 //            } else {
 //                print("Error: No active window found.")
 //            }

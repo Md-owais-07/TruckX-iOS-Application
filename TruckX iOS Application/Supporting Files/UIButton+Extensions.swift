@@ -7,6 +7,18 @@
 
 import UIKit
 
+class AppPrimaryButton: UIButton {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.clipsToBounds = true
+        self.setCornerRadius(radius: 5)
+        self.setBackgroundColor2(color: .black)
+        self.setFontColor(color: .white)
+        self.setFont(font: UIFont.systemFont(ofSize: 15, weight: .bold))
+    }
+}
+
 @IBDesignable
 class DesignableButton: UIButton {
     @IBInspectable var cornerRadius: CGFloat = 0 {
@@ -28,3 +40,14 @@ class DesignableButton: UIButton {
     }
 }
 
+extension UIButton {
+    func setFontColor(color: UIColor) {
+       self.setTitleColor(color, for: .normal)
+    }
+    func setDisabledFontColor(color: UIColor) {
+       self.setTitleColor(color, for: .disabled)
+    }
+    func setFont(font: UIFont) {
+       self.titleLabel?.font = font
+    }
+}

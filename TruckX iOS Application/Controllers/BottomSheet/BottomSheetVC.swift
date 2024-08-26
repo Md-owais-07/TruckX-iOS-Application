@@ -18,7 +18,8 @@ class BottomSheetVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         containerView.layer.masksToBounds = true
-        customView.alpha = 0.1
+//        customView.alpha = 0.1
+        customView.isHidden = true
         containerView.alpha = 1
         containerView.clipsToBounds = true
         
@@ -28,11 +29,17 @@ class BottomSheetVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        UIView.animate(withDuration: 0.3, animations: {
-            self.customView.alpha = 0.1
+//        UIView.animate(withDuration: 0.5, animations: {
+////            self.customView.alpha = 0.1
+//            self.customView.isHidden = false
+//            self.containerView.alpha = 1.0
+//            self.view.layoutIfNeeded()
+//        })
+        UIView.transition(with: view, duration: 0.3, options: .transitionCrossDissolve) {
+            self.customView.isHidden = false
             self.containerView.alpha = 1.0
-            self.view.layoutIfNeeded()
-        })
+//            self.view.layoutIfNeeded()
+        }
     }
     
     @IBAction func closeButtonTapped(_ sender: Any) {

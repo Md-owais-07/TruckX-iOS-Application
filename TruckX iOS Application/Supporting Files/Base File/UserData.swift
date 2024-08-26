@@ -19,13 +19,45 @@ class UserData {
             return userDefault.set(status, forKey: "isLoggedIn")
         }
     }
-    
     var currentAuthKey: String {
-       get{
+       get {
           return userDefault.string(forKey: "currentAuthKey") ?? ""
        }
        set(data) {
           userDefault.set(data, forKey: "currentAuthKey")
        }
     }
+    var firstName: String {
+        get {
+            return userDefault.string(forKey: "firstName") ?? ""
+        }
+        set(data) {
+            userDefault.set(data, forKey: "firstName")
+        }
+    }
+    var lastName: String {
+        get {
+            return userDefault.string(forKey: "lastName") ?? ""
+        }
+        set(data) {
+            userDefault.set(data, forKey: "lastName")
+        }
+    }
+    var emailAddress: String {
+        get {
+            return userDefault.string(forKey: "emailAddress") ?? ""
+        }
+        set(data) {
+            userDefault.set(data, forKey: "emailAddress")
+        }
+    }
+    var userId: String {
+       get{
+          return userDefault.string(forKey: "userId") ?? ""
+       }
+       set(data) {
+          userDefault.set(data, forKey: "userId")
+       }
+    }
+    
 }

@@ -83,4 +83,7 @@ class AppController {
     var AppSettings: AppSettingVC {
         AppStoryBoard.shared.main.instantiateViewController(withIdentifier: "AppSettingVC_id") as? AppSettingVC ?? AppSettingVC()
     }
+    var Register: RegisterVC {
+        AppStoryBoard.shared.main.instantiateViewController(withIdentifier: "RegisterVC_id") as? RegisterVC ?? RegisterVC()
+    }
 }

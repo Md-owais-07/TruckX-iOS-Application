@@ -11,12 +11,12 @@ class APIManager {
     static let shared = APIManager()
     
     let authService: AuthService
-    let terminalService: TerminalService
+    let userService: UserService
     let exemptionService: ExemptionService
     
     private init() {
         authService = AuthService()
-        terminalService = TerminalService()
+        userService = UserService()
         exemptionService = ExemptionService()
     }
     

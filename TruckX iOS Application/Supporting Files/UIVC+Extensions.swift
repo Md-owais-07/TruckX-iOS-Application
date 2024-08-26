@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIViewController {
+extension UIViewController: UITextFieldDelegate {
     private var loaderView: LoaderView {
         return LoaderView.shared
     }
@@ -73,10 +73,32 @@ extension UIViewController {
         self.view.endEditing(true)
     }
     
+    func navigateToHome() {
+        let tabBarController = AppController.shared.Tabbar
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+            window.rootViewController = tabBarController
+            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil)
+            window.makeKeyAndVisible()
+        }
+    }
+    
+    func togglePasswordVisibility(for textField: UITextField, button: UIButton, isPasswordVisible: inout Bool, visibleImageName: String, hiddenImageName: String) {
+        isPasswordVisible.toggle()
+        let imageName = isPasswordVisible ? visibleImageName : hiddenImageName
+        button.setImage(UIImage(systemName: imageName), for: .normal)
+        textField.isSecureTextEntry = !isPasswordVisible
+    }
+    
     func checkMailIdFormat(string: String) -> Bool{
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
         let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegex)
         return emailTest.evaluate(with: string)
+    }
+    
+    func toggleButtonSelection(_ button: UIButton, imageView: UIImageView, selectedImage: UIImage, deselectedImage: UIImage) {
+        button.isSelected.toggle()
+        imageView.image = button.isSelected ? selectedImage : deselectedImage
     }
     
     func applyShadow(to view: UIView) {
@@ -111,6 +133,36 @@ extension UIViewController {
         }
         if let borderColor = borderColor {
             view.layer.borderColor = borderColor.cgColor
+        }
+    }
+    
+    func setupLabel(_ label: UILabel) {
+        let text = "by using xyz-product I agree to\nTerms & Conditions and Privacy Policy"
+        let attributedString = NSMutableAttributedString(string: text)
+        
+        attributedString.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], range: NSRange(location: 0, length: text.count))
+        
+        let rangeTerms = (text as NSString).range(of: "Terms & Conditions", options: .caseInsensitive)
+        let rangePrivacy = (text as NSString).range(of: "Privacy Policy", options: .caseInsensitive)
+        
+        attributedString.addAttributes([NSAttributedString.Key.foregroundColor: UIColor(red: 52/255, green: 183/255, blue: 193/255, alpha: 1), .font: UIFont.systemFont(ofSize: 11, weight: .semibold)], range: rangeTerms)
+        
+        attributedString.addAttributes([NSAttributedString.Key.foregroundColor: UIColor(red: 52/255, green: 183/255, blue: 193/255, alpha: 1), .font: UIFont.systemFont(ofSize: 11, weight: .semibold)], range: rangePrivacy)
+        
+        label.attributedText = attributedString
+    }
+    
+    func updateLabelHeight(_ label: UILabel) {
+        let maxSize = CGSize(width: label.frame.width, height: CGFloat.greatestFiniteMagnitude)
+        let textHeight = label.sizeThatFits(maxSize).height
+        
+        // Assuming you have a height constraint set up for this label
+        if let heightConstraint = label.constraints.first(where: { $0.firstAttribute == .height }) {
+            heightConstraint.constant = textHeight
+        } else {
+            // Add a height constraint if none exists
+            let heightConstraint = label.heightAnchor.constraint(equalToConstant: textHeight)
+            heightConstraint.isActive = true
         }
     }
     

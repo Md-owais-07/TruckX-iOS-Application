@@ -16,6 +16,7 @@ class LogbookVC: UIViewController {
     @IBOutlet weak var btnOf: DesignableButton!
     @IBOutlet weak var btnSB: DesignableButton!
     @IBOutlet weak var reusableView: ReusableGraphView!
+    @IBOutlet weak var lblUserName: UILabel!
     
     var buttonStyles: [UIButton: (backgroundColor: (default: UIColor, selected: UIColor), textColor: (default: UIColor, selected: UIColor))] = [:]
     
@@ -24,6 +25,8 @@ class LogbookVC: UIViewController {
         
         btnNotifications.addTarget(self, action: #selector(pushToVC), for: .touchUpInside)
         btnRefresh.addTarget(self, action: #selector(reloadView), for: .touchUpInside)
+        
+        lblUserName.text = UserData.shared.isLoggedIn ? "\(UserData.shared.firstName) \(UserData.shared.lastName)" : "No Name Found"
         
         reusableView.viewController = self
         

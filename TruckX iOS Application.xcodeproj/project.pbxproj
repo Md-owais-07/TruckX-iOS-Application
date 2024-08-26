@@ -64,14 +64,20 @@
 		E96C60FA2C6BB0F3000F2D38 /* LogoutAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60F92C6BB0F3000F2D38 /* LogoutAlertVC.swift */; };
 		E96C61002C6C81B6000F2D38 /* SearchCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C60FF2C6C81B6000F2D38 /* SearchCode.swift */; };
 		E96C61032C6C9593000F2D38 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C61022C6C9593000F2D38 /* AuthService.swift */; };
-		E96C61052C6C95A3000F2D38 /* TerminalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C61042C6C95A3000F2D38 /* TerminalService.swift */; };
+		E96C61052C6C95A3000F2D38 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C61042C6C95A3000F2D38 /* UserService.swift */; };
 		E96C61072C6C95AE000F2D38 /* ExemptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C61062C6C95AE000F2D38 /* ExemptionService.swift */; };
 		E96C61152C6CA9FA000F2D38 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C61142C6CA9FA000F2D38 /* AppInfo.swift */; };
 		E96C61172C6CAF8B000F2D38 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C61162C6CAF8B000F2D38 /* Api.swift */; };
 		E96C61192C6CAF93000F2D38 /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C61182C6CAF93000F2D38 /* ApiModel.swift */; };
 		E96C611B2C6CAFF1000F2D38 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C611A2C6CAFF1000F2D38 /* ApiResponse.swift */; };
-		E96C611D2C6CD630000F2D38 /* TerminalDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C611C2C6CD630000F2D38 /* TerminalDataModel.swift */; };
 		E99C9D252C75EE9D00A2C860 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C9D242C75EE9D00A2C860 /* UIButton+Extensions.swift */; };
+		E99C9D2E2C771C9900A2C860 /* NewChatTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C9D2C2C771C9900A2C860 /* NewChatTVC.swift */; };
+		E99C9D2F2C771C9900A2C860 /* NewChatTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E99C9D2D2C771C9900A2C860 /* NewChatTVC.xib */; };
+		E99C9D322C7734FE00A2C860 /* ChatTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C9D302C7734FE00A2C860 /* ChatTVC.swift */; };
+		E99C9D332C7734FE00A2C860 /* ChatTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E99C9D312C7734FE00A2C860 /* ChatTVC.xib */; };
+		E99C9D362C789B0D00A2C860 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C9D352C789B0D00A2C860 /* RegisterVC.swift */; };
+		E99C9D382C79B5E500A2C860 /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C9D372C79B5E500A2C860 /* SignInResponse.swift */; };
+		E99C9D3A2C79B71E00A2C860 /* CreateUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C9D392C79B71E00A2C860 /* CreateUserResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -146,14 +152,20 @@
 		E96C60F92C6BB0F3000F2D38 /* LogoutAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertVC.swift; sourceTree = "<group>"; };
 		E96C60FF2C6C81B6000F2D38 /* SearchCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCode.swift; sourceTree = "<group>"; };
 		E96C61022C6C9593000F2D38 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		E96C61042C6C95A3000F2D38 /* TerminalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalService.swift; sourceTree = "<group>"; };
+		E96C61042C6C95A3000F2D38 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		E96C61062C6C95AE000F2D38 /* ExemptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExemptionService.swift; sourceTree = "<group>"; };
 		E96C61142C6CA9FA000F2D38 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		E96C61162C6CAF8B000F2D38 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		E96C61182C6CAF93000F2D38 /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
 		E96C611A2C6CAFF1000F2D38 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
-		E96C611C2C6CD630000F2D38 /* TerminalDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalDataModel.swift; sourceTree = "<group>"; };
 		E99C9D242C75EE9D00A2C860 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		E99C9D2C2C771C9900A2C860 /* NewChatTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChatTVC.swift; sourceTree = "<group>"; };
+		E99C9D2D2C771C9900A2C860 /* NewChatTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewChatTVC.xib; sourceTree = "<group>"; };
+		E99C9D302C7734FE00A2C860 /* ChatTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTVC.swift; sourceTree = "<group>"; };
+		E99C9D312C7734FE00A2C860 /* ChatTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTVC.xib; sourceTree = "<group>"; };
+		E99C9D352C789B0D00A2C860 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		E99C9D372C79B5E500A2C860 /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
+		E99C9D392C79B71E00A2C860 /* CreateUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,7 +394,7 @@
 			children = (
 				E96C60CC2C69E8D3000F2D38 /* APIManager.swift */,
 				E96C61022C6C9593000F2D38 /* AuthService.swift */,
-				E96C61042C6C95A3000F2D38 /* TerminalService.swift */,
+				E96C61042C6C95A3000F2D38 /* UserService.swift */,
 				E96C61062C6C95AE000F2D38 /* ExemptionService.swift */,
 			);
 			path = Services;
@@ -392,7 +404,8 @@
 			isa = PBXGroup;
 			children = (
 				E96C60DE2C6A9D03000F2D38 /* ExemptionDataModel.swift */,
-				E96C611C2C6CD630000F2D38 /* TerminalDataModel.swift */,
+				E99C9D372C79B5E500A2C860 /* SignInResponse.swift */,
+				E99C9D392C79B71E00A2C860 /* CreateUserResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -423,6 +436,7 @@
 				E96C60C92C6945CB000F2D38 /* BottomSheet */,
 				E96C60C72C68F879000F2D38 /* Splash */,
 				E96C60C52C68F73C000F2D38 /* Login */,
+				E99C9D342C789AE200A2C860 /* Register */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -438,6 +452,10 @@
 				E9332D912C73313500C25ABB /* TopTVC.xib */,
 				E9332D892C73216700C25ABB /* TruckAndTarilerTVC.xib */,
 				E9332D982C733F6400C25ABB /* MoreTVC.xib */,
+				E99C9D2C2C771C9900A2C860 /* NewChatTVC.swift */,
+				E99C9D2D2C771C9900A2C860 /* NewChatTVC.xib */,
+				E99C9D302C7734FE00A2C860 /* ChatTVC.swift */,
+				E99C9D312C7734FE00A2C860 /* ChatTVC.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -478,6 +496,14 @@
 				E96C60972C6760BA000F2D38 /* TabBarVC.swift */,
 			);
 			path = TabbarVC;
+			sourceTree = "<group>";
+		};
+		E99C9D342C789AE200A2C860 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				E99C9D352C789B0D00A2C860 /* RegisterVC.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -547,12 +573,14 @@
 			files = (
 				E9497E812C662D840050A251 /* Assets.xcassets in Resources */,
 				E9497E842C662D840050A251 /* Base in Resources */,
+				E99C9D332C7734FE00A2C860 /* ChatTVC.xib in Resources */,
 				E9332D922C73313500C25ABB /* TopTVC.xib in Resources */,
 				E9497E7C2C662D820050A251 /* Base in Resources */,
 				E96C60D42C6A8796000F2D38 /* ExemptionTVC.xib in Resources */,
 				E9332D992C733F6400C25ABB /* MoreTVC.xib in Resources */,
 				E9332D8A2C73216700C25ABB /* TruckAndTarilerTVC.xib in Resources */,
 				E9332D792C6F738A00C25ABB /* ReusableGraphView.xib in Resources */,
+				E99C9D2F2C771C9900A2C860 /* NewChatTVC.xib in Resources */,
 				E96C60D72C6A8BDA000F2D38 /* ToastView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -598,25 +626,29 @@
 				E96C60FA2C6BB0F3000F2D38 /* LogoutAlertVC.swift in Sources */,
 				E9497E752C662D820050A251 /* AppDelegate.swift in Sources */,
 				E96C61172C6CAF8B000F2D38 /* Api.swift in Sources */,
+				E99C9D322C7734FE00A2C860 /* ChatTVC.swift in Sources */,
+				E99C9D2E2C771C9900A2C860 /* NewChatTVC.swift in Sources */,
 				E96C60962C67581A000F2D38 /* UIVC+Extensions.swift in Sources */,
-				E96C611D2C6CD630000F2D38 /* TerminalDataModel.swift in Sources */,
 				E9332D722C6F2B0200C25ABB /* CountryDropDownVC.swift in Sources */,
-				E96C61052C6C95A3000F2D38 /* TerminalService.swift in Sources */,
+				E96C61052C6C95A3000F2D38 /* UserService.swift in Sources */,
 				E96C60A82C676E43000F2D38 /* SplashVC.swift in Sources */,
 				E96C60CD2C69E8D3000F2D38 /* APIManager.swift in Sources */,
 				E96C61152C6CA9FA000F2D38 /* AppInfo.swift in Sources */,
 				E9332D822C70B1A200C25ABB /* DvirVC.swift in Sources */,
 				E9332D842C70B1AB00C25ABB /* SignVC.swift in Sources */,
+				E99C9D3A2C79B71E00A2C860 /* CreateUserResponse.swift in Sources */,
 				E96C60982C6760BA000F2D38 /* TabBarVC.swift in Sources */,
 				E9332DA42C73E22300C25ABB /* CircularProgressView.swift in Sources */,
 				E9497E772C662D820050A251 /* SceneDelegate.swift in Sources */,
 				E9332D7B2C6F739900C25ABB /* ReusableGraphView.swift in Sources */,
 				E96C609A2C6760F3000F2D38 /* AppController.swift in Sources */,
 				E9332D8F2C7330E500C25ABB /* UITable+Extensions.swift in Sources */,
+				E99C9D382C79B5E500A2C860 /* SignInResponse.swift in Sources */,
 				E9332DA02C7343F800C25ABB /* AppSettingVC.swift in Sources */,
 				E96C60A62C67637C000F2D38 /* Enumerations.swift in Sources */,
 				E96C60DF2C6A9D03000F2D38 /* ExemptionDataModel.swift in Sources */,
 				E96C61032C6C9593000F2D38 /* AuthService.swift in Sources */,
+				E99C9D362C789B0D00A2C860 /* RegisterVC.swift in Sources */,
 				E99C9D252C75EE9D00A2C860 /* UIButton+Extensions.swift in Sources */,
 				E96C61002C6C81B6000F2D38 /* SearchCode.swift in Sources */,
 			);

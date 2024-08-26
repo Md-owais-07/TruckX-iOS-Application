@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         let initialVC = SplashVC() // Your initial view controller
         let navigationController = UINavigationController(rootViewController: initialVC)
+        navigationController.navigationItem.hidesBackButton = true
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         

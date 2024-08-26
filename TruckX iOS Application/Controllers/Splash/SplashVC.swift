@@ -27,6 +27,7 @@ class SplashVC: UIViewController, UIGestureRecognizerDelegate {
         let tabVC = AppController.shared.Tabbar
         let navigationController = UINavigationController(rootViewController: tabVC)
         navigationController.isNavigationBarHidden = true
+        self.navigationItem.hidesBackButton = true
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let window = windowScene.windows.first {
             window.rootViewController = navigationController
@@ -38,6 +39,7 @@ class SplashVC: UIViewController, UIGestureRecognizerDelegate {
         let loginVC = AppController.shared.Login
         let navigationController = UINavigationController(rootViewController: loginVC)
         navigationController.isNavigationBarHidden = true
+        self.navigationItem.hidesBackButton = true
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let window = windowScene.windows.first {
             window.rootViewController = navigationController
