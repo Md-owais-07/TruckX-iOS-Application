@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ExemptionDataModel: Codable {
+struct ExemptionModel: Codable {
     let message: String
     let status: Int
     let data: ExemptionData

@@ -18,7 +18,7 @@ class AppSettingVC: UIViewController {
         // Do any additional setup after loading the view.
         btnBAck.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
         
-        imgCountry.layer.cornerRadius = imgCountry.frame.size.width / 2
+        imgCountry.applyCircularCornerRadius()
         
         self.enablePopGestureRecognizer()
     }
@@ -36,6 +36,4 @@ class AppSettingVC: UIViewController {
         }
         
     }
-    
-    
 }

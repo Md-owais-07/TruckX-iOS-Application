@@ -29,11 +29,14 @@ class DocsVC: UIViewController {
 }
 
 extension DocsVC {
-    @objc func gotoDvir() {
+    @objc func gotoDvir()
+    {
         let dvirVC = AppController.shared.Dvir
         self.pushToVC(dvirVC)
     }
-    @objc func gotoSign() {
+    
+    @objc func gotoSign()
+    {
         let signVC = AppController.shared.Sign
         self.pushToVC(signVC)
     }

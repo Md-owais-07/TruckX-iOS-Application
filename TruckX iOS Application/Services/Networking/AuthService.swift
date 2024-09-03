@@ -64,7 +64,7 @@ class AuthService {
         task.resume()
     }
     
-    func createUser(fName: String, lName: String, email: String, password: String, completion: @escaping (Result<CreateUserResponse, Error>) -> Void)
+    func createUser(fName: String, lName: String, email: String, password: String, completion: @escaping (Result<CreateUserModel, Error>) -> Void)
     {
         guard let url = URL(string: "https://eld-backend.vercel.app/api/v1/admin/createUser") else {
             completion(.failure(NSError(domain: "", code: 400, userInfo: [NSLocalizedDescriptionKey: "Invalid CreateUser URL"])))
@@ -84,6 +84,8 @@ class AuthService {
         
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: body, options: [])
+            //            let requstBody = try JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
+            //            request.httpBody = requstBody
         } catch {
             completion(.failure(error))
             return
@@ -111,7 +113,7 @@ class AuthService {
             }
             
             do {
-                let createUserResponse = try JSONDecoder().decode(CreateUserResponse.self, from: data)
+                let createUserResponse = try JSONDecoder().decode(CreateUserModel.self, from: data)
                 completion(.success(createUserResponse))
             } catch {
                 print("Decoding Error: \(error)")

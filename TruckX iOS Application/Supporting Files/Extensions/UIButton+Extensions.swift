@@ -41,13 +41,39 @@ class DesignableButton: UIButton {
 }
 
 extension UIButton {
-    func setFontColor(color: UIColor) {
-       self.setTitleColor(color, for: .normal)
+    func setFontColor(color: UIColor)
+    {
+        self.setTitleColor(color, for: .normal)
     }
-    func setDisabledFontColor(color: UIColor) {
-       self.setTitleColor(color, for: .disabled)
+    func setDisabledFontColor(color: UIColor)
+    {
+        self.setTitleColor(color, for: .disabled)
     }
-    func setFont(font: UIFont) {
-       self.titleLabel?.font = font
+    func setFont(font: UIFont)
+    {
+        self.titleLabel?.font = font
+    }
+    
+    func applyTouchEffect(normalBackgroundColor: UIColor = UIColor(red: 0, green: 0.730076015, blue: 0.7659813166, alpha: 1), highlightedBackgroundColor: UIColor = UIColor(red: 0, green: 0.730076015, blue: 0.7659813166, alpha: 0.4), normalTitleColor: UIColor = .white, highlightedTitleColor: UIColor = .lightGray)
+    {
+        
+        self.backgroundColor = normalBackgroundColor
+        self.setTitleColor(normalTitleColor, for: .normal)
+        
+        self.addTarget(self, action: #selector(buttonTouchedDown), for: .touchDown)
+        self.addTarget(self, action: #selector(buttonTouchedUp), for: .touchUpInside)
+        self.addTarget(self, action: #selector(buttonTouchedUp), for: .touchDragExit)
+    }
+    
+    @objc private func buttonTouchedDown(_ sender: UIButton)
+    {
+        sender.backgroundColor = sender.backgroundColor?.withAlphaComponent(0.4)
+        sender.setTitleColor(.lightGray, for: .normal)
+    }
+    
+    @objc private func buttonTouchedUp(_ sender: UIButton)
+    {
+        sender.backgroundColor = #colorLiteral(red: 0, green: 0.730076015, blue: 0.7659813166, alpha: 1)
+        sender.setTitleColor(.white, for: .normal)
     }
 }

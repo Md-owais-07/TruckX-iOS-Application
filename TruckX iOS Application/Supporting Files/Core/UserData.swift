@@ -8,10 +8,12 @@
 import UIKit
 
 class UserData {
+    
     static let shared = UserData()
     private let userDefault = UserDefaults.standard
     
-    var isLoggedIn: Bool {
+    var isLoggedIn: Bool
+    {
         get {
             return userDefault.value(forKey: "isLoggedIn") as? Bool ?? false
         }
@@ -19,15 +21,19 @@ class UserData {
             return userDefault.set(status, forKey: "isLoggedIn")
         }
     }
-    var currentAuthKey: String {
-       get {
-          return userDefault.string(forKey: "currentAuthKey") ?? ""
-       }
-       set(data) {
-          userDefault.set(data, forKey: "currentAuthKey")
-       }
+    
+    var currentAuthKey: String
+    {
+        get {
+            return userDefault.string(forKey: "currentAuthKey") ?? ""
+        }
+        set(data) {
+            userDefault.set(data, forKey: "currentAuthKey")
+        }
     }
-    var firstName: String {
+    
+    var firstName: String
+    {
         get {
             return userDefault.string(forKey: "firstName") ?? ""
         }
@@ -35,7 +41,9 @@ class UserData {
             userDefault.set(data, forKey: "firstName")
         }
     }
-    var lastName: String {
+    
+    var lastName: String
+    {
         get {
             return userDefault.string(forKey: "lastName") ?? ""
         }
@@ -43,7 +51,9 @@ class UserData {
             userDefault.set(data, forKey: "lastName")
         }
     }
-    var emailAddress: String {
+    
+    var emailAddress: String
+    {
         get {
             return userDefault.string(forKey: "emailAddress") ?? ""
         }
@@ -51,13 +61,23 @@ class UserData {
             userDefault.set(data, forKey: "emailAddress")
         }
     }
-    var userId: String {
-       get{
-          return userDefault.string(forKey: "userId") ?? ""
-       }
-       set(data) {
-          userDefault.set(data, forKey: "userId")
-       }
-    }
     
+    var userId: String
+    {
+        get {
+            return userDefault.string(forKey: "userId") ?? ""
+        }
+        set(data) {
+            userDefault.set(data, forKey: "userId")
+        }
+    }
+    var createdAt: String
+    {
+        get {
+            return userDefault.string(forKey: "createdAt") ?? ""
+        }
+        set(data) {
+            userDefault.set(data, forKey: "createdAt")
+        }
+    }
 }

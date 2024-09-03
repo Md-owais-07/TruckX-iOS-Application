@@ -15,7 +15,7 @@ class ChatTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        imgUserProfile.layer.cornerRadius = self.imgUserProfile.frame.size.width / 2
+        imgUserProfile.applyCircularCornerRadius()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

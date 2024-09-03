@@ -21,6 +21,7 @@ class NewChatVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         btnBack.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
         
         tableView.register(cellType: ChatTVC.self, withIdentifier: "cell")
@@ -56,45 +57,15 @@ class NewChatVC: UIViewController {
     }
     
     @IBAction func searchBarAction(_ sender: UITextField) {
-        
-        //        if let searchText = sender.text, !searchText.isEmpty {
-        //                filteredNamesDictionary = namesDictionary.mapValues { $0.filter { $0.lowercased().contains(searchText.lowercased()) } }
-        //                filteredNamesDictionary = filteredNamesDictionary.filter { !$0.value.isEmpty }
-        //            } else {
-        //                filteredNamesDictionary = namesDictionary
-        //            }
-        //
-        //            sectionTitles = [String](filteredNamesDictionary.keys).sorted(by: { $0 < $1 })
-        //            tableView.reloadData()
-        
         if let searchText = sender.text?.trimmingCharacters(in: .whitespacesAndNewlines), !searchText.isEmpty {
             filteredNamesDictionary = namesDictionary.mapValues { $0.filter { $0.lowercased().contains(searchText.lowercased()) } }
             filteredNamesDictionary = filteredNamesDictionary.filter { !$0.value.isEmpty }
-            
-            // If you want to only show exact matches, use this code instead:
-            // filteredNamesDictionary = namesDictionary.mapValues { $0.filter { $0.lowercased() == searchText.lowercased() } }
         } else {
             filteredNamesDictionary = namesDictionary
         }
         
         sectionTitles = [String](filteredNamesDictionary.keys).sorted(by: { $0 < $1 })
         tableView.reloadData()
-        
-        
-        //        print("SEARCH BAR ACTION.")
-        //                if let searchText = sender.text {
-        //                    print("SEARCHE TEXT IS ", searchText)
-        //                    dataSearch = searchText.isEmpty ? namesDictionary : namesDictionary.filter { key, value in
-        //
-        //                        return value.contains { $0.capitalized.contains(searchText) }
-        //                    }
-        //                    if dataSearch.isEmpty {
-        //                        self.toastView(toastMessage: "No data found", type: "error")
-        //                    }
-        //                    tableView.reloadData()
-        //                }
-        
-        //
     }
     
 }

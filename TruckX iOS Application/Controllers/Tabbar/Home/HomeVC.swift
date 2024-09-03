@@ -29,11 +29,19 @@ class HomeVC: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var lblUserName: UILabel!
+    @IBOutlet weak var lblViolationData: UILabel!
+    @IBOutlet weak var lbldriveLeftData: UILabel!
+    @IBOutlet weak var lblShiftLeftData: UILabel!
+    @IBOutlet weak var lblCycleInHours: UILabel!
+    @IBOutlet weak var cycleInDays: UILabel!
+    @IBOutlet weak var lblPersonalUse: UILabel!
+    @IBOutlet weak var btnChangeStatus: UIButton!
     
     var buttonStyles: [UIButton: (backgroundColor: (default: UIColor, selected: UIColor), textColor: (default: UIColor, selected: UIColor))] = [:]
     
     private let loaderView = LoaderView()
     let locationManager = CLLocationManager()
+    private var preferredSheetHeight: CGFloat = 370
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +55,7 @@ class HomeVC: UIViewController {
         lblUserName.text = UserData.shared.isLoggedIn ? "\(UserData.shared.firstName) \(UserData.shared.lastName)" : "No Name Found"
         
         bottomView.isHidden = true
+        homeValueSetUp()
         
         gradientView.applyGradient()
         setupButtonStyles()
@@ -79,26 +88,47 @@ class HomeVC: UIViewController {
         }
     }
     
+    @IBAction func changeStatusAction(_ sender: Any) {
+        print("Action...")
+    }
+    
     @IBAction func hosInfoButtonAction(_ sender: Any) {
         let hosInfoVC = AppController.shared.HosInformation
         self.pushToVC(hosInfoVC)
     }
     
     @IBAction func chartButtonAction(_ sender: Any) {
-            let chartDetailsVC = AppController.shared.Logs
-            self.pushToVCWithHideTabBar(chartDetailsVC)
+        let chartDetailsVC = AppController.shared.Logs
+        self.pushToVCWithHideTabBar(chartDetailsVC)
     }
     
+    @IBAction func btnSheet(_ sender: Any) {
+        let vc = AppController.shared.Bottomvc
+        preferredSheetHeight = 370
+        let navigationController = UINavigationController(rootViewController: vc)
+        navigationController.modalPresentationStyle = .custom
+        navigationController.transitioningDelegate = self
+        
+        present(navigationController, animated: true)
+    }
 }
 
 
+extension HomeVC: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return CustomPresentationController(presentedViewController: presented, presenting: presenting, preferredHeight: preferredSheetHeight)
+    }
+}
+
 extension HomeVC {
-    @objc func pushToNotificationVC() {
+    @objc func pushToNotificationVC()
+    {
         let notificationsVC = AppController.shared.Notifications
         self.pushToVCWithHideTabBar(notificationsVC)
     }
     
-    private func setupButtonStyles() {
+    private func setupButtonStyles()
+    {
         buttonStyles = [
             btnD: (
                 backgroundColor: (default: #colorLiteral(red: 0.8278301358, green: 0.948792398, blue: 0.9425254464, alpha: 1),
@@ -127,29 +157,54 @@ extension HomeVC {
         ]
     }
     
-    private func deselectAllButtons() {
+    private func deselectAllButtons()
+    {
         for button in [btnD, btnOn, btnOF, btnSB] {
             button?.isSelected = false
             updateButtonAppearance(button!)
         }
     }
     
-    private func updateButtonAppearance(_ button: UIButton) {
+    private func updateButtonAppearance(_ button: UIButton)
+    {
         guard let styles = buttonStyles[button] else { return }
         button.backgroundColor = button.isSelected ? styles.backgroundColor.selected : styles.backgroundColor.default
         button.setTitleColor(button.isSelected ? styles.textColor.selected : styles.textColor.default, for: .normal)
     }
     
-    private func updateAllButtonAppearances() {
+    private func updateAllButtonAppearances()
+    {
         for button in [btnD, btnOn, btnOF, btnSB] {
             updateButtonAppearance(button!)
         }
     }
     
-    func fetchLocation() {
+    func fetchLocation()
+    {
         LocationManager.shared.didUpdateLocation = { [weak self] locationString in
             DispatchQueue.main.async {
                 self?.lblLocation.text = locationString
+            }
+        }
+    }
+    
+    func homeValueSetUp()
+    {
+        APIManager.shared.userService.getUserProfile { response in
+            DispatchQueue.main.async {
+                switch response {
+                case.success(let profileData):
+                    DispatchQueue.main.async {
+                        self.lblViolationData.text = "\(profileData.data.violations)"
+                        self.lbldriveLeftData.text = "\(profileData.data.driveLeft):00"
+                        self.lblShiftLeftData.text = "\(profileData.data.shiftLeft):00"
+                        self.lblCycleInHours.text = "\(profileData.data.cycleInHrs):00"
+                        self.cycleInDays.text = "\(profileData.data.cycleInDays) Days"
+                        self.lblPersonalUse.text = "\(profileData.data.useFor) Use"
+                    }
+                case.failure(let err):
+                    print(err.localizedDescription)
+                }
             }
         }
     }

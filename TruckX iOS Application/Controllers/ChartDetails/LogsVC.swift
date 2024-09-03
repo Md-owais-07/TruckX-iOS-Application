@@ -27,6 +27,7 @@ class LogsVC: UIViewController {
         btnDocs.addTarget(self, action: #selector(gotoDocs), for: .touchUpInside)
         btnDvir.addTarget(self, action: #selector(gotoDvir), for: .touchUpInside)
         btnSign.addTarget(self, action: #selector(gotoSign), for: .touchUpInside)
+        
         seperatorViewColor()
         self.enablePopGestureRecognizer()
     }
@@ -34,19 +35,26 @@ class LogsVC: UIViewController {
 
 
 extension LogsVC {
-    @objc func gotoDocs() {
+    @objc func gotoDocs()
+    {
         let docsVC = AppController.shared.Docs
         self.pushToVC(docsVC)
     }
-    @objc func gotoDvir() {
+    
+    @objc func gotoDvir()
+    {
         let dvirVC = AppController.shared.Dvir
         self.pushToVC(dvirVC)
     }
-    @objc func gotoSign() {
+    
+    @objc func gotoSign()
+    {
         let signVC = AppController.shared.Sign
         self.pushToVC(signVC)
     }
-    func seperatorViewColor() {
+    
+    func seperatorViewColor()
+    {
         seperatorView.backgroundColor = UIColor.systemGray6.withAlphaComponent(0.3)
         topSeperater.backgroundColor = UIColor.systemGray6.withAlphaComponent(0.3)
     }

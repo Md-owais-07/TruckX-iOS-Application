@@ -27,10 +27,12 @@ class DvirVC: UIViewController {
         
         self.enablePopGestureRecognizer()
     }
-    
-    @objc func gotoSign() {
+}
+
+extension DvirVC {
+    @objc func gotoSign()
+    {
         let signVC = AppController.shared.Sign
         self.navigationController?.pushViewController(signVC, animated: true)
     }
-
 }

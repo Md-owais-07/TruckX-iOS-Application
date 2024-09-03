@@ -28,6 +28,7 @@ class LoginVC: UIViewController {
         
         setUpNavigation()
         setupLoader()
+        btnLogin.applyTouchEffect()
         
         self.HideKeyboardWhenTapAround()
     }
@@ -67,12 +68,25 @@ class LoginVC: UIViewController {
                     DispatchQueue.main.async {
                         UserData.shared.isLoggedIn = true
                         UserData.shared.currentAuthKey = "\(response.accessToken)"
-                        UserData.shared.firstName = response.data.firstName?.capitalized ?? ""
-                        UserData.shared.lastName = response.data.lastName?.capitalized ?? ""
-                        UserData.shared.emailAddress = response.data.email
                         print("SIGN IN USER RESPONSE IS: ", response)
-                        self.toastView(toastMessage: "Login Success!!", type: "success")
-                        self.navigateToHome()
+                        
+                        APIManager.shared.userService.getUserProfile { responseProfile in
+                            switch responseProfile {
+                            case.success(let userProfile):
+                                print("User Profile: \(userProfile)")
+                                DispatchQueue.main.async {
+                                    UserData.shared.firstName = response.data.firstName?.capitalized ?? ""
+                                    UserData.shared.lastName = response.data.lastName?.capitalized ?? ""
+                                    UserData.shared.emailAddress = response.data.email
+                                    UserData.shared.userId = userProfile.data.id
+                                    UserData.shared.createdAt = userProfile.data.createdAt
+                                    self.toastView(toastMessage: "Login Success!!", type: "success")
+                                    self.navigateToHome()
+                                }
+                            case.failure(let error):
+                                print("Failed to fetch user profile: \(error.localizedDescription)")
+                            }
+                        }
                     }
                     print("Login Success!")
                 case .failure(let error):

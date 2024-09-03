@@ -18,19 +18,16 @@ class LogoutAlertVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        customView.alpha = 0.8
-        mainView.alpha = 1.0
         
         setAttributedText()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
-    
     @IBAction func cancelButtonAction(_ sender: Any) {
-        self.dismiss(animated: true)
+        UIView.animate(withDuration: 0.4, animations: {
+            self.view.frame.origin.y = self.view.frame.size.height
+        }, completion: { _ in
+            self.dismiss(animated: true, completion: nil)
+        })
     }
     
     @IBAction func okButtonAction(_ sender: Any) {
@@ -63,10 +60,10 @@ extension LogoutAlertVC {
             .font: UIFont.systemFont(ofSize: 15, weight: .regular),
             .foregroundColor: #colorLiteral(red: 0.5333333611, green: 0.5333333611, blue: 0.5333333611, alpha: 1).withAlphaComponent(50)
         ]
-        var attributeString = NSMutableAttributedString(
+        let attributeString = NSMutableAttributedString(
             string: "TrucX app ?",
             attributes: boldAttributes)
-        var attributeString1 = NSMutableAttributedString(
+        let attributeString1 = NSMutableAttributedString(
             string: "Are you sure you want to log out of ",
             attributes: regularAttributes)
         attributeString1.append(attributeString)

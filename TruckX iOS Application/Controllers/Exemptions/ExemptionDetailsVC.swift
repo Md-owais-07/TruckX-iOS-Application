@@ -21,20 +21,9 @@ class ExemptionDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
-        exemptionImage.layer.cornerRadius = exemptionImage.frame.size.width / 2
         
-//        if let imgUrlString = image, let imgUrl = URL(string: imgUrlString)
-//        {
-//            // Start an asynchronous task to download the image
-//            downloadImage(from: imgUrl) { (image) in
-//                DispatchQueue.main.async
-//                {
-//                    self.exemptionImage.image = image
-//                }
-//            }
-//        }
+        exemptionImage.applyCircularCornerRadius()
         
         self.enablePopGestureRecognizer()
         

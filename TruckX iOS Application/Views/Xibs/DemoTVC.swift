@@ -1,15 +1,15 @@
 //
-//  MoreTVC.swift
+//  DemoTVC.swift
 //  TruckX iOS Application
 //
-//  Created by Owais on 19/08/24.
+//  Created by Owais on 27/08/24.
 //
 
 import UIKit
 
-class MoreTVC: UITableViewCell {
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var lblSubTitle: UILabel!
+class DemoTVC: UITableViewCell {
+    @IBOutlet weak var lbl1: UILabel!
+    @IBOutlet weak var lbl2: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,5 +21,5 @@ class MoreTVC: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }

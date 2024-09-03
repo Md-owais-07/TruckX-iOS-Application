@@ -27,6 +27,9 @@ class MoreVC: UIViewController {
     @IBOutlet weak var imgRotation: UIImageView!
     @IBOutlet weak var lblUserName: UILabel!
     
+    private var preferredSheetHeight: CGFloat = 246
+    private var isLandscape = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -45,24 +48,13 @@ class MoreVC: UIViewController {
     }
     
     @IBAction func logoutButtonAction(_ sender: Any) {
-        DispatchQueue.main.async {
-            let logoutAlert = AppController.shared.LogoutAlert
-//            logoutAlert.modalTransitionStyle = .crossDissolve
-            logoutAlert.modalPresentationStyle = .overCurrentContext
-//            self.present(logoutAlert, animated: true)
-            
-            let winS = UIApplication.shared.connectedScenes.first as? UIWindowScene
-            let rootV = winS?.windows.first(where: { $0.isKeyWindow
-            })?.rootViewController
-            rootV?.present(logoutAlert, animated: true)
-            
-//            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-//               let rootVC = windowScene.windows.first(where: { $0.isKeyWindow })?.rootViewController {
-//                rootVC.present(logoutAlert, animated: false, completion: nil)
-//            } else {
-//                print("Error: No active window found.")
-//            }
-        }
+        let vc = AppController.shared.LogoutAlert
+        preferredSheetHeight = UIScreen.main.bounds.height
+        let navigationController = UINavigationController(rootViewController: vc)
+        navigationController.modalPresentationStyle = .custom
+        navigationController.transitioningDelegate = self
+        
+        present(navigationController, animated: true)
     }
     
     @IBAction func exemptionButtonAction(_ sender: Any) {
@@ -72,23 +64,13 @@ class MoreVC: UIViewController {
     }
     
     @IBAction func dotInspectionButtonTapped(_ sender: Any) {
-        DispatchQueue.main.async {
-            let bottomSheet = AppController.shared.BottomSheet
-//            bottomSheet.modalTransitionStyle = .crossDissolve
-            bottomSheet.modalPresentationStyle = .overCurrentContext
-            let winS = UIApplication.shared.connectedScenes.first as? UIWindowScene
-            let rootV = winS?.windows.first(where: { $0.isKeyWindow
-            })?.rootViewController
-            rootV?.present(bottomSheet, animated: true)
-            
-            
-//            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-//               let rootVC = windowScene.windows.first(where: { $0.isKeyWindow })?.rootViewController {
-//                rootVC.present(bottomSheet, animated: true, completion: nil)
-//            } else {
-//                print("Error: No active window found.")
-//            }
-        }
+        let vc = AppController.shared.BottomSheet
+        preferredSheetHeight = 246
+        let navigationController = UINavigationController(rootViewController: vc)
+        navigationController.modalPresentationStyle = .custom
+        navigationController.transitioningDelegate = self
+        
+        present(navigationController, animated: true)
     }
     
     @IBAction func truckandTrailerButtonAction(_ sender: Any) {
@@ -116,15 +98,24 @@ class MoreVC: UIViewController {
     }
     
     @IBAction func rotateButtonAction(_ sender: UIButton) {
-        sender.isSelected.toggle()
-        if sender.isSelected {
+        isLandscape.toggle()
+        
+        if isLandscape {
             self.imgRotation.image = UIImage(named: "Vector (18)")
+            OrientationManager.shared.forceLandscape()
         } else {
             self.imgRotation.image = UIImage(named: "Vector (3)")
+            OrientationManager.shared.forcePortrait()
         }
     }
 }
 
+
+extension MoreVC: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return CustomPresentationController(presentedViewController: presented, presenting: presenting, preferredHeight: preferredSheetHeight)
+    }
+}
 
 extension MoreVC {
     func applyViewStyle()

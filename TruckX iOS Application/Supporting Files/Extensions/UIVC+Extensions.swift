@@ -8,26 +8,31 @@
 import UIKit
 
 extension UIViewController: UITextFieldDelegate {
-    private var loaderView: LoaderView {
+    private var loaderView: LoaderView
+    {
         return LoaderView.shared
     }
     
-    func setupLoader() {
+    func setupLoader()
+    {
         loaderView.frame = view.bounds
         loaderView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(loaderView)
         loaderView.isHidden = true
     }
     
-    func showLoader() {
+    func showLoader()
+    {
         loaderView.startLoading()
     }
     
-    func hideLoader() {
+    func hideLoader()
+    {
         loaderView.stopLoading()
     }
     
-    @objc func reloadView() {
+    @objc func reloadView()
+    {
         UIView.animate(withDuration: 1.0) {
             self.showLoader()
             self.view.alpha = 0.9
@@ -38,42 +43,56 @@ extension UIViewController: UITextFieldDelegate {
         }
     }
     
-    func HideKeyboardWhenTapAround() {
+    func HideKeyboardWhenTapAround()
+    {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
     
-    func enablePopGestureRecognizer() {
+    func enablePopGestureRecognizer()
+    {
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
-    func disablePopGestureRecognizer() {
+    func disablePopGestureRecognizer()
+    {
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
-    func pushToVC<T: UIViewController>(_ viewController: T, animated: Bool = true) {
+    func pushToVC<T: UIViewController>(_ viewController: T, animated: Bool = true)
+    {
         self.navigationController?.pushViewController(viewController, animated: animated)
     }
     
-    func pushToVCWithHideTabBar<T: UIViewController>(_ viewController: T, animated: Bool = true, hidesBottomBar: Bool = true) {
+    func pushToVCWithHideTabBar<T: UIViewController>(_ viewController: T, animated: Bool = true, hidesBottomBar: Bool = true)
+    {
         viewController.hidesBottomBarWhenPushed = hidesBottomBar
         self.navigationController?.pushViewController(viewController, animated: animated)
     }
     
-    @objc func popToVC() {
+    @objc func popToVC()
+    {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @objc func popToRootView() {
+    @objc func popToRootView()
+    {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
-    @objc func dismissKeyboard() {
+    @objc func dismissKeyboard()
+    {
         self.view.endEditing(true)
     }
     
-    func navigateToHome() {
+    func dimmingViewTapped2()
+    {
+        presentedViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    func navigateToHome()
+    {
         let tabBarController = AppController.shared.Tabbar
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let window = windowScene.windows.first {
@@ -83,34 +102,48 @@ extension UIViewController: UITextFieldDelegate {
         }
     }
     
-    func togglePasswordVisibility(for textField: UITextField, button: UIButton, isPasswordVisible: inout Bool, visibleImageName: String, hiddenImageName: String) {
+    @objc func dismissView() 
+    {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.frame.origin.y = self.view.frame.size.height
+        }, completion: { _ in
+            self.dismiss(animated: true, completion: nil)
+        })
+    }
+    
+    func togglePasswordVisibility(for textField: UITextField, button: UIButton, isPasswordVisible: inout Bool, visibleImageName: String, hiddenImageName: String)
+    {
         isPasswordVisible.toggle()
         let imageName = isPasswordVisible ? visibleImageName : hiddenImageName
         button.setImage(UIImage(systemName: imageName), for: .normal)
         textField.isSecureTextEntry = !isPasswordVisible
     }
     
-    func checkMailIdFormat(string: String) -> Bool{
+    func checkMailIdFormat(string: String) -> Bool
+    {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
         let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegex)
         return emailTest.evaluate(with: string)
     }
     
-    func toggleButtonSelection(_ button: UIButton, imageView: UIImageView, selectedImage: UIImage, deselectedImage: UIImage) {
+    func toggleButtonSelection(_ button: UIButton, imageView: UIImageView, selectedImage: UIImage, deselectedImage: UIImage)
+    {
         button.isSelected.toggle()
         imageView.image = button.isSelected ? selectedImage : deselectedImage
     }
     
-    func applyShadow(to view: UIView) {
-        view.layer.shadowColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 0.25).cgColor // #EDEDED with 25% opacity
+    func applyShadow(to view: UIView)
+    {
+        view.layer.shadowColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 0.25).cgColor
         view.layer.shadowOpacity = 1
-        view.layer.shadowOffset = CGSize(width: 0, height: 12) // X: 0, Y: 12
+        view.layer.shadowOffset = CGSize(width: 0, height: 12)
         view.layer.shadowRadius = 12 // Blur: 12
         view.layer.shadowPath = UIBezierPath(rect: view.bounds).cgPath
         view.layer.masksToBounds = false
     }
     
-    func dismiss(completion:(()->())? = nil) {
+    func dismiss(completion:(()->())? = nil)
+    {
         UIView.animate(withDuration: 0.3, animations: {
             self.view.alpha = 0
             self.view.alpha = 0
@@ -126,7 +159,8 @@ extension UIViewController: UITextFieldDelegate {
         }
     }
     
-    func styleView(_ view: UIView, cornerRadius: CGFloat, borderWidth: CGFloat? = nil, borderColor: UIColor? = nil) {
+    func styleView(_ view: UIView, cornerRadius: CGFloat, borderWidth: CGFloat? = nil, borderColor: UIColor? = nil)
+    {
         view.layer.cornerRadius = cornerRadius
         if let borderWidth = borderWidth {
             view.layer.borderWidth = borderWidth
@@ -136,7 +170,8 @@ extension UIViewController: UITextFieldDelegate {
         }
     }
     
-    func setupLabel(_ label: UILabel) {
+    func setupLabel(_ label: UILabel)
+    {
         let text = "by using xyz-product I agree to\nTerms & Conditions and Privacy Policy"
         let attributedString = NSMutableAttributedString(string: text)
         
@@ -152,7 +187,8 @@ extension UIViewController: UITextFieldDelegate {
         label.attributedText = attributedString
     }
     
-    func updateLabelHeight(_ label: UILabel) {
+    func updateLabelHeight(_ label: UILabel)
+    {
         let maxSize = CGSize(width: label.frame.width, height: CGFloat.greatestFiniteMagnitude)
         let textHeight = label.sizeThatFits(maxSize).height
         
@@ -166,7 +202,8 @@ extension UIViewController: UITextFieldDelegate {
         }
     }
     
-    func downloadImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
+    func downloadImage(from url: URL, completion: @escaping (UIImage?) -> Void)
+    {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data, error == nil else {
                 completion(nil)
@@ -177,7 +214,8 @@ extension UIViewController: UITextFieldDelegate {
         }.resume()
     }
     
-    func toastView(toastMessage: String, visibleDuration: TimeInterval = 3,type: String) {
+    func toastView(toastMessage: String, visibleDuration: TimeInterval = 3,type: String)
+    {
         DispatchQueue.main.async {
             let status = Network.isAvailable()
             let message = !status ? "No Internet Connection" : toastMessage

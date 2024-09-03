@@ -21,7 +21,7 @@ class NewChatTVC: UITableViewCell {
         lblMessageNotifications.isHidden = false
         imgMessageCount.isHidden = false
         
-        imgProfile.layer.cornerRadius = self.imgProfile.frame.size.width / 2
+        imgProfile.applyCircularCornerRadius()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

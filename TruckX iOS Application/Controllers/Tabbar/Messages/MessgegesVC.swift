@@ -29,12 +29,6 @@ class MessgegesVC: UIViewController {
         super.viewDidAppear(animated)
         disablePopGestureRecognizer()
     }
-    
-    @objc func pushToVC() {
-        let newChatVC = AppController.shared.NewChat
-        newChatVC.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(newChatVC, animated: true)
-    }
 
 }
 
@@ -46,6 +40,12 @@ extension MessgegesVC {
         btnAdd.layer.shadowOpacity = 0.6
         btnAdd.layer.shadowOffset = CGSize.zero
         btnAdd.layer.shadowColor = UIColor.lightGray.cgColor
+    }
+    
+    @objc func pushToVC()
+    {
+        let newChatVC = AppController.shared.NewChat
+        self.pushToVCWithHideTabBar(newChatVC)
     }
 }
 

@@ -19,7 +19,4 @@ class APIManager {
         userService = UserService()
         exemptionService = ExemptionService()
     }
-    
 }
-
-

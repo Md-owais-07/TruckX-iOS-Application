@@ -48,30 +48,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        // Handle changes in authorization status if necessary
         requestLocation()
     }
-    
-//    private func reverseGeocode(location: CLLocation) {
-//        geocoder.reverseGeocodeLocation(location) { [weak self] placemarks, error in
-//            if let error = error {
-//                print("Geocoding error: \(error.localizedDescription)")
-//                return
-//            }
-//            
-//            guard let placemark = placemarks?.first else {
-//                print("No placemarks found.")
-//                return
-//            }
-//            
-//            let country = placemark.country ?? "Unknown country"
-//            let city = placemark.locality ?? "Unknown city"
-//            let area = placemark.subLocality ?? "Unknown area"
-//            let locationString = "Country: \(country), City: \(city), Area: \(area)"
-//            
-//            self?.didUpdateLocation?(locationString)
-//        }
-//    }
     
     private func reverseGeocode(location: CLLocation) {
         geocoder.reverseGeocodeLocation(location) { [weak self] placemarks, error in
@@ -90,22 +68,19 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
                 }
                 return
             }
-
+            
             guard let placemark = placemarks?.first else {
                 print("No placemarks found.")
                 return
             }
-
+            
             let country = placemark.country ?? "Unknown country"
             let city = placemark.locality ?? "Unknown city"
             let area = placemark.subLocality ?? "Unknown area"
-//            let locationString = "Country: \(country), City: \(city), Area: \(area)"
+            //            let locationString = "Country: \(country), City: \(city), Area: \(area)"
             let locationString2 = "\(area), \(city), \(country)"
-
+            
             self?.didUpdateLocation?(locationString2)
         }
     }
-
 }
-
-

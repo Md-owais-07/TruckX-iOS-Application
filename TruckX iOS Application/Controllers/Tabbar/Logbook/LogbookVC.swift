@@ -17,6 +17,12 @@ class LogbookVC: UIViewController {
     @IBOutlet weak var btnSB: DesignableButton!
     @IBOutlet weak var reusableView: ReusableGraphView!
     @IBOutlet weak var lblUserName: UILabel!
+    @IBOutlet weak var lblViolationData: UILabel!
+    @IBOutlet weak var lblDriveLeftData: UILabel!
+    @IBOutlet weak var lblShiftleftData: UILabel!
+    @IBOutlet weak var lblCycleInHrs: UILabel!
+    @IBOutlet weak var lblCycleInDays: UILabel!
+    @IBOutlet weak var lblPersonalUse: UILabel!
     
     var buttonStyles: [UIButton: (backgroundColor: (default: UIColor, selected: UIColor), textColor: (default: UIColor, selected: UIColor))] = [:]
     
@@ -32,6 +38,7 @@ class LogbookVC: UIViewController {
         
         gradientView.applyGradient()
         updateAllButtonAppearances()
+        logbookValueSetUp()
         setupButtonStyles()
         setupLoader()
     }
@@ -39,11 +46,6 @@ class LogbookVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         disablePopGestureRecognizer()
-    }
-    
-    @objc func ddd() {
-        let chartDetailsVC = AppController.shared.Logs
-        self.pushToVCWithHideTabBar(chartDetailsVC)
     }
     
     @IBAction func dropDpwnButtonAction(_ sender: Any) {
@@ -70,13 +72,16 @@ class LogbookVC: UIViewController {
     }
 }
 
+
 extension LogbookVC {
-    @objc func pushToVC() {
+    @objc func pushToVC()
+    {
         let VC = AppController.shared.Notifications
         self.pushToVCWithHideTabBar(VC)
     }
     
-    private func setupButtonStyles() {
+    private func setupButtonStyles()
+    {
         buttonStyles = [
             btnD: (
                 backgroundColor: (default: #colorLiteral(red: 0.8278301358, green: 0.948792398, blue: 0.9425254464, alpha: 1),
@@ -105,22 +110,46 @@ extension LogbookVC {
         ]
     }
     
-    private func deselectAllButtons() {
+    private func deselectAllButtons()
+    {
         for button in [btnD, btnOn, btnOf, btnSB] {
             button?.isSelected = false
             updateButtonAppearance(button!)
         }
     }
     
-    private func updateButtonAppearance(_ button: UIButton) {
+    private func updateButtonAppearance(_ button: UIButton)
+    {
         guard let styles = buttonStyles[button] else { return }
         button.backgroundColor = button.isSelected ? styles.backgroundColor.selected : styles.backgroundColor.default
         button.setTitleColor(button.isSelected ? styles.textColor.selected : styles.textColor.default, for: .normal)
     }
     
-    private func updateAllButtonAppearances() {
+    private func updateAllButtonAppearances()
+    {
         for button in [btnD, btnOn, btnOf, btnSB] {
             updateButtonAppearance(button!)
+        }
+    }
+    
+    func logbookValueSetUp()
+    {
+        APIManager.shared.userService.getUserProfile { response in
+            DispatchQueue.main.async {
+                switch response {
+                case.success(let profileData):
+                    DispatchQueue.main.async {
+                        self.lblViolationData.text = "\(profileData.data.violations)"
+                        self.lblDriveLeftData.text = "\(profileData.data.driveLeft):00"
+                        self.lblShiftleftData.text = "\(profileData.data.shiftLeft):00"
+                        self.lblCycleInHrs.text = "\(profileData.data.cycleInHrs):00"
+                        self.lblCycleInDays.text = "\(profileData.data.cycleInDays) Days"
+                        self.lblPersonalUse.text = "\(profileData.data.useFor) Use"
+                    }
+                case.failure(let err):
+                    print(err.localizedDescription)
+                }
+            }
         }
     }
 }

@@ -31,6 +31,8 @@ class RegisterVC: UIViewController {
         
         PopGestureRecognizerDelegate()
         textFieldDelegate()
+        btnRegister.applyTouchEffect()
+        
         self.setupLoader()
         self.HideKeyboardWhenTapAround()
         self.enablePopGestureRecognizer()
@@ -104,6 +106,7 @@ class RegisterVC: UIViewController {
     
 }
 
+
 extension RegisterVC: UIGestureRecognizerDelegate {
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
@@ -125,27 +128,30 @@ extension RegisterVC: UIGestureRecognizerDelegate {
         }
     }
     
-    func textFieldDelegate() {
+    func textFieldDelegate()
+    {
         fNameTextField.delegate = self
         lNameTextField.delegate = self
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
     
-    private func handleAPIError(_ error: Error) {
+    private func handleAPIError(_ error: Error)
+    {
         if let nsError = error as NSError? {
             if nsError.code == 401 {
                 self.toastView(toastMessage: "Invalid email or password.", type: "error")
             } else if nsError.code == 404 {
                 self.toastView(toastMessage: "Invalid email or password.", type: "error")
             } else if nsError.code == 409 {
-                self.toastView(toastMessage: "User already exist, Please login.", type: "error")
+                self.toastView(toastMessage: "User already exists.", type: "error")
             }
         }
         print("Error: \(error.localizedDescription)")
     }
     
-    @objc func gereeBtnToggle() {
+    @objc func gereeBtnToggle()
+    {
         self.toggleButtonSelection(
             btnRadio,
             imageView: imgCheckStatus,

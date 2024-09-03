@@ -44,11 +44,20 @@ class AppStatusBar: UIView {
 
 
 extension UIView {
-    func setCornerRadius(radius: CGFloat) {
-       self.layer.cornerRadius = radius
+    func setCornerRadius(radius: CGFloat)
+    {
+        self.layer.cornerRadius = radius
     }
-    func setBackgroundColor2(color: UIColor) {
-       self.backgroundColor = color
+    
+    func setBackgroundColor2(color: UIColor)
+    {
+        self.backgroundColor = color
+    }
+    
+    func applyCircularCornerRadius()
+    {
+        self.layer.cornerRadius = self.frame.size.width / 2
+        self.layer.masksToBounds = true
     }
     
     func setShadow(radius: CGFloat = 10, opacity: Float = 0.8, color: UIColor = UIColor.systemGray5, offset: CGSize = CGSize.zero, cornerRadius: CGFloat = 16)
@@ -60,12 +69,13 @@ extension UIView {
         self.layer.shadowColor = color.cgColor
     }
     
-    func setBackgroundColor(color: UIColor) {
+    func setBackgroundColor(color: UIColor)
+    {
         self.backgroundColor = color
     }
     
-    func applyShadowStyle(cornerRadius: CGFloat, shadowOpacity: Float, shadowRadius: CGFloat = 8.0, shadowOffset: CGSize = CGSize(width: 0, height: 12), shadowColor: UIColor) {
-        
+    func applyShadowStyle(cornerRadius: CGFloat, shadowOpacity: Float, shadowRadius: CGFloat = 8.0, shadowOffset: CGSize = CGSize(width: 0, height: 12), shadowColor: UIColor)
+    {
         self.layer.cornerRadius = cornerRadius
         self.layer.masksToBounds = false
         
@@ -84,7 +94,8 @@ extension UIView {
         self.insertSubview(blurEffectView, at: 0)
     }
     
-    func applyGradient() {
+    func applyGradient()
+    {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [
             UIColor(red: 25/255.0, green: 86/255.0, blue: 91/255.0, alpha: 1).cgColor,
@@ -97,7 +108,8 @@ extension UIView {
         layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    func applyGradient2() {
+    func applyGradient2()
+    {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [
             UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1).cgColor, // rgba(255, 255, 255, 1)
@@ -110,13 +122,15 @@ extension UIView {
         layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    func customizeSearchBar() {
+    func customizeSearchBar()
+    {
         self.layer.cornerRadius = 20
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.darkGray.withAlphaComponent(80).cgColor
     }
     
-    func applyFinalStyle(cornerRadius: CGFloat, borderWidth: CGFloat? = nil, borderColor: UIColor? = nil) {
+    func applyFinalStyle(cornerRadius: CGFloat, borderWidth: CGFloat? = nil, borderColor: UIColor? = nil)
+    {
         self.layer.cornerRadius = cornerRadius
         if let borderWidth = borderWidth {
             self.layer.borderWidth = borderWidth
@@ -126,4 +140,3 @@ extension UIView {
         }
     }
 }
-

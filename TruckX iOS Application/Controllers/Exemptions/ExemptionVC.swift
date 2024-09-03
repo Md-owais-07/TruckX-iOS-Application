@@ -16,9 +16,9 @@ class ExemptionVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        tableView.register(UINib(nibName: "ExemptionTVC", bundle: nil), forCellReuseIdentifier: "cell")
+        
+        tableView.register(cellType: ExemptionTVC.self, withIdentifier: "cell")
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
 
@@ -29,25 +29,6 @@ class ExemptionVC: UIViewController {
         setupLoader()
         fetchExemptionData()
     }
-    
-    func fetchExemptionData() {
-        showLoader()
-        APIManager.shared.exemptionService.getExemptionData { result in
-            DispatchQueue.main.async {
-                self.hideLoader()
-                switch result {
-                case .success(let apiResponse):
-                    self.exemptionsData = apiResponse.data.docs
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                case .failure(let error):
-                    print("Error fetching exemptions: \(error)")
-                }
-            }
-        }
-    }
-    
 }
 
 extension ExemptionVC: UITableViewDelegate, UITableViewDataSource {
@@ -70,5 +51,25 @@ extension ExemptionVC: UITableViewDelegate, UITableViewDataSource {
         detailsVC.image = exemptionsData[indexPath.row].image
         self.navigationController?.pushViewController(detailsVC, animated: true)
     }
-    
+}
+
+extension ExemptionVC {
+    func fetchExemptionData()
+    {
+        showLoader()
+        APIManager.shared.exemptionService.getExemptionData { result in
+            DispatchQueue.main.async {
+                self.hideLoader()
+                switch result {
+                case .success(let apiResponse):
+                    self.exemptionsData = apiResponse.data.docs
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                case .failure(let error):
+                    print("Error fetching exemptions: \(error)")
+                }
+            }
+        }
+    }
 }
