@@ -11,6 +11,9 @@ class ReusableGraphView: UIView {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var signView: UIView!
     @IBOutlet weak var btnGotoDetails: UIButton!
+    @IBOutlet weak var mainHeaderView: UIView!
+    @IBOutlet weak var spaceView: UIView!
+    @IBOutlet weak var mainGraphView: UIView!
     
     weak var viewController: UIViewController?
     

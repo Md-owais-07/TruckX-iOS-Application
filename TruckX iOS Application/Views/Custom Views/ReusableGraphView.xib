@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,8 +11,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReusableGraphView" customModule="TruckX_iOS_Application" customModuleProvider="target">
             <connections>
                 <outlet property="btnGotoDetails" destination="a33-P3-krj" id="nGj-ln-8cS"/>
+                <outlet property="mainGraphView" destination="H0v-Rw-dwX" id="mKB-8s-GZF"/>
+                <outlet property="mainHeaderView" destination="gVO-IE-RWd" id="pz7-QM-3GL"/>
                 <outlet property="mainView" destination="gZP-zP-YVc" id="dID-30-xGJ"/>
                 <outlet property="signView" destination="Olz-AC-ZnS" id="hHd-fi-M1n"/>
+                <outlet property="spaceView" destination="ZHW-A7-IGE" id="sne-cR-cUl"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -48,7 +51,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dB4-xI-77f">
-                                                    <rect key="frame" x="68" y="8.9999999999999982" width="20" height="18.666666666666664"/>
+                                                    <rect key="frame" x="68" y="8.6666666666666661" width="20" height="18.666666666666671"/>
                                                     <color key="tintColor" red="0.93725490570000003" green="0.61960786580000005" blue="0.43921568989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="FEb-jn-tA5"/>
@@ -106,8 +109,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0v-Rw-dwX">
                             <rect key="frame" x="0.0" y="46" width="393" height="165"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame 427318611" translatesAutoresizingMaskIntoConstraints="NO" id="k0p-hs-1u7">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Graph-img" translatesAutoresizingMaskIntoConstraints="NO" id="k0p-hs-1u7">
+                                    <rect key="frame" x="40" y="0.0" width="313" height="150"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </imageView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37g-e1-mOg">
@@ -145,10 +148,17 @@
                                 <constraint firstAttribute="bottom" secondItem="mVP-OL-Qe7" secondAttribute="bottom" id="XcX-vC-NUk"/>
                                 <constraint firstItem="mVP-OL-Qe7" firstAttribute="top" secondItem="H0v-Rw-dwX" secondAttribute="top" id="aSn-Jh-YYV"/>
                                 <constraint firstAttribute="trailing" secondItem="mVP-OL-Qe7" secondAttribute="trailing" id="e7q-Ht-sPV"/>
-                                <constraint firstAttribute="trailing" secondItem="k0p-hs-1u7" secondAttribute="trailing" id="eXJ-8V-PsP"/>
-                                <constraint firstItem="k0p-hs-1u7" firstAttribute="leading" secondItem="H0v-Rw-dwX" secondAttribute="leading" id="hpG-dO-gmx"/>
+                                <constraint firstAttribute="trailing" secondItem="k0p-hs-1u7" secondAttribute="trailing" constant="40" id="eXJ-8V-PsP"/>
+                                <constraint firstItem="k0p-hs-1u7" firstAttribute="leading" secondItem="H0v-Rw-dwX" secondAttribute="leading" constant="40" id="hpG-dO-gmx"/>
                                 <constraint firstAttribute="height" constant="165" id="xsD-5m-Wq0"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="subviews">
+                                    <exclude reference="37g-e1-mOg"/>
+                                    <exclude reference="mVP-OL-Qe7"/>
+                                    <exclude reference="DZB-Wz-Jri"/>
+                                </mask>
+                            </variation>
                         </view>
                     </subviews>
                     <constraints>
@@ -178,7 +188,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Frame 427318611" width="310" height="120"/>
+        <image name="Graph-img" width="247" height="106"/>
         <image name="info.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

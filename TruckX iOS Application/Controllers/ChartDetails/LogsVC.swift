@@ -19,6 +19,7 @@ class LogsVC: UIViewController {
     @IBOutlet weak var locationView: UIView!
     @IBOutlet weak var seperatorView: UIView!
     @IBOutlet weak var topSeperater: UIView!
+    @IBOutlet weak var reView: ReusableGraphView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +28,9 @@ class LogsVC: UIViewController {
         btnDocs.addTarget(self, action: #selector(gotoDocs), for: .touchUpInside)
         btnDvir.addTarget(self, action: #selector(gotoDvir), for: .touchUpInside)
         btnSign.addTarget(self, action: #selector(gotoSign), for: .touchUpInside)
-        
         seperatorViewColor()
+        reView.mainHeaderView.isHidden = true
+        reView.spaceView.isHidden = true
         self.enablePopGestureRecognizer()
     }
 }
