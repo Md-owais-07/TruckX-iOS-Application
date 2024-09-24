@@ -36,7 +36,7 @@ extension BottomVC {
         
         refreshButton.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         
-        let refreshImage = UIImage(named: "Vector (20)")
+        let refreshImage = UIImage(named: "Refresh2-img")
         refreshButton.setImage(refreshImage, for: .normal)
         
         refreshButton.tintColor = #colorLiteral(red: 0, green: 0.3433497846, blue: 0.3613733053, alpha: 1)

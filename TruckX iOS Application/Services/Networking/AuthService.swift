@@ -83,7 +83,7 @@ class AuthService {
         ]
         
         do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: body, options: [])
+            request.httpBody = try JSONSerialization.data(withJSONObject: body, options: [.prettyPrinted])
             //            let requstBody = try JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
             //            request.httpBody = requstBody
         } catch {

@@ -8,14 +8,14 @@
 import UIKit
 
 enum AppAssets: String {
-    case tabbar_home = "Vector (2)"
-    case tabbar_home_fill = "Vector (13)"
-    case tabbar_logbook = "Group"
-    case tabbar_logbook_fill = "Vector (15)"
-    case tabbar_messgae = "Group (1)"
-    case tabbar_messgae_fill = "Vector (14)"
-    case tabbar_more = "Vector"
-    case tabbar_more_fill = "Vector (16)"
+    case tabbar_home = "Home-Unselected"
+    case tabbar_home_fill = "Home-Selected"
+    case tabbar_logbook = "Book-Unselected"
+    case tabbar_logbook_fill = "Book-Selected"
+    case tabbar_messgae = "Message-Unselected"
+    case tabbar_messgae_fill = "Message-Selected"
+    case tabbar_more = "More-Unselected"
+    case tabbar_more_fill = "More-Selected"
     case tabbar_shadow = "tabbar_shadow"
 }
 

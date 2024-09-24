@@ -26,12 +26,12 @@ class AppSettingVC: UIViewController {
     @IBAction func nightModeButtonAction(_ sender: Any) {
         if btnToggle.tag == 0
         {
-            self.btnToggle.setImage(UIImage(named: "Property 1=off"), for: .normal)
+            self.btnToggle.setImage(UIImage(named: "Toggle-On"), for: .normal)
             self.btnToggle.tag = 1
         }
         else
         {
-            self.btnToggle.setImage(UIImage(named: "Property 1=off (1)"), for: .normal)
+            self.btnToggle.setImage(UIImage(named: "Toggle-Off"), for: .normal)
             self.btnToggle.tag = 0
         }
         

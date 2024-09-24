@@ -38,6 +38,11 @@ class LoginVC: UIViewController {
         disablePopGestureRecognizer()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setLandscapeLottieLoader()
+    }
+    
     @IBAction func loginBtnction(_ sender: Any) {
         
         guard let email = emailTextfield.text,  email != "" else {
@@ -59,13 +64,12 @@ class LoginVC: UIViewController {
             return
         }
         
-        showLoader()
+        showLottieLoader()
         APIManager.shared.authService.signIn(email: email, password: password) { result in
             DispatchQueue.main.async {
-                self.hideLoader()
+                self.hideLottieLoader()
                 switch result {
                 case .success(let response):
-                    DispatchQueue.main.async {
                         UserData.shared.isLoggedIn = true
                         UserData.shared.currentAuthKey = "\(response.accessToken)"
                         print("SIGN IN USER RESPONSE IS: ", response)
@@ -87,7 +91,6 @@ class LoginVC: UIViewController {
                                 print("Failed to fetch user profile: \(error.localizedDescription)")
                             }
                         }
-                    }
                     print("Login Success!")
                 case .failure(let error):
                     if let nsError = error as NSError? {

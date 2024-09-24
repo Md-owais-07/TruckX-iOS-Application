@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E90ADE8E2CA090F500D0DC7D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E90ADE8D2CA090F500D0DC7D /* Lottie */; };
+		E90ADE902CA0912F00D0DC7D /* LottieLoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90ADE8F2CA0912F00D0DC7D /* LottieLoaderManager.swift */; };
+		E90ADE922CA091F400D0DC7D /* loader-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = E90ADE912CA091F400D0DC7D /* loader-animation.json */; };
 		E9332D722C6F2B0200C25ABB /* CountryDropDownVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D712C6F2B0200C25ABB /* CountryDropDownVC.swift */; };
 		E9332D762C6F64F000C25ABB /* HosInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D742C6F64F000C25ABB /* HosInfoVC.swift */; };
 		E9332D792C6F738A00C25ABB /* ReusableGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9332D782C6F738A00C25ABB /* ReusableGraphView.xib */; };
@@ -69,6 +72,7 @@
 		E96C61172C6CAF8B000F2D38 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C61162C6CAF8B000F2D38 /* Api.swift */; };
 		E96C61192C6CAF93000F2D38 /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C61182C6CAF93000F2D38 /* ApiModel.swift */; };
 		E96C611B2C6CAFF1000F2D38 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C611A2C6CAFF1000F2D38 /* ApiResponse.swift */; };
+		E98DFCF52CA29DF6000D0AE0 /* No-Notifications.json in Resources */ = {isa = PBXBuildFile; fileRef = E98DFCF42CA29DF6000D0AE0 /* No-Notifications.json */; };
 		E99C9D252C75EE9D00A2C860 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C9D242C75EE9D00A2C860 /* UIButton+Extensions.swift */; };
 		E99C9D2E2C771C9900A2C860 /* NewChatTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C9D2C2C771C9900A2C860 /* NewChatTVC.swift */; };
 		E99C9D2F2C771C9900A2C860 /* NewChatTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E99C9D2D2C771C9900A2C860 /* NewChatTVC.xib */; };
@@ -100,6 +104,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E90ADE8F2CA0912F00D0DC7D /* LottieLoaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieLoaderManager.swift; sourceTree = "<group>"; };
+		E90ADE912CA091F400D0DC7D /* loader-animation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "loader-animation.json"; sourceTree = "<group>"; };
 		E9332D712C6F2B0200C25ABB /* CountryDropDownVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDropDownVC.swift; sourceTree = "<group>"; };
 		E9332D742C6F64F000C25ABB /* HosInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HosInfoVC.swift; sourceTree = "<group>"; };
 		E9332D782C6F738A00C25ABB /* ReusableGraphView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReusableGraphView.xib; sourceTree = "<group>"; };
@@ -163,6 +169,7 @@
 		E96C61162C6CAF8B000F2D38 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		E96C61182C6CAF93000F2D38 /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
 		E96C611A2C6CAFF1000F2D38 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		E98DFCF42CA29DF6000D0AE0 /* No-Notifications.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "No-Notifications.json"; sourceTree = "<group>"; };
 		E99C9D242C75EE9D00A2C860 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		E99C9D2C2C771C9900A2C860 /* NewChatTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChatTVC.swift; sourceTree = "<group>"; };
 		E99C9D2D2C771C9900A2C860 /* NewChatTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewChatTVC.xib; sourceTree = "<group>"; };
@@ -186,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9497E8D2C66652B0050A251 /* IQKeyboardManagerSwift in Frameworks */,
+				E90ADE8E2CA090F500D0DC7D /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +284,7 @@
 		E96C60BB2C68E5A1000F2D38 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E98DFCF32CA29DDA000D0AE0 /* App Animations */,
 				E99C9D442C7C6AB100A2C860 /* Utilities */,
 				E99C9D432C7C6A9200A2C860 /* Helper */,
 				E99C9D422C7C6A8400A2C860 /* UI Components */,
@@ -416,6 +425,7 @@
 		E96C610A2C6C9845000F2D38 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E98DFCF82CA2A65F000D0AE0 /* ChangeStatus */,
 				E96C60C82C68FA0C000F2D38 /* Tabbar */,
 				E96C60C52C68F73C000F2D38 /* Login */,
 				E99C9D342C789AE200A2C860 /* Register */,
@@ -458,7 +468,6 @@
 			isa = PBXGroup;
 			children = (
 				E9497E7A2C662D820050A251 /* Main.storyboard */,
-				E99C9D562C82213100A2C860 /* ChangeStatusVC.swift */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -493,6 +502,31 @@
 			path = TabbarVC;
 			sourceTree = "<group>";
 		};
+		E98DFCF32CA29DDA000D0AE0 /* App Animations */ = {
+			isa = PBXGroup;
+			children = (
+				E90ADE912CA091F400D0DC7D /* loader-animation.json */,
+				E98DFCF42CA29DF6000D0AE0 /* No-Notifications.json */,
+			);
+			path = "App Animations";
+			sourceTree = "<group>";
+		};
+		E98DFCF82CA2A65F000D0AE0 /* ChangeStatus */ = {
+			isa = PBXGroup;
+			children = (
+				E99C9D562C82213100A2C860 /* ChangeStatusVC.swift */,
+			);
+			path = ChangeStatus;
+			sourceTree = "<group>";
+		};
+		E98DFCF92CA2A6DC000D0AE0 /* Api Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E96C60CC2C69E8D3000F2D38 /* APIManager.swift */,
+			);
+			path = "Api Manager";
+			sourceTree = "<group>";
+		};
 		E99C9D342C789AE200A2C860 /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,7 +538,7 @@
 		E99C9D3D2C7C691F00A2C860 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				E96C60CC2C69E8D3000F2D38 /* APIManager.swift */,
+				E98DFCF92CA2A6DC000D0AE0 /* Api Manager */,
 				E96C61022C6C9593000F2D38 /* AuthService.swift */,
 				E96C61042C6C95A3000F2D38 /* UserService.swift */,
 				E96C61062C6C95AE000F2D38 /* ExemptionService.swift */,
@@ -549,6 +583,7 @@
 			isa = PBXGroup;
 			children = (
 				E9332DA52C74B87A00C25ABB /* LocationManager.swift */,
+				E90ADE8F2CA0912F00D0DC7D /* LottieLoaderManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -607,6 +642,7 @@
 			name = "TruckX iOS Application";
 			packageProductDependencies = (
 				E9497E8C2C66652B0050A251 /* IQKeyboardManagerSwift */,
+				E90ADE8D2CA090F500D0DC7D /* Lottie */,
 			);
 			productName = "TruckX iOS Application";
 			productReference = E9497E712C662D820050A251 /* TruckX iOS Application.app */;
@@ -638,6 +674,7 @@
 			mainGroup = E9497E682C662D820050A251;
 			packageReferences = (
 				E9497E8B2C66652B0050A251 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				E90ADE8C2CA090F500D0DC7D /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = E9497E722C662D820050A251 /* Products */;
 			projectDirPath = "";
@@ -654,6 +691,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9497E812C662D840050A251 /* Assets.xcassets in Resources */,
+				E98DFCF52CA29DF6000D0AE0 /* No-Notifications.json in Resources */,
+				E90ADE922CA091F400D0DC7D /* loader-animation.json in Resources */,
 				E9497E842C662D840050A251 /* Base in Resources */,
 				E99C9D332C7734FE00A2C860 /* ChatTVC.xib in Resources */,
 				E9332D922C73313500C25ABB /* TopTVC.xib in Resources */,
@@ -729,6 +768,7 @@
 				E9497E772C662D820050A251 /* SceneDelegate.swift in Sources */,
 				E9332D7B2C6F739900C25ABB /* ReusableGraphView.swift in Sources */,
 				E96C609A2C6760F3000F2D38 /* AppController.swift in Sources */,
+				E90ADE902CA0912F00D0DC7D /* LottieLoaderManager.swift in Sources */,
 				E9332D8F2C7330E500C25ABB /* UITable+Extensions.swift in Sources */,
 				E99C9D382C79B5E500A2C860 /* SignInResponse.swift in Sources */,
 				E99C9D472C7C771100A2C860 /* UserProfileModel.swift in Sources */,
@@ -890,6 +930,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4NP4L6636N;
@@ -910,6 +951,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.self..TruckX-iOS-Application";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -925,6 +967,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4NP4L6636N;
@@ -945,6 +988,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.self..TruckX-iOS-Application";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -979,6 +1023,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E90ADE8C2CA090F500D0DC7D /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
 		E9497E8B2C66652B0050A251 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -990,6 +1042,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E90ADE8D2CA090F500D0DC7D /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E90ADE8C2CA090F500D0DC7D /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		E9497E8C2C66652B0050A251 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E9497E8B2C66652B0050A251 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;

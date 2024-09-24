@@ -26,7 +26,7 @@ class RegisterVC: UIViewController {
         self.setupLabel(lblTerms)
         self.updateLabelHeight(lblTerms)
         
-        self.imgCheckStatus.image = UIImage(named: "ri_checkbox-line")
+        self.imgCheckStatus.image = UIImage(named: "Btn-uncheck")
         btnRadio.addTarget(self, action: #selector(gereeBtnToggle), for: .touchUpInside)
         
         PopGestureRecognizerDelegate()
@@ -63,10 +63,11 @@ class RegisterVC: UIViewController {
             self.toastView(toastMessage: "Please enter atleast 6 or more characters.", type: "error")
             return
         }
-        showLoader()
+        
+        showLottieLoader()
         APIManager.shared.authService.createUser(fName: firstName, lName: lastName, email: email, password: password) { result in
             DispatchQueue.main.async {
-                self.hideLoader()
+                self.hideLottieLoader()
                 switch result {
                 case .success(let response):
                     DispatchQueue.main.async {
@@ -155,7 +156,7 @@ extension RegisterVC: UIGestureRecognizerDelegate {
         self.toggleButtonSelection(
             btnRadio,
             imageView: imgCheckStatus,
-            selectedImage: UIImage(named: "ri_checkbox-line (1)")!,
-            deselectedImage: UIImage(named: "ri_checkbox-line")!)
+            selectedImage: UIImage(named: "Btn-check")!,
+            deselectedImage: UIImage(named: "Btn-uncheck")!)
     }
 }

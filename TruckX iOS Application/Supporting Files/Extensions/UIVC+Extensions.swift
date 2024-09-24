@@ -31,6 +31,21 @@ extension UIViewController: UITextFieldDelegate {
         loaderView.stopLoading()
     }
     
+    func showLottieLoader()
+    {
+        LottieLoaderManager.shared.showLoader(in: self.view)
+    }
+    
+    func hideLottieLoader()
+    {
+        LottieLoaderManager.shared.hideLoader()
+    }
+    
+    func setLandscapeLottieLoader()
+    {
+        LottieLoaderManager.shared.updateLayout(for: self.view)
+    }
+    
     @objc func reloadView()
     {
         UIView.animate(withDuration: 1.0) {

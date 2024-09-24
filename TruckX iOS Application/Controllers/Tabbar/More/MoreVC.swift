@@ -35,7 +35,7 @@ class MoreVC: UIViewController {
         // Do any additional setup after loading the view.
         bottomView.isHidden = true
         
-        imgRotation.image = UIImage(named: "Vector (3)")
+        imgRotation.image = UIImage(named: "Rotate-img")
         
         lblUserName.text = UserData.shared.isLoggedIn ? "\(UserData.shared.firstName) \(UserData.shared.lastName)" : "No Name Found"
         
@@ -101,10 +101,10 @@ class MoreVC: UIViewController {
         isLandscape.toggle()
         
         if isLandscape {
-            self.imgRotation.image = UIImage(named: "Vector (18)")
+            self.imgRotation.image = UIImage(named: "Rotate-lock-img")
             OrientationManager.shared.forceLandscape()
         } else {
-            self.imgRotation.image = UIImage(named: "Vector (3)")
+            self.imgRotation.image = UIImage(named: "Rotate-img")
             OrientationManager.shared.forcePortrait()
         }
     }
