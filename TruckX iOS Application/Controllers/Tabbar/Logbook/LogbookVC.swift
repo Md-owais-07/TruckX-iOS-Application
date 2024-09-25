@@ -48,6 +48,11 @@ class LogbookVC: UIViewController {
         disablePopGestureRecognizer()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        gradientView.applyGradient()
+    }
+    
     @IBAction func dropDpwnButtonAction(_ sender: Any) {
         let dropDownVC = AppController.shared.CountryDropDown
         dropDownVC.modalPresentationStyle = .overCurrentContext

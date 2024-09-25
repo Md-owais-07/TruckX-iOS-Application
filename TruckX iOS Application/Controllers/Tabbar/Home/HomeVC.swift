@@ -70,10 +70,19 @@ class HomeVC: UIViewController {
         disablePopGestureRecognizer()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        gradientView.applyGradient()
+    }
+    
     @IBAction func toggleButton(_ sender: UIButton) {
         deselectAllButtons()
         sender.isSelected = true
         updateButtonAppearance(sender)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     @IBAction func dropDownButtonAction(_ sender: Any) {
@@ -104,7 +113,9 @@ class HomeVC: UIViewController {
     
     @IBAction func btnSheet(_ sender: Any) {
         let vc = AppController.shared.Bottomvc
+        
         preferredSheetHeight = 370
+        
         let navigationController = UINavigationController(rootViewController: vc)
         navigationController.modalPresentationStyle = .custom
         navigationController.transitioningDelegate = self

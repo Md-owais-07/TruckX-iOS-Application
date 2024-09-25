@@ -12,11 +12,13 @@ class BottomVC: UIViewController {
     @IBOutlet weak var lblBluetoothText: UILabel!
     @IBOutlet weak var btnRefresh: UIButton!
     @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var containerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imgBluetooth.applyCircularCornerRadius()
         refreshButtonSetUp()
+        containerView.layer.cornerRadius = 16
     }
     
     @IBAction func backButtonAction(_ sender: Any) {
@@ -59,9 +61,8 @@ extension BottomVC {
         refreshButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            refreshButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            refreshButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            refreshButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 297),
+            refreshButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
+            refreshButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24),
             refreshButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -24),
             refreshButton.heightAnchor.constraint(equalToConstant: 48)
         ])

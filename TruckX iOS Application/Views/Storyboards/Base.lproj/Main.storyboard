@@ -5110,77 +5110,106 @@ Click start to begin inspection.</string>
             <objects>
                 <viewController storyboardIdentifier="BottomVC_id" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4jP-ys-ZKe" customClass="BottomVC" customModule="TruckX_iOS_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cx6-Ni-EQE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="370"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="369"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NpD-Db-IhF">
-                                <rect key="frame" x="0.0" y="24" width="414" height="25"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m8k-OX-OtL">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="369"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn On Bluetooth" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiE-jW-k9a">
-                                        <rect key="frame" x="24" y="0.0" width="181.5" height="25"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edd-99-lcP">
-                                        <rect key="frame" x="365" y="0.0" width="25" height="25"/>
-                                        <color key="backgroundColor" red="0.68235294120000001" green="0.92941176469999998" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="Bf5-fk-39k"/>
-                                            <constraint firstAttribute="width" constant="25" id="eUB-aE-Wks"/>
-                                        </constraints>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="xmark" catalog="system"/>
-                                        <connections>
-                                            <action selector="backButtonAction:" destination="4jP-ys-ZKe" eventType="touchUpInside" id="dBD-iw-9h1"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="JoJ-x1-HBa">
+                                        <rect key="frame" x="24" y="24" width="366" height="321"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NpD-Db-IhF">
+                                                <rect key="frame" x="0.0" y="0.0" width="366" height="26"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn On Bluetooth" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiE-jW-k9a">
+                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="26.5"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edd-99-lcP">
+                                                        <rect key="frame" x="365" y="0.0" width="25" height="25"/>
+                                                        <color key="backgroundColor" red="0.68235294120000001" green="0.92941176469999998" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="Bf5-fk-39k"/>
+                                                            <constraint firstAttribute="width" constant="25" id="eUB-aE-Wks"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="xmark" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="backButtonAction:" destination="4jP-ys-ZKe" eventType="touchUpInside" id="dBD-iw-9h1"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="TiE-jW-k9a" firstAttribute="top" secondItem="NpD-Db-IhF" secondAttribute="top" id="3Ca-7s-eB6"/>
+                                                    <constraint firstItem="TiE-jW-k9a" firstAttribute="leading" secondItem="NpD-Db-IhF" secondAttribute="leading" id="6qR-o8-p0J"/>
+                                                    <constraint firstAttribute="trailing" secondItem="TiE-jW-k9a" secondAttribute="trailing" id="Jrh-xV-wOV"/>
+                                                    <constraint firstAttribute="height" constant="26" id="oSt-Ok-gym"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="subviews">
+                                                        <exclude reference="edd-99-lcP"/>
+                                                    </mask>
+                                                </variation>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mip-gl-klr">
+                                                <rect key="frame" x="0.0" y="58" width="366" height="128"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bluetooth-img" translatesAutoresizingMaskIntoConstraints="NO" id="6tO-o6-fgm">
+                                                        <rect key="frame" x="119" y="0.0" width="128" height="128"/>
+                                                        <color key="backgroundColor" red="0.68235294117647061" green="0.92941176470588238" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="128" id="1YA-ZM-mOQ"/>
+                                                            <constraint firstAttribute="width" constant="128" id="NAk-FS-EkZ"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="dG3-lr-MZQ"/>
+                                                    <constraint firstItem="6tO-o6-fgm" firstAttribute="centerY" secondItem="Mip-gl-klr" secondAttribute="centerY" id="eni-qQ-kAO"/>
+                                                    <constraint firstItem="6tO-o6-fgm" firstAttribute="centerX" secondItem="Mip-gl-klr" secondAttribute="centerX" id="epf-En-jQg"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hE3-kO-xES">
+                                                <rect key="frame" x="0.0" y="218" width="366" height="23"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn on Bluetooth on your smartphone" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVk-2h-sf6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="23"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5022506208609272" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="wVk-2h-sf6" firstAttribute="leading" secondItem="hE3-kO-xES" secondAttribute="leading" id="9Qb-eW-iCK"/>
+                                                    <constraint firstAttribute="bottom" secondItem="wVk-2h-sf6" secondAttribute="bottom" id="W3H-EH-MVL"/>
+                                                    <constraint firstAttribute="height" constant="23" id="cUP-dz-muL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="wVk-2h-sf6" secondAttribute="trailing" id="qOj-lH-R2a"/>
+                                                    <constraint firstItem="wVk-2h-sf6" firstAttribute="top" secondItem="hE3-kO-xES" secondAttribute="top" id="sUM-gd-QWJ"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bML-hI-p9u">
+                                                <rect key="frame" x="0.0" y="273" width="366" height="48"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="TiE-jW-k9a" firstAttribute="top" secondItem="NpD-Db-IhF" secondAttribute="top" id="Bkw-cn-2Cn"/>
-                                    <constraint firstItem="TiE-jW-k9a" firstAttribute="leading" secondItem="NpD-Db-IhF" secondAttribute="leading" constant="24" id="COq-Lw-dZZ"/>
-                                    <constraint firstAttribute="height" constant="25" id="R7N-d9-wh1"/>
-                                    <constraint firstAttribute="trailing" secondItem="edd-99-lcP" secondAttribute="trailing" constant="24" id="ief-Nd-DtL"/>
-                                    <constraint firstAttribute="bottom" secondItem="TiE-jW-k9a" secondAttribute="bottom" id="pnS-Ud-uq8"/>
-                                    <constraint firstAttribute="bottom" secondItem="edd-99-lcP" secondAttribute="bottom" id="w53-jW-QCK"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="edd-99-lcP"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mip-gl-klr">
-                                <rect key="frame" x="0.0" y="81" width="414" height="128"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bluetooth-img" translatesAutoresizingMaskIntoConstraints="NO" id="6tO-o6-fgm">
-                                        <rect key="frame" x="143" y="0.0" width="128" height="128"/>
-                                        <color key="backgroundColor" red="0.68235294117647061" green="0.92941176470588238" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="1YA-ZM-mOQ"/>
-                                            <constraint firstAttribute="width" constant="128" id="NAk-FS-EkZ"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="dG3-lr-MZQ"/>
-                                    <constraint firstItem="6tO-o6-fgm" firstAttribute="centerY" secondItem="Mip-gl-klr" secondAttribute="centerY" id="eni-qQ-kAO"/>
-                                    <constraint firstItem="6tO-o6-fgm" firstAttribute="centerX" secondItem="Mip-gl-klr" secondAttribute="centerX" id="epf-En-jQg"/>
+                                    <constraint firstAttribute="bottom" secondItem="JoJ-x1-HBa" secondAttribute="bottom" constant="24" id="Dxe-Nf-uec"/>
+                                    <constraint firstItem="JoJ-x1-HBa" firstAttribute="leading" secondItem="m8k-OX-OtL" secondAttribute="leading" constant="24" id="P6i-CO-ivs"/>
+                                    <constraint firstAttribute="trailing" secondItem="JoJ-x1-HBa" secondAttribute="trailing" constant="24" id="mpJ-AW-EyU"/>
+                                    <constraint firstItem="JoJ-x1-HBa" firstAttribute="top" secondItem="m8k-OX-OtL" secondAttribute="top" constant="24" id="wid-4Y-khK"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn on Bluetooth on your smartphone" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVk-2h-sf6">
-                                <rect key="frame" x="52" y="241" width="310" height="23"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="23" id="PWw-uy-vKv"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5022506208609272" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYR-sI-3Mc" customClass="DesignableView" customModule="TruckX_iOS_Application" customModuleProvider="target">
                                 <rect key="frame" x="24" y="296" width="366" height="48"/>
                                 <subviews>
@@ -5233,19 +5262,13 @@ Click start to begin inspection.</string>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xff-4G-YdX"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Mip-gl-klr" firstAttribute="top" secondItem="NpD-Db-IhF" secondAttribute="bottom" constant="32" id="9Ow-y9-30A"/>
-                            <constraint firstItem="NpD-Db-IhF" firstAttribute="top" secondItem="cx6-Ni-EQE" secondAttribute="top" constant="24" id="LzG-U0-yaW"/>
-                            <constraint firstItem="xff-4G-YdX" firstAttribute="trailing" secondItem="wVk-2h-sf6" secondAttribute="trailing" constant="52" id="Q53-9D-Jj4"/>
-                            <constraint firstItem="wVk-2h-sf6" firstAttribute="top" secondItem="Mip-gl-klr" secondAttribute="bottom" constant="32" id="cap-kA-4S0"/>
-                            <constraint firstItem="wVk-2h-sf6" firstAttribute="leading" secondItem="xff-4G-YdX" secondAttribute="leading" constant="52" id="cgi-Jt-dko"/>
-                            <constraint firstItem="xff-4G-YdX" firstAttribute="trailing" secondItem="Mip-gl-klr" secondAttribute="trailing" id="chX-UR-2GV"/>
-                            <constraint firstItem="xff-4G-YdX" firstAttribute="trailing" secondItem="NpD-Db-IhF" secondAttribute="trailing" id="eb3-ez-J22"/>
+                            <constraint firstAttribute="bottom" secondItem="m8k-OX-OtL" secondAttribute="bottom" id="ReA-KD-5wj"/>
                             <constraint firstItem="xff-4G-YdX" firstAttribute="trailing" secondItem="mYR-sI-3Mc" secondAttribute="trailing" constant="24" id="fTN-zx-xGm"/>
-                            <constraint firstItem="Mip-gl-klr" firstAttribute="leading" secondItem="xff-4G-YdX" secondAttribute="leading" id="iaY-S1-G5J"/>
-                            <constraint firstItem="NpD-Db-IhF" firstAttribute="leading" secondItem="xff-4G-YdX" secondAttribute="leading" id="iyx-bR-V6c"/>
-                            <constraint firstItem="mYR-sI-3Mc" firstAttribute="top" secondItem="wVk-2h-sf6" secondAttribute="bottom" constant="32" id="oBc-Hi-3a7"/>
+                            <constraint firstItem="xff-4G-YdX" firstAttribute="trailing" secondItem="m8k-OX-OtL" secondAttribute="trailing" id="rdE-Xj-uOq"/>
+                            <constraint firstItem="m8k-OX-OtL" firstAttribute="top" secondItem="cx6-Ni-EQE" secondAttribute="top" id="uDZ-7d-GIA"/>
+                            <constraint firstItem="m8k-OX-OtL" firstAttribute="leading" secondItem="xff-4G-YdX" secondAttribute="leading" id="wDL-bf-roh"/>
                             <constraint firstItem="mYR-sI-3Mc" firstAttribute="leading" secondItem="xff-4G-YdX" secondAttribute="leading" constant="24" id="y8X-Ya-xBv"/>
                         </constraints>
                         <variation key="default">
@@ -5254,17 +5277,18 @@ Click start to begin inspection.</string>
                             </mask>
                         </variation>
                     </view>
-                    <size key="freeformSize" width="414" height="370"/>
+                    <size key="freeformSize" width="414" height="369"/>
                     <connections>
                         <outlet property="btnBack" destination="edd-99-lcP" id="qNn-NX-GFS"/>
                         <outlet property="btnRefresh" destination="KB1-Sn-9MN" id="z2r-SW-urG"/>
+                        <outlet property="containerView" destination="m8k-OX-OtL" id="DpZ-dI-7B9"/>
                         <outlet property="imgBluetooth" destination="6tO-o6-fgm" id="5zc-g2-1yd"/>
                         <outlet property="lblBluetoothText" destination="wVk-2h-sf6" id="VQp-Xj-7hX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WTf-dG-pnB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-926.08695652173924" y="3621.4285714285711"/>
+            <point key="canvasLocation" x="-926.08695652173924" y="3617.4107142857142"/>
         </scene>
         <!--Change StatusVC-->
         <scene sceneID="FVt-fp-mE8">
@@ -5779,7 +5803,7 @@ Click start to begin inspection.</string>
                                                         <color key="tintColor" red="0.098039215686274508" green="0.3411764705882353" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="CANCEL">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <action selector="cancelButtonAction:" destination="Nta-gK-ZeS" eventType="touchUpInside" id="pGS-9e-QU4"/>
@@ -5793,7 +5817,7 @@ Click start to begin inspection.</string>
                                                         <color key="tintColor" red="0.098039215686274508" green="0.3411764705882353" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="OK">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <action selector="okButtonAction:" destination="Nta-gK-ZeS" eventType="touchUpInside" id="c0x-Yn-yTm"/>

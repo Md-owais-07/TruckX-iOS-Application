@@ -105,7 +105,21 @@ extension UIView {
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 1, y: 0)
         gradientLayer.frame = bounds
+
+        if let existingGradient = layer.sublayers?.first(where: { $0 is CAGradientLayer }) {
+            existingGradient.removeFromSuperlayer()
+        }
+        
         layer.insertSublayer(gradientLayer, at: 0)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateGradientFrame), name: UIDevice.orientationDidChangeNotification, object: nil)
+    }
+
+    @objc private func updateGradientFrame()
+    {
+        if let gradientLayer = layer.sublayers?.first(where: { $0 is CAGradientLayer }) {
+            gradientLayer.frame = bounds
+        }
     }
     
     func applyGradient2()
