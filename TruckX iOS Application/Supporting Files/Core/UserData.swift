@@ -62,6 +62,16 @@ class UserData {
         }
     }
     
+    var emailID: String
+    {
+        get {
+            return userDefault.string(forKey: "emailID") ?? ""
+        }
+        set(data) {
+            userDefault.set(data, forKey: "emailID")
+        }
+    }
+    
     var userId: String
     {
         get {
@@ -71,6 +81,27 @@ class UserData {
             userDefault.set(data, forKey: "userId")
         }
     }
+    
+    var userIdOtp: String
+    {
+        get {
+            return userDefault.string(forKey: "userId") ?? ""
+        }
+        set(data) {
+            userDefault.set(data, forKey: "userId")
+        }
+    }
+    
+    var userOtp: String
+    {
+        get {
+            return userDefault.string(forKey: "userOtp") ?? ""
+        }
+        set(data) {
+            userDefault.set(data, forKey: "userOtp")
+        }
+    }
+    
     var createdAt: String
     {
         get {

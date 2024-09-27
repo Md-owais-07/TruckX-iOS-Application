@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 extension UIViewController: UITextFieldDelegate {
     private var loaderView: LoaderView
@@ -227,6 +228,25 @@ extension UIViewController: UITextFieldDelegate {
             let image = UIImage(data: data)
             completion(image)
         }.resume()
+    }
+    
+    func createAnimation(on view: UIView, animationName: String, loopMode: LottieLoopMode = .playOnce) {
+        let animationView = LottieAnimationView(name: animationName)
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = loopMode
+        animationView.frame = view.bounds
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(animationView)
+
+        // Center the animationView inside the passed view using Auto Layout
+        NSLayoutConstraint.activate([
+            animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            animationView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            animationView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            animationView.heightAnchor.constraint(equalTo: view.heightAnchor)
+        ])
+
+        animationView.play()
     }
     
     func toastView(toastMessage: String, visibleDuration: TimeInterval = 3,type: String)

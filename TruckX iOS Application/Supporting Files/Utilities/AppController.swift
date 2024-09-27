@@ -118,4 +118,16 @@ class AppController {
     {
         AppStoryBoard.shared.main.instantiateViewController(withIdentifier: "ChangeStatusVC_id") as? ChangeStatusVC ?? ChangeStatusVC()
     }
+    var ForgotPassword: ForgotPasswordVC
+    {
+        AppStoryBoard.shared.main.instantiateViewController(withIdentifier: "ForgotPasswordVC_id") as? ForgotPasswordVC ?? ForgotPasswordVC()
+    }
+    var VerifyOtp: VerifyOtpVC
+    {
+        AppStoryBoard.shared.main.instantiateViewController(withIdentifier: "VerifyOtpVC_id") as? VerifyOtpVC ?? VerifyOtpVC()
+    }
+    var CreateNewPassword: CreateNewPasswordVC
+    {
+        AppStoryBoard.shared.main.instantiateViewController(withIdentifier: "CreateNewPasswordVC_id") as? CreateNewPasswordVC ?? CreateNewPasswordVC()
+    }
 }

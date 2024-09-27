@@ -31,7 +31,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         case .authorizedWhenInUse, .authorizedAlways:
             locationManager.startUpdatingLocation()
         case .restricted, .denied:
-            // Handle restricted/denied location services
             print("Location services are restricted or denied.")
         @unknown default:
             fatalError("Unknown authorization status")

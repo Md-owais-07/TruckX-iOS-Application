@@ -120,6 +120,12 @@ class LoginVC: UIViewController {
         self.pushToVC(registerVC)
     }
     
+    @IBAction func forgetPasswordButtonAction(_ sender: Any) {
+        let vc = AppController.shared.ForgotPassword
+        self.pushToVC(vc)
+    }
+    
+    
 }
 
 extension LoginVC {
