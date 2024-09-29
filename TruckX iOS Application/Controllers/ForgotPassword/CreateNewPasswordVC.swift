@@ -52,16 +52,14 @@ class CreateNewPasswordVC: UIViewController {
                 case .success(let passwordResponse):
                     self.toastView(toastMessage: "\(passwordResponse.message)", type: "success")
                     print("CONFORM PASSWORD RESPONSE: \(passwordResponse)")
-                    self.navigationController?.popToRootViewController(animated: false)
-//                    let vc = AppController.shared.Tabbar
-//                    let navigationController = UINavigationController(rootViewController: vc)
-//                    navigationController.setNavigationBarHidden(true, animated: true)
-//                    
-//                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-//                       let sceneDelegate = windowScene.delegate as? SceneDelegate {
-//                        sceneDelegate.window?.rootViewController = navigationController
-//                        sceneDelegate.window?.makeKeyAndVisible()
-//                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.showLottieLoader()
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        self.hideLottieLoader()
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
                 case .failure(let error):
                     print("Error", error.localizedDescription)
                 }

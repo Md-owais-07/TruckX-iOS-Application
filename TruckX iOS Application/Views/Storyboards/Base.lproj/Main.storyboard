@@ -9078,7 +9078,7 @@ Click start to begin inspection.</string>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFD-rD-YbH">
                                                         <rect key="frame" x="0.0" y="1016" width="414" height="106"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="106" id="DpE-EA-MoB"/>
                                                         </constraints>
@@ -9462,7 +9462,7 @@ Click start to begin inspection.</string>
                                                                             <constraint firstAttribute="height" constant="35" id="gZ9-Bb-P79"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="next" textContentType="email"/>
                                                                     </textField>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RW1-Ea-V6R">
                                                                         <rect key="frame" x="0.0" y="69" width="374" height="1"/>
@@ -9513,7 +9513,7 @@ Click start to begin inspection.</string>
                                                                             <constraint firstAttribute="height" constant="35" id="dl0-Hw-hbZ"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
+                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
                                                                     </textField>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4v-ya-7nH">
                                                                         <rect key="frame" x="0.0" y="69" width="374" height="1"/>
