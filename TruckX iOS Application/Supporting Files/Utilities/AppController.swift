@@ -130,4 +130,8 @@ class AppController {
     {
         AppStoryBoard.shared.main.instantiateViewController(withIdentifier: "CreateNewPasswordVC_id") as? CreateNewPasswordVC ?? CreateNewPasswordVC()
     }
+    var LandingPage: LandingVC
+    {
+        AppStoryBoard.shared.main.instantiateViewController(withIdentifier: "LandingVC_id") as? LandingVC ?? LandingVC()
+    }
 }

@@ -10,6 +10,7 @@ import UIKit
 class CycleInfoVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var lblGuestAlert: UILabel!
     
     var profileData: [UserProfileModel] = []
     var cellDataItems: [CellData] = []
@@ -20,6 +21,15 @@ class CycleInfoVC: UIViewController {
         tableView.register(cellType: MoreTVC.self, withIdentifier: "cell3")
         
         btnBack.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
+        
+        if UserData.shared.isGuestUser {
+            tableView.isHidden = true
+            lblGuestAlert.isHidden = false
+            UserData.shared.isGuestUser = false
+        } else if UserData.shared.isLoggedIn {
+            tableView.isHidden = false
+            lblGuestAlert.isHidden = true
+        }
         
         self.cellSetUp()
         self.setupLoader()

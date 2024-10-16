@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabBarVC: UITabBarController, UIGestureRecognizerDelegate, UINavigationControllerDelegate {
+class TabBarVC: UITabBarController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()

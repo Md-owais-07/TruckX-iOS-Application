@@ -11,12 +11,23 @@ class MessgegesVC: UIViewController {
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var btnAdd: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var lblGuest: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         searchView.customizeSearchBar()
         addButtonSetup()
+        
+        tableView.isHidden = true
+        
+        if UserData.shared.isGuestUser {
+            tableView.isHidden = true
+            lblGuest.isHidden = false
+        } else if UserData.shared.isLoggedIn {
+            tableView.isHidden = false
+            lblGuest.isHidden = true
+        }
         
         tableView.register(cellType: NewChatTVC.self, withIdentifier: "cell")
         tableView.reloadData()

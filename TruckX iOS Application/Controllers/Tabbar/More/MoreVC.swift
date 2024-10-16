@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MoreVC: UIViewController {
+class MoreVC: BaseViewController {
     @IBOutlet weak var rotateView: UIView!
     @IBOutlet weak var updateView: UIView!
     @IBOutlet weak var dotView: UIView!
@@ -26,6 +26,7 @@ class MoreVC: UIViewController {
     @IBOutlet weak var btnUpdates: UIButton!
     @IBOutlet weak var imgRotation: UIImageView!
     @IBOutlet weak var lblUserName: UILabel!
+    @IBOutlet weak var guestLoginView: UIView!
     
     private var preferredSheetHeight: CGFloat = 246
     private var isLandscape = false
@@ -34,10 +35,19 @@ class MoreVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         bottomView.isHidden = true
+        guestLoginView.isHidden = true
         
         imgRotation.image = UIImage(named: "Rotate-img")
         
-        lblUserName.text = UserData.shared.isLoggedIn ? "\(UserData.shared.firstName) \(UserData.shared.lastName)" : "No Name Found"
+        lblUserName.text = UserData.shared.isLoggedIn ? "\(UserData.shared.firstName) \(UserData.shared.lastName)" : "\(UserData.shared.guestName)"
+        
+        if UserData.shared.isGuestUser {
+            logoutView.isHidden = true
+            guestLoginView.isHidden = false
+        } else if UserData.shared.isLoggedIn {
+            logoutView.isHidden = false
+            guestLoginView.isHidden = true
+        }
         
         applyViewStyle()
     }
@@ -108,6 +118,25 @@ class MoreVC: UIViewController {
             OrientationManager.shared.forcePortrait()
         }
     }
+    
+    @IBAction func guestLoginButton(_ sender: Any) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.mainView.alpha = 0
+        }, completion: { _ in
+            UserData.shared.isLoggedIn = false
+            UserData.shared.isGuestUser = false
+            let loginVC = AppController.shared.LandingPage
+            let newNavController = UINavigationController(rootViewController: loginVC)
+            self.navigationItem.hidesBackButton = true
+            self.navigationController?.isNavigationBarHidden = true
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let window = windowScene.windows.first {
+                window.rootViewController = newNavController
+                window.makeKeyAndVisible()
+            }
+        })
+    }
+    
 }
 
 
@@ -126,7 +155,6 @@ extension MoreVC {
         cycleView.applyShadowStyle(cornerRadius: 16, shadowOpacity: 0.2, shadowColor: .systemGray3)
         carrierView.applyShadowStyle(cornerRadius: 16, shadowOpacity: 0.2, shadowColor: .systemGray3)
         settingView.applyShadowStyle(cornerRadius: 16, shadowOpacity: 0.2, shadowColor: .systemGray3)
-        logoutView.applyShadowStyle(cornerRadius: 16, shadowOpacity: 0.2, shadowColor: .systemGray3)
         mainView.backgroundColor = UIColor.white.withAlphaComponent(0.3)
     }
 }

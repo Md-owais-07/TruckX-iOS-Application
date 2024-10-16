@@ -10,6 +10,7 @@ import UIKit
 class CarrierInfoVC: UIViewController {
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var lblGuestAlert: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,15 @@ class CarrierInfoVC: UIViewController {
         
         tableView.register(cellType: MoreTVC.self, withIdentifier: "cell3")
         tableView.reloadData()
+        
+        if UserData.shared.isGuestUser {
+            tableView.isHidden = true
+            lblGuestAlert.isHidden = false
+            UserData.shared.isGuestUser = false
+        } else if UserData.shared.isLoggedIn {
+            tableView.isHidden = false
+            lblGuestAlert.isHidden = true
+        }
         
         self.enablePopGestureRecognizer()
     }

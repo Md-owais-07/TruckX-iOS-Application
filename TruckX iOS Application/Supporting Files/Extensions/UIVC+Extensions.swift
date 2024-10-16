@@ -8,7 +8,7 @@
 import UIKit
 import Lottie
 
-extension UIViewController: UITextFieldDelegate {
+extension UIViewController: UITextFieldDelegate, UIGestureRecognizerDelegate {
     private var loaderView: LoaderView
     {
         return LoaderView.shared
@@ -68,6 +68,7 @@ extension UIViewController: UITextFieldDelegate {
     
     func enablePopGestureRecognizer()
     {
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     

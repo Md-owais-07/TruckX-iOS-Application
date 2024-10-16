@@ -13,6 +13,7 @@ class NewChatVC: UIViewController {
     @IBOutlet weak var searchBarTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblSearchMsg: UILabel!
+    @IBOutlet weak var lblGuest: UILabel!
     
     var namesDictionary = [String: [String]]()
     var filteredNamesDictionary = [String: [String]]()
@@ -44,6 +45,14 @@ class NewChatVC: UIViewController {
         sectionTitles = [String](filteredNamesDictionary.keys).sorted(by: { $0 < $1 })
         
         lblSearchMsg.isHidden = true
+        
+        if UserData.shared.isGuestUser {
+            tableView.isHidden = true
+            lblGuest.isHidden = false
+        } else if UserData.shared.isLoggedIn {
+            tableView.isHidden = false
+            lblGuest.isHidden = true
+        }
         
         searchBar.customizeSearchBar()
         searchBarTextField.delegate = self

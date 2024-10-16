@@ -108,7 +108,7 @@ class RegisterVC: UIViewController {
 }
 
 
-extension RegisterVC: UIGestureRecognizerDelegate {
+extension RegisterVC {
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }

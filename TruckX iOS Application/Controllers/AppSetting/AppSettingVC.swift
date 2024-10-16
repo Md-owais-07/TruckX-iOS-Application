@@ -11,14 +11,28 @@ class AppSettingVC: UIViewController {
     @IBOutlet weak var btnBAck: UIButton!
     @IBOutlet weak var imgCountry: UIImageView!
     @IBOutlet weak var btnToggle: UIButton!
-    
+    @IBOutlet weak var addTralerView: UIView!
+    @IBOutlet weak var countryDropButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         btnBAck.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
         
+        addTralerView.isHidden = true
+        imgCountry.isHidden = true
+        countryDropButton.isHidden = true
+        
         imgCountry.applyCircularCornerRadius()
+        
+        if UserData.shared.isGuestUser {
+            imgCountry.isHidden = true
+            UserData.shared.isGuestUser = false
+        } else if UserData.shared.isLoggedIn {
+            addTralerView.isHidden = false
+            imgCountry.isHidden = false
+            countryDropButton.isHidden = false
+        }
         
         self.enablePopGestureRecognizer()
     }

@@ -32,7 +32,7 @@ class LogbookVC: UIViewController {
         btnNotifications.addTarget(self, action: #selector(pushToVC), for: .touchUpInside)
         btnRefresh.addTarget(self, action: #selector(reloadView), for: .touchUpInside)
         
-        lblUserName.text = UserData.shared.isLoggedIn ? "\(UserData.shared.firstName) \(UserData.shared.lastName)" : "No Name Found"
+        lblUserName.text = UserData.shared.isLoggedIn ? "\(UserData.shared.firstName) \(UserData.shared.lastName)" : "\(UserData.shared.guestName)"
         
         reusableView.viewController = self
         

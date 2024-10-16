@@ -10,6 +10,8 @@
 		E90ADE8E2CA090F500D0DC7D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E90ADE8D2CA090F500D0DC7D /* Lottie */; };
 		E90ADE902CA0912F00D0DC7D /* LottieLoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90ADE8F2CA0912F00D0DC7D /* LottieLoaderManager.swift */; };
 		E90ADE922CA091F400D0DC7D /* loader-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = E90ADE912CA091F400D0DC7D /* loader-animation.json */; };
+		E92370422CB96BAF00976899 /* LandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92370412CB96BAF00976899 /* LandingVC.swift */; };
+		E92371022CC0404700976899 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92371012CC0404700976899 /* BaseViewController.swift */; };
 		E9332D722C6F2B0200C25ABB /* CountryDropDownVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D712C6F2B0200C25ABB /* CountryDropDownVC.swift */; };
 		E9332D762C6F64F000C25ABB /* HosInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9332D742C6F64F000C25ABB /* HosInfoVC.swift */; };
 		E9332D792C6F738A00C25ABB /* ReusableGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9332D782C6F738A00C25ABB /* ReusableGraphView.xib */; };
@@ -116,6 +118,8 @@
 /* Begin PBXFileReference section */
 		E90ADE8F2CA0912F00D0DC7D /* LottieLoaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieLoaderManager.swift; sourceTree = "<group>"; };
 		E90ADE912CA091F400D0DC7D /* loader-animation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "loader-animation.json"; sourceTree = "<group>"; };
+		E92370412CB96BAF00976899 /* LandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
+		E92371012CC0404700976899 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E9332D712C6F2B0200C25ABB /* CountryDropDownVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDropDownVC.swift; sourceTree = "<group>"; };
 		E9332D742C6F64F000C25ABB /* HosInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HosInfoVC.swift; sourceTree = "<group>"; };
 		E9332D782C6F738A00C25ABB /* ReusableGraphView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReusableGraphView.xib; sourceTree = "<group>"; };
@@ -220,6 +224,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E923703E2CB96B8E00976899 /* LandingPage */ = {
+			isa = PBXGroup;
+			children = (
+				E92370412CB96BAF00976899 /* LandingVC.swift */,
+			);
+			path = LandingPage;
+			sourceTree = "<group>";
+		};
 		E9332D732C6F64CA00C25ABB /* HOSInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +470,7 @@
 		E96C610A2C6C9845000F2D38 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E923703E2CB96B8E00976899 /* LandingPage */,
 				E94C241A2CA49A9C00557CF7 /* ForgotPassword */,
 				E98DFCF82CA2A65F000D0AE0 /* ChangeStatus */,
 				E96C60C82C68FA0C000F2D38 /* Tabbar */,
@@ -648,6 +661,7 @@
 			isa = PBXGroup;
 			children = (
 				E96C60992C6760F3000F2D38 /* AppController.swift */,
+				E92371012CC0404700976899 /* BaseViewController.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -693,7 +707,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					E9497E702C662D820050A251 = {
@@ -768,11 +782,13 @@
 				E96C60E12C6AA139000F2D38 /* LoaderView.swift in Sources */,
 				E96C60DB2C6A8F98000F2D38 /* Network.swift in Sources */,
 				E9332D762C6F64F000C25ABB /* HosInfoVC.swift in Sources */,
+				E92370422CB96BAF00976899 /* LandingVC.swift in Sources */,
 				E9332D8B2C73216700C25ABB /* TruckAndTarilerTVC.swift in Sources */,
 				E99C9D492C7E0D3C00A2C860 /* DemoTVC.swift in Sources */,
 				E96C60D02C6A86A8000F2D38 /* ExemptionVC.swift in Sources */,
 				E96C60D32C6A8796000F2D38 /* ExemptionTVC.swift in Sources */,
 				E99C9D4B2C7E11BA00A2C860 /* CellData.swift in Sources */,
+				E92371022CC0404700976899 /* BaseViewController.swift in Sources */,
 				E9332D9A2C733F6400C25ABB /* MoreTVC.swift in Sources */,
 				E96C609E2C676155000F2D38 /* HomeVC.swift in Sources */,
 				E96C60CB2C6945E5000F2D38 /* BottomSheetVC.swift in Sources */,
@@ -985,12 +1001,15 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TruckX iOS Application/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = TruckX;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide better service.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1022,12 +1041,15 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TruckX iOS Application/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = TruckX;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide better service.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1083,8 +1105,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.1.1;
+				kind = exactVersion;
+				version = 7.1.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

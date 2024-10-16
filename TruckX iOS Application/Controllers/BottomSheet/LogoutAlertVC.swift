@@ -35,8 +35,10 @@ class LogoutAlertVC: UIViewController {
             self.mainView.alpha = 0
         }, completion: { _ in
             UserData.shared.isLoggedIn = false
-            let loginVC = AppController.shared.Login
+            let loginVC = AppController.shared.LandingPage
             let newNavController = UINavigationController(rootViewController: loginVC)
+//            self.navigationItem.hidesBackButton = true
+            self.navigationController?.isNavigationBarHidden = true
             self.navigationItem.hidesBackButton = true
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                let window = windowScene.windows.first {

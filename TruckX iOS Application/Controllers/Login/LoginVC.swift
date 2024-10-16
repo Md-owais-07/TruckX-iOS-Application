@@ -29,13 +29,14 @@ class LoginVC: UIViewController {
         setUpNavigation()
         setupLoader()
         btnLogin.applyTouchEffect()
-        
+
+        self.enablePopGestureRecognizer()
         self.HideKeyboardWhenTapAround()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        disablePopGestureRecognizer()
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.enablePopGestureRecognizer()
     }
     
     override func viewDidLayoutSubviews() {

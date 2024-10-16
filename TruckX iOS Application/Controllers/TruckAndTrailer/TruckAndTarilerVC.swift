@@ -10,6 +10,7 @@ import UIKit
 class TruckAndTarilerVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var lblAlert: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,15 @@ class TruckAndTarilerVC: UIViewController {
         tableView.reloadData()
         
         btnBack.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
+        
+        if UserData.shared.isGuestUser {
+            tableView.isHidden = true
+            lblAlert.isHidden = false
+            UserData.shared.isGuestUser = false
+        } else if UserData.shared.isLoggedIn {
+            tableView.isHidden = false
+            lblAlert.isHidden = true
+        }
         
         self.enablePopGestureRecognizer()
     }

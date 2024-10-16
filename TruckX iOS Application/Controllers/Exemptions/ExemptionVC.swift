@@ -10,6 +10,7 @@ import UIKit
 class ExemptionVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var lblGuestAlert: UILabel!
     
     var exemptionsData: [Exemption] = []
     private let loaderView = LoaderView()
@@ -25,6 +26,15 @@ class ExemptionVC: UIViewController {
         btnBack.addTarget(self, action: #selector(popToVC), for: .touchUpInside)
         
         self.enablePopGestureRecognizer()
+        
+        if UserData.shared.isGuestUser {
+            tableView.isHidden = true
+            lblGuestAlert.isHidden = false
+            UserData.shared.isGuestUser = false
+        } else if UserData.shared.isLoggedIn {
+            tableView.isHidden = false
+            lblGuestAlert.isHidden = true
+        }
         
         setupLoader()
         fetchExemptionData()

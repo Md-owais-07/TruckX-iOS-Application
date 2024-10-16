@@ -12,13 +12,23 @@ class UserData {
     static let shared = UserData()
     private let userDefault = UserDefaults.standard
     
+    var isGuestUser: Bool
+    {
+        get {
+            return userDefault.value(forKey: "isGuestUser") as? Bool ?? false
+        }
+        set(status) {
+            userDefault.set(status, forKey: "isGuestUser")
+        }
+    }
+    
     var isLoggedIn: Bool
     {
         get {
             return userDefault.value(forKey: "isLoggedIn") as? Bool ?? false
         }
         set(status) {
-            return userDefault.set(status, forKey: "isLoggedIn")
+            userDefault.set(status, forKey: "isLoggedIn")
         }
     }
     
@@ -49,6 +59,16 @@ class UserData {
         }
         set(data) {
             userDefault.set(data, forKey: "lastName")
+        }
+    }
+    
+    var guestName: String
+    {
+        get {
+            return userDefault.string(forKey: "guestName") ?? ""
+        }
+        set(data) {
+            userDefault.set(data, forKey: "guestName")
         }
     }
     
